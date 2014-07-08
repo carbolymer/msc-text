@@ -1,0 +1,152 @@
+\documentclass[11pt,a4paper,openright]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bookmarks,
+            breaklinks,
+            hidelinks,
+            backref=false,
+            pdfhighlight=/I,
+            pdffitwindow=true,
+            pdfstartview=Fit,
+            pdfcenterwindow=true,
+            linkbordercolor={1 1 1},
+            linkcolor=violetMy,
+            urlcolor=violetMy,
+            pdftitle=Calculation~of~predictions~for~non-identical~particle~correlations~in~AA~collisions~at~LHC~energies~from~hydrodynamics-inspired~models,
+            pdfauthor=Mateusz~Galazyn]%
+           {hyperref}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,xfrac}
+\usepackage{tikz}
+\usepackage{natbib}
+\usepackage{datetime}
+\usepackage{color,graphicx}
+\usepackage{listings}
+\usepackage{placeins}
+\usepackage{url}
+\usepackage{indentfirst}
+\usepackage{lineno}
+\usepackage{morefloats}
+\usepackage{times}
+\usepackage{pdfpages}
+\usepackage{palatino}
+\usepackage[polish,british]{babel}
+\graphicspath{{figures/}}
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+%\renewcommand\marginpar@font{\color{grey}}
+
+\addtolength{\textwidth}{1cm}
+\addtolength{\hoffset}{-0.5cm}
+
+\title{Calculation of predictions for non-identical particle correlations in AA collisions at LHC energies from hydrodynamics-inspired models}
+\author{Mateusz Gałażyn \\  \centering Warsaw University of Technology, Faculty of Physics}
+\date{September 2014}
+
+\begin{document}
+\selectlanguage{british}
+\newdateformat{mydatePL}{\THEDAY.0\THEMONTH.\THEYEAR~r.}
+\newdateformat{mydateEN}{\monthname[\THEMONTH] \THEDAY, \THEYEAR}
+\hyphenation{therminator}
+
+\definecolor{violetMy}{rgb}{1,1,1}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.1mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\begin{titlepage}
+	\includegraphics[height=3.5cm]{wut}
+	    \hfill
+	\includegraphics[height=3.5cm]{wut_physics}
+
+	\center
+	{\textbf{}}\\[3.3cm]
+	{ \Huge Calculation of predictions for non-identical particle correlations in AA collisions at LHC energies from hydrodynamics-inspired models}
+	\\[3cm]
+
+	\LARGE\uppercase{Master of Science Thesis}\\[1.3cm]
+		\begin{flushright} \Large
+		Author:\hspace{2.cm}~\\
+		\textbf{Mateusz Wojciech Gałażyn}\\[-0.5cm]
+		\end{flushright}
+
+		\begin{flushright} \Large
+		Supervisor:\hspace{1.6cm}~\\
+		\textbf{Prof.~Adam~{Kisiel}}\hspace{1.1cm}~\\[0.0cm]
+		\end{flushright}
+
+	{\large Warsaw,~\mydateEN\today}
+	\vfill
+\end{titlepage}	
+\cleardoublepage
+
+\begin{titlepage}
+\selectlanguage{polish}
+	\includegraphics[height=3.5cm]{wut}
+	    \hfill
+	\includegraphics[height=3.5cm]{wut_physics}
+	\center
+	{\textbf{}}\\[2cm]
+	{ \Huge Obliczenia teoretycznych przewidywań korelacji cząstek nieidentycznych w zderzeniach AA przy energiach LHC pochodzących z modeli hydrodynamicznych }
+	\\[3.2cm]
+
+
+	\LARGE\uppercase{Praca magisterska}\\[1.3cm]
+		\begin{flushright} \Large
+		Autor:\hspace{2.2cm}~\\
+		\textbf{Mateusz Wojciech Gałażyn}\\[-0.5cm]
+		\end{flushright}
+
+		\begin{flushright} \Large
+		Promotor:\hspace{1.8cm}~\\
+		\textbf{dr~hab.~inż.~Adam~{Kisiel}, prof. PW}\\[0cm]
+		\end{flushright}
+
+	{\large Warszawa,~\mydatePL\today}
+	\vfill
+\end{titlepage}
+\cleardoublepage
+\selectlanguage{british}
+\linenumbers
+
+\begin{abstract}
+\input{chapters/abstract_en}
+\end{abstract}
+\cleardoublepage
+\renewcommand{\abstractname}{Streszczenie}
+\begin{abstract}
+\selectlanguage{polish}
+\hyphenation{po-prze-czną}
+\input{chapters/abstract_pl}
+\end{abstract}
+\selectlanguage{british}
+\cleardoublepage
+\pagestyle{empty}
+\pagenumbering{gobble}
+\tableofcontents
+\cleardoublepage
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\input{chapters/intro}
+\newpage
+\input{chapters/theory}
+\newpage
+\input{chapters/therminator}
+\newpage
+\input{chapters/interferometry}
+\newpage
+\input{chapters/results}
+\newpage
+\input{chapters/summary}
+\newpage
+
+\bibliography{bibliography}
+\bibliographystyle{unsrt}
+%\listoftables
+\listoffigures
+%TODO rewrite statement below
+%\includepdf[pages={1}]{oswiadczenie.pdf}
+\end{document}

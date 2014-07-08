@@ -1,0 +1,11 @@
+*.aux
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.bbl
+*.blg
+figures/*.pdf
+figures/analysis/radii/*.pdf
+figures/analysis/cf/*.pdf
