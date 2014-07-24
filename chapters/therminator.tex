@@ -67,9 +67,10 @@
     The basic assumption of the statistical approach of evolution of the quark-gluon plasma is that at some point of the space-time evolution of the fireball, the thermal equilibrium is reached.
     When the system is in the thermal equilibrium the local phase-space densities of particles follow the Fermi-Dirac or Bose-Einstein statistical distributions.
     At the end of the plasma expansion, the freeze-out occurs.
-    The freeze-out model incorporated in the Therminator model assumes, that chemical and thermal freeze-out occur at the same time.
-    At the rather high temperature of the freeze-out $\approx$140-160 MeV, the resonances contribute very significantly to the observables.
-    Therefore, the crucial element for the success of the statistical approach is the complete inclusion of hadronic resonances~\cite{therminator}.
+    The freeze-out model incorporated in the \verb|THERMINATOR| model assumes, that chemical and thermal freeze-out occur at the same time.
+
+    One of the crucial elements of the statistical approach is the complete inclusion of hadronic resonances.
+    This is because at the rather high temperature of the freeze-out $\approx$140-160 MeV, the resonances contribute very significantly to the observables~\cite{therminator}.
     %
     % ========
     \subsection{Cooper-Frye formalism}
@@ -79,4 +80,34 @@
       \begin{equation}
       d\Sigma_\mu = \epsilon_{\mu\alpha\beta\gamma} \frac{\partial x^\alpha}{\partial \alpha} \frac{\partial x^\beta}{\partial \beta} \frac{\partial x^\gamma}{\partial \gamma} d\alpha d\beta d\gamma ,
       \end{equation}
-      where $\epsilon_{\mu\alpha\beta\gamma}$ is the Levi-Civita tensor and the variables $\alpha$, $\beta$ and $\gamma$ are used to parametrize the three-dimensional freeze-out hypersurface.
+      where $\epsilon_{\mu\alpha\beta\gamma}$ is the Levi-Civita tensor and the variables $\alpha, \beta, \gamma \in \{1,2,3\}$ are used to parametrize the three-dimensional freeze-out hypersurface in the Minkowski four-dimensional space.
+      The Levi-Civita tensor is equal to 1 when the indices form an even permutation (eg.~$\epsilon_{0123}$), to -1 when the permutation is odd (e.g. $\epsilon_{2134}$) and has a value of 0 if any index is repeated. Therefore~\cite{therminator2},
+      \begin{equation}
+        d \Sigma_0  = 
+        \begin{vmatrix}
+          \frac{\partial x}{\partial \alpha} & \frac{\partial x}{\partial \beta} & \frac{\partial x}{\partial \gamma} \\
+          \frac{\partial y}{\partial \alpha} & \frac{\partial y}{\partial \beta} & \frac{\partial y}{\partial \gamma} \\
+          \frac{\partial z}{\partial \alpha} & \frac{\partial z}{\partial \beta} & \frac{\partial z}{\partial \gamma} \\
+        \end{vmatrix} d \alpha d \beta d \gamma
+      \end{equation}
+      and the remaining components are obtained by cyclic permutations of \textit{t}, \textit{x}, \textit{y} and~\textit{z}.
+
+      One can obtain the number of hadrons produced on the hypersurface $\Sigma^{\mu}$ from the Cooper-Frye formalism.
+      The following integral yields the total number of created particles~\cite{therminator2}:
+      \begin{equation}
+        \label{eq:cooper-frye}
+        N = (2s+1) \int \frac{d^3p}{(2\pi)^3 E_p} \int d\Sigma_{\mu}(x)p^\mu f(x,p) ,
+      \end{equation}
+      where
+      \begin{equation}
+        \label{eq:phase-space-dist}
+        f(p \cdot u) = \left\{ ex\left[ \frac{p_\mu u^\mu - (B \mu_B + I_3 \mu_{I_3}+S\mu_S + C \mu_C)}{T} \right] \pm 1 \right\}^{-1}
+      \end{equation}
+      is the phase-space distribution for particles (for stable ones and resonances).
+      For the Fermi-Dirac distribution in the \ref{eq:phase-space-dist} there is a plus sign and for Bose-Einstein statistics minus sign respectively.
+      The thermodynamic quantities in $f(\cdot)$ are $T$ - temperature, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, $\mu_S$ - strange chemical potential, $\mu_C$ - charmed chemical potential and the $s$ is a spin of a particle.
+      One can simply derive from equation \ref{eq:cooper-frye}, the dependence of the momentum density~\cite{cooperfrye}:
+      \begin{equation}
+        E \frac{d N}{d^3 p} = \int f(x,p)p^\mu d \Sigma_\mu .
+      \end{equation}
+      The equations presented above are directly used in the \verb|THERMINATOR| to generate the hadrons with the Monte-Carlo method.
