@@ -5,68 +5,78 @@
   It performs the statistical hadronization which is followed by space-time evolution of particles and the decay of resonances.
   The key element of this method is an inclusion of a complete list of hadronic resonances.
   The second version of \verb|THERMINATOR|~\cite{therminator2} comes with a posibility to incorporate any shape of freeze-out hypersurface and the expansion velocity field, especially those generated externally with various hydrodynamic codes.
+
+  %
+  % ========
+  \section{(3+1)-dimensional viscous hydrodynamics}
+  % ========
+  Most of the relativistic viscous hydrodynamic calculations are done in \mbox{(2+1)-dimensions}.
+  Such simplification assumes boost-invariance of a matter created in a collision.
+  Experimental data reveals that no boost-invariant region is formed in the collisions~\cite{chmeson}.
+  Hence, for the better description of created system a \mbox{(3+1)-dimensional} model is required.
+
+  In the four dimensional relativistic dynamics one can describe a system using a space-time four-vector $x^\nu=(ct,x,y,z)$, a velocity four-vector $u^\nu=\gamma(c,v_x,v_y,v_z)$ and a energy-momentum tensor $T^{\mu\nu}$.
+  The particular components of $T^{\mu\nu}$ have a following meaning:
+  \begin{itemize}
+    \item $T^{00}$ - an energy density,
+    \item $c T^{0\alpha}$ - an energy flux across a surface $x^\alpha$,
+    \item $T^{\alpha0}$ - an $\alpha$-momentum flux across a surface  $x^\alpha$ multiplied by $c$,
+    \item $T^{\alpha\beta}$ - components of momentum flux density tensor,
+  \end{itemize}
+  where $\gamma = (1-v^2/c^2)^{-1/2}$ is Lorentz factor and $\alpha,\beta \in \{1,2,3\}$.
+  Using $u^\nu$ one can express $T^{\mu\nu}$ as follows~\cite{israel}:
+  \begin{equation}
+    \label{eq:visc_ten}
+    T^{\mu\nu}_0 = (e+p)u^\mu u^\nu - pg^{\mu\nu}
+  \end{equation}
+  where $e$ is an energy density, $p$ is a pressure and $g^{\mu\nu}$ is an inverse metric tensor:
+  \begin{equation}
+    g^{\mu\nu} = 
+    \begin{bmatrix}
+      1 & 0 & 0 & 0 \\
+      0 & -1 & 0 & 0 \\
+      0 & 0 & -1 & 0 \\
+      0 & 0 & 0 & -1
+    \end{bmatrix} .
+  \end{equation}
+  The presented version of energy-momentum tensor (\ref{eq:visc_ten}) can be used to describe dynamics of a perfect fluid.
+  To take into account influence of viscosity, one has to apply the following corrections coming from shear $\pi^{\mu\nu}$ and bulk $\Pi$ viscosities~\cite{visc_hydro}:
+  \begin{equation}
+    T^{\mu\nu} = T_0^{\mu\nu} + \pi^{\mu\nu} + \Pi(g^{\mu\nu}-u^{\mu}u^{\nu}) .
+  \end{equation}
+  The stress tensor $\pi^{\mu\nu}$ and the bulk viscosity $\Pi$ are solutions of dynamical equations in the second order viscous hydrodynamic framework~\cite{israel}.
+  
+  The comparison of hydrodynamics calculations with the experimental results reveal, that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
+  When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
+  \begin{equation}
+    \partial_{\mu} T^{\mu\nu} = 0
+  \end{equation}
+  can be used to describe the dynamics of the local energy density, pressure and flow velocity.
+
+  Hydrodynamic calculations are starting from the Glauber \footnote{The Glauber Model is used to calculate ``geometrical'' parameters of a collision like an impact parameter, number of participating nucleons or number of binary collisions.}
+  model initial conditions.
+  The collective expansion of a fluid ends at the freeze-out hypersurface.
+  That surface is usually defined as a constant temperature surface, or equivalently as a cut-off in local energy density.
+  The freeze-out is assumed to occur at the temperature $T$ = 140 MeV.
+
   %
   % ========
   \section{Statistical hadronization}
   % ========
     Statistical description of heavy ion collision has been successfully used to describe quantitatively \textit{soft} physics, i.e. the regime with the transverse momentum not exceeding 2 GeV.
-    The assumption that hadronic matter before rapid expansion reaches equilibrium, leads to good results in particle abundances measured in heavy ion experiments, in particular, at the high energies.
+    The basic assumption of the statistical approach of evolution of the quark-gluon plasma is that at some point of the space-time evolution of the fireball, the thermal equilibrium is reached.
+    When the system is in the thermal equilibrium the local phase-space densities of particles follow the Fermi-Dirac or Bose-Einstein statistical distributions.
+    At the end of the plasma expansion, the freeze-out occurs.
+    The freeze-out model incorporated in the Therminator model assumes, that chemical and thermal freeze-out occur at the same time.
     At the rather high temperature of the freeze-out $\approx$140-160 MeV, the resonances contribute very significantly to the observables.
     Therefore, the crucial element for the success of the statistical approach is the complete inclusion of hadronic resonances~\cite{therminator}.
     %
     % ========
     \subsection{Cooper-Frye formalism}
     % ========
-      % opisac wzor C-F
-
-    %
-    % ========
-    \section{(3+1)-dimensional viscous hydrodynamics}
-    % ========
-    Most of the relativistic viscous hydrodynamic calculations are done in \mbox{(2+1)-dimensions}.
-    Such simplification assumes boost-invariance of a matter created in a collision.
-    Experimental data reveals that no boost-invariant region is formed in the collisions~\cite{chmeson}.
-    Hence, for the better description of created system a \mbox{(3+1)-dimensional} model is required.
-
-    In the four dimensional relativistic dynamics one can describe a system using a space-time four-vector $x^\nu=(ct,x,y,z)$, a velocity four-vector $u^\nu=\gamma(c,v_x,v_y,v_z)$ and a energy-momentum tensor $T^{\mu\nu}$.
-    The particular components of $T^{\mu\nu}$ have a following meaning:
-    \begin{itemize}
-      \item $T^{00}$ - an energy density,
-      \item $c T^{0\alpha}$ - an energy flux across a surface $x^\alpha$,
-      \item $T^{\alpha0}$ - an $\alpha$-momentum flux across a surface  $x^\alpha$ multiplied by $c$,
-      \item $T^{\alpha\beta}$ - components of momentum flux density tensor,
-    \end{itemize}
-    where $\gamma = (1-v^2/c^2)^{-1/2}$ is Lorentz factor and $\alpha,\beta \in \{1,2,3\}$.
-    Using $u^\nu$ one can express $T^{\mu\nu}$ as follows~\cite{israel}:
-    \begin{equation}
-      \label{eq:visc_ten}
-      T^{\mu\nu}_0 = (e+p)u^\mu u^\nu - pg^{\mu\nu}
-    \end{equation}
-    where $e$ is an energy density, $p$ is a pressure and $g^{\mu\nu}$ is an inverse metric tensor:
-    \begin{equation}
-      g^{\mu\nu} = 
-      \begin{bmatrix}
-        1 & 0 & 0 & 0 \\
-        0 & -1 & 0 & 0 \\
-        0 & 0 & -1 & 0 \\
-        0 & 0 & 0 & -1
-      \end{bmatrix} .
-    \end{equation}
-    The presented version of energy-momentum tensor (\ref{eq:visc_ten}) can be used to describe dynamics of a perfect fluid.
-    To take into account influence of viscosity, one has to apply the following corrections coming from shear $\pi^{\mu\nu}$ and bulk $\Pi$ viscosities~\cite{visc_hydro}:
-    \begin{equation}
-      T^{\mu\nu} = T_0^{\mu\nu} + \pi^{\mu\nu} + \Pi(g^{\mu\nu}-u^{\mu}u^{\nu}) .
-    \end{equation}
-    The stress tensor $\pi^{\mu\nu}$ and the bulk viscosity $\Pi$ are solutions of dynamical equations in the second order viscous hydrodynamic framework~\cite{israel}.
-    The comparison of hydrodynamics calculations with the experimental results reveal, that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
-    When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
-    \begin{equation}
-      \partial_{\mu} T^{\mu\nu} = 0
-    \end{equation}
-    can be used to describe the dynamics of the local energy density, pressure and flow velocity.
-
-    Hydrodynamic calculations are starting from the Glauber \footnote{The Glauber Model is used to calculate ``geometrical'' parameters of a collision like an impact parameter, number of participating nucleons or number of binary collisions.}
-    model initial conditions.
-    The collective expansion of a fluid ends at the freeze-out hypersurface.
-    That surface is usually defined as a constant temperature surface, or equivalently as a cut-off in local energy density.
-    The freeze-out is assumed to occur at the temperature $T$ = 140 MeV.
+      The result of the hydrodynamic calculations is the freeze-out hypersurface~$\Sigma^\mu$.
+      A three-dimensional element of the surface is defined as~\cite{therminator2} 
+      \begin{equation}
+      d\Sigma_\mu = \epsilon_{\mu\alpha\beta\gamma} \frac{\partial x^\alpha}{\partial \alpha} \frac{\partial x^\beta}{\partial \beta} \frac{\partial x^\gamma}{\partial \gamma} d\alpha d\beta d\gamma ,
+      \end{equation}
+      where $\epsilon_{\mu\alpha\beta\gamma}$ is the Levi-Civita tensor and the variables $\alpha$, $\beta$ and $\gamma$ are used to parametrize the three-dimensional freeze-out hypersurface.
