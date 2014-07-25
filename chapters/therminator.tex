@@ -3,7 +3,7 @@
   \verb|THERMINATOR|~\cite{therminator} is a Monte Carlo event generator designed to investigate the particle production in the relativistic heavy ion collisions.
   The functionality of the code includes a generation of the stable particles and unstable resonances at the chosen hypersurface model.
   It performs the statistical hadronization which is followed by space-time evolution of particles and the decay of resonances.
-  The key element of this method is an inclusion of a complete list of hadronic resonances.
+  The key element of this method is an inclusion of a complete list of hadronic resonances, which contribute very significantly to the observables.
   The second version of \verb|THERMINATOR|~\cite{therminator2} comes with a posibility to incorporate any shape of freeze-out hypersurface and the expansion velocity field, especially those generated externally with various hydrodynamic codes.
 
   %
@@ -45,8 +45,8 @@
     T^{\mu\nu} = T_0^{\mu\nu} + \pi^{\mu\nu} + \Pi(g^{\mu\nu}-u^{\mu}u^{\nu}) .
   \end{equation}
   The stress tensor $\pi^{\mu\nu}$ and the bulk viscosity $\Pi$ are solutions of dynamical equations in the second order viscous hydrodynamic framework~\cite{israel}.
-  
   The comparison of hydrodynamics calculations with the experimental results reveal, that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
+  
   When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
   \begin{equation}
     \partial_{\mu} T^{\mu\nu} = 0
@@ -68,9 +68,6 @@
     When the system is in the thermal equilibrium the local phase-space densities of particles follow the Fermi-Dirac or Bose-Einstein statistical distributions.
     At the end of the plasma expansion, the freeze-out occurs.
     The freeze-out model incorporated in the \verb|THERMINATOR| model assumes, that chemical and thermal freeze-out occur at the same time.
-
-    One of the crucial elements of the statistical approach is the complete inclusion of hadronic resonances.
-    This is because at the rather high temperature of the freeze-out $\approx$140-160 MeV, the resonances contribute very significantly to the observables~\cite{therminator}.
     %
     % ========
     \subsection{Cooper-Frye formalism}
@@ -105,7 +102,7 @@
       \end{equation}
       is the phase-space distribution for particles (for stable ones and resonances).
       For the Fermi-Dirac distribution in the \ref{eq:phase-space-dist} there is a plus sign and for Bose-Einstein statistics minus sign respectively.
-      The thermodynamic quantities in $f(\cdot)$ are $T$ - temperature, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, $\mu_S$ - strange chemical potential, $\mu_C$ - charmed chemical potential and the $s$ is a spin of a particle.
+      The thermodynamic quantities appearing in the $f(\cdot)$ are $T$ - temperature, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, $\mu_S$ - strange chemical potential, $\mu_C$ - charmed chemical potential and the $s$ is a spin of a particle.
       One can simply derive from equation \ref{eq:cooper-frye}, the dependence of the momentum density~\cite{cooperfrye}:
       \begin{equation}
         E \frac{d N}{d^3 p} = \int f(x,p)p^\mu d \Sigma_\mu .
