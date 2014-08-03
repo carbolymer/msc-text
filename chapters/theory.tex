@@ -82,7 +82,7 @@
       \begin{figure}[h]
         \centering
         \includegraphics[width=0.5\textwidth]{strong_cc}
-        \caption{The coupling parameter $\alpha_s$ dependence on four-momentum transfer $Q^2$~\cite{pdg}.}
+        \caption{The coupling parameter $\alpha_s$ dependence on four-momentum transfer~$Q^2$~\cite{pdg}.}
         \label{fig:strong_cc}
       \end{figure}
       The value $\alpha_s$ decreases with increasing momentum transfer and the interaction becomes weak for large $Q^2$ ($\alpha_s (Q) \to 0$).
@@ -123,7 +123,7 @@
         \caption{A number of degrees of freedom as a function of a temperature~\cite{karsch}.}
         \label{fig:lqcd}
       \end{figure}
-      The results obtained from such calculations are show on Fig.~\ref{fig:lqcd}.
+      The results obtained from such calculations are shown on Fig.~\ref{fig:lqcd}.
       The energy density $\epsilon$ which is divided by $T^4$ is a measure of number of degrees of freedom in the system.
       One can observe significant rise of this value, when the temperature increases past the critical value $T_C$.
       Such increase is signaling a phase transition - the formation of QGP~\cite{drkisiel}.
@@ -148,7 +148,69 @@
   % ========
   \section{Relativistic heavy ion collisions}
   % ========
-    % To achieve high enough temperatures and baryon densities  
+    %
+    % ========
+    \subsection{Stages of heavy ion collision}
+    % ========
+
+      To create the quark-gluon plasma one has to achieve high enough temperatures and baryon densities.
+      Such conditions can be recreated in the heavy ion collisions at the high energies.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=1\textwidth]{collision}
+        \caption{Left: stages of a heavy ion collision simulated in the UrQMD model. Right: schematic view of a heavy ion collision evolution~\cite{drkisiel}.}
+        \label{fig:colision}
+      \end{figure}
+      The left side of the Figure~\ref{fig:colision} shows simplified picture of a central collision of two highly relativistic nuclei in the centre-of-mass reference frame.
+      The colliding nuclei are presented as thin disks because of the Lorentz contraction.
+      In the central region, where the energy density is the highest, a new state of matter - the quark-gluon plasma - is supposedly created.
+      Afterwards, the plasma expands ad cools down, quarks combine into hadrons and their mutual interactions cease when the system reaches the \textit{freeze-out} temperature.
+      Subsequently, produced free hadrons move towards the detectors.
+
+      On the right side of the Figure~\ref{fig:colision} there is presented a space-time evolution of a collision process, plotted in the light-cone variables (z, t).
+      The two highly relativistic nuclei are traveling basically along the light cone until they collide at the centre of diagram. 
+      Nuclear fragments emerge from the collision again along the (forward) light cone, while the matter between fragmentation zones populates the central region.
+      This hot and dense matter is believed to be in the state of the quark-gluon plasma.
+      There exist several frameworks to describe this transition to the QGP phase, for example: QCD string breaking, QCD parton cascades or color glass condensate evolving into glasma and later into quark-gluon plasma~\cite{florkowski}.
+      \paragraph{String breaking}
+      In the string picture, the nuclei pass through each other forming color strings.
+      This is analogous to the situation depicted in the Fig~\ref{fig:string_break} -  the color string is created between quarks inside particular nucleons in nuclei.
+      In the next step strings decay / fragment forming quarks and gluons or directly hadrons.
+      This approach becomes invalid at very high energies, when the strings overlap and cannot be treated as independent objects.
+      \paragraph{Parton cascade}
+      The parton\footnote{A parton is a common name for quark and gluon.} cascade model is based on the pQCD.
+      The colliding nuclei are treated as clouds of quarks and which penetrate through each other.
+      The key element of this method is the time evolution of the partion phase-space distributions, which is governed by a relativistic Boltzmann equation with a collision term that contains dominant perturbative QCD interations.
+      The bottleneck of the parton cascade model is the low energies regime, where the $Q^2$ is too small to be described by the perturbative theory.
+      \paragraph{Color glass condensate}
+      The color glass condensate assumes, that the hadron can be viewed as a tightly packed system of interacting gluons.
+      The saturation of gluons increases with energy, hence the total number of gluons may increase without the bound.
+      Such a saturated and weakly coupled gluon system is called a color glass condensate.
+      The fast gluons in the condensate are Lorentz contracted and redistributed on the two very thin sheets representing two colliding nuclei.
+      The sheets are perpendicular to the beam axis.
+      The fast gluons produce mutually orthogonal color magnetic and electric fields, that only exist on the sheets.
+      Immediately after the collision, i.e. just after the passage of the two gluonic sheets after each other, the longitudinal electric and magnetic fields are produced forming the \textit{glasma}.
+      The glasma fields decay through the classical rearrangement of the fields into radiation of gluons.
+      Also decays due to the quantum pair creations are possible.
+      In this way, the quark-gluon plasma is produced.
+      \\
+
+      Interactions within the created quark-gluon plasma bring the system into the local statistical equilibrium, hence its further evolution can be described by the relativistic hydrodynamics.
+      The hydrodynamic expansion causes that the system becomes more and more dilute.
+      The phase transition from the quark-gluon plasma to the hadronic gas occurs.
+      Further expansion causes a transition from the strongly interaction hadronic gas to weakly interacting system of hadrons which move freely to the detectors.
+      Such decoupling of hadrons is called the \textit{freeze-out}.
+      The freeze-out can be divided into two phases: the chemical freeze-out and the thermal one.
+      The \textit{chemical freeze-out} occurs when the inelastic collisions between constituents of the hadron gas stop.
+      As the system evolves from the chemical freeze-out to the thermal freeze-out the dominant processes are elastic collisions (such as, for example $\pi+\pi\to$ $\rho \to$ $\pi+\pi$) and strong decays of heavier resonances which populate the yield of stable hadrons.
+      The \textit{thermal freeze-out} is the stage of the evolution of matter, when the strongly coupled system transforms to a weakly coupled one (consisting of essentially free particles).
+      In other words this is the moment, where the hadrons practically stop to interact.
+      Obviously, the temperatures corresponding to the two freeze-outs satisfy the condition
+      \begin{equation}
+        T_{chem} > T_{therm}~,
+      \end{equation}
+      where $T_{chem}$ (inferred from the ratios of hadron multiplicities) is the temperature of the chemical freeze-out, and $T_{therm}$ (obtained from the investigation of the transverse-momentum spectra) is the temperature of the thermal freeze-out~\cite{florkowski}.
+
     %taken from grebieszkow's HIP 7th lecture - HIC dynamics
     %
     % ========
@@ -157,4 +219,12 @@
       % experimental signatures of occurence of QGP
       % TODO impact parameter and other collision parameters?
 
+      \subsubsection{Kinematic variables} %subsection?
+      %AK
+      \subsubsection{Elliptic Flow}
+      \subsubsection{Transverse radial flow}
+      %JEREMI
+      \subsubsection{Direct photon slope}
+      \subsubsection{low-mass dilepton production}
+      \subsubsection{jet quenching}
 
