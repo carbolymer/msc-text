@@ -32,12 +32,17 @@
 \usepackage{pdfpages}
 \usepackage{palatino}
 \usepackage[polish,british]{babel}
+\usepackage{titlesec}
 \graphicspath{{figures/}}
 \renewcommand\floatpagefraction{.9}
 \renewcommand\topfraction{.9}
 \renewcommand\bottomfraction{.9}
 \renewcommand\textfraction{.1}
 %\renewcommand\marginpar@font{\color{grey}}
+
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}
+\titlespacing*{\paragraph}{0em}{1em}{0.3em}
 
 \setlength{\emergencystretch}{8em}
 
