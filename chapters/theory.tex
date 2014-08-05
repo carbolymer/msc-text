@@ -178,7 +178,7 @@
       In the next step strings decay~/~fragment forming quarks and gluons or directly hadrons.
       This approach becomes invalid at very high energies, when the strings overlap and cannot be treated as independent objects.
       \paragraph{Parton cascade}
-      The parton\footnote{A parton is a common name for quark and gluon.} cascade model is based on the pQCD.
+      The parton\footnote{A parton is a common name for a quark and a gluon.} cascade model is based on the pQCD.
       The colliding nuclei are treated as clouds of quarks and which penetrate through each other.
       The key element of this method is the time evolution of the partion phase-space distributions, which is governed by a relativistic Boltzmann equation with a collision term that contains dominant perturbative QCD interations.
       The bottleneck of the parton cascade model is the low energies regime, where the $Q^2$ is too small to be described by the perturbative theory.
@@ -216,12 +216,10 @@
     % ========
     \subsection{QGP signatures}
     % ========
-      % experimental signatures of occurence of QGP
-      % TODO impact parameter and other collision parameters?
       The quark-gluon plasma is a very short living and unstable state of matter.
-      One cannot confirm existence of it and investigate the properties of a plasma directly.
+      One cannot investigate the properties of a plasma and confirm existence of it directly.
       Hence, the several experimental effects were proposed as QGP signatures, some of them have been already observed in heavy ion experiments~\cite{drkisiel}.
-      As matter created in the heavy ions collisions is supposed to behave like a fluid, one should expect appearance of collective behaviour at small transversive momenta - so called \textit{radial flow} and \textit{elliptic flow}.
+      As matter created in the heavy ions collisions is supposed to behave like a fluid, one should expect appearance of collective behaviour at small transverse momenta - so called \textit{elliptic flow} and \textit{radial flow}.
       \subsubsection{Elliptic flow}
         In a non-central heavy ion collisions, created region of matter has an almond shape with its shorter axis in the \textit{reaction plane} (Fig.~\ref{fig:elliptic_flow}).
         The pressure gradient is much larger in-plane rather than out-of-plane.
@@ -259,7 +257,7 @@
         Therefore the observation of elliptic flow means that the created matter was in fact a strongly interacting matter.
         \begin{figure}[h]
           \centering
-          \includegraphics[width=0.7\textwidth]{elliptic_flow_experimental}
+          \includegraphics[width=0.8\textwidth]{elliptic_flow_experimental}
           \caption{\textit{Lower:} The elliptic flow $v_2$ follows the hydrodynamical predictions for an ideal fluid perfectly. Note that $> 99\%$ of all final hadrons have $p_T < 1.5$~GeV/c. \textit{Upper left:} The $v_2$ plotted versus transverse kinetic energy $KE_T = m_T - m_0 = \sqrt{p_T^2 + m_0^2} - m_0$. The $v_2$ follows different universal curves for mesons and baryons. \textit{Upper right:} When scaled by the number of valence quarks, the $v_2$ follows the same universal curve for all hadrons and for all values of scaled transverse kinetic energy~\cite{heinz}.}
           \label{fig:elliptic_flow_experimental}
         \end{figure}
@@ -271,10 +269,33 @@
         The left plot shows the two unversal trend lines for baryons and mesons.
         After the scaling of $v_2$ and the kinetic energy by the number of valence quarks, all of the hadrons follow the same universal curve.
         Those plots show that strong collectivity is observed in heavy ion collisions.
-
       \pagebreak
       \subsubsection{Transverse radial flow}
-      %JEREMI
+        Elliptic flow described previously is caused by the pressure gradients which must also produce a more simple collective behaviour of matter - a~movement inside-out, called radial flow.
+        Particles are pushed to higher momenta and they move away from the center of the collision.
+        A source not showing collective behaviour, like pp collisions, produces particle spectra that can be fitted by a power-law~\cite{drkisiel}:
+        \begin{equation}
+          \frac{1}{2\pi p_T} \frac{d^2 N}{d p_T d \eta} = C \left( 1 +\frac{p_T}{p_0} \right)~.
+        \end{equation}
+        The $\eta$ variable is a \textit{pseudorapidity} defined as follows:
+        \begin{equation}
+          \eta = \frac{1}{2} \ln \left( \frac{p + p_L}{p - p_L} \right) = -\ln \left(\frac{\theta}{2} \right)~,
+        \end{equation}
+        where $\theta$ is an emission angle $\cos \theta = p_L / p$~.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=1\textwidth]{mt_spectra}
+          \caption{Invariant yield of particles versus transverse mass $m_T = \sqrt{p^2_T + m_0^2}$ for $\pi^{\pm}$, $K^{\pm}$, $p$ and $\bar{p}$ at mid-rapidity for pp collisions (bottom) and Au+Au events from 70-80\% (second bottom) to 0-5\% (top) centrality~\cite{mtspectra}.}
+          \label{fig:invariant_yield}
+        \end{figure}
+
+        The hydrodynamical expansion of a system gives the same flow velocity kick for different kind of particles - ones with bigger masses will gain larger $p_T$ boost.
+        This causes increase of the yield of particles with larger transverse momenta.
+        In the invariant yield plots one can observe the decrease of the slope parameter, especially for the heavier hadrons.
+        This is presented in the Fig.~\ref{fig:invariant_yield}.
+        The most affected spectra are ones of kaons (b) and protons (c).
+        One can notice decrease of the slope parameter for heavy ion collisions (plots from second bottom to top) comparing to the proton-proton collisions (bottom ones), where no boost from radial flow should occur~\cite{drkisiel}.
+
       \subsubsection{Direct photon slope}
       \subsubsection{low-mass dilepton production}
       \subsubsection{jet quenching}
