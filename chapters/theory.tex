@@ -218,22 +218,61 @@
     % ========
       % experimental signatures of occurence of QGP
       % TODO impact parameter and other collision parameters?
-      The quark-gluon plasma is very short living and unstable state of matter.
+      The quark-gluon plasma is a very short living and unstable state of matter.
       One cannot confirm existence of it and investigate the properties of a plasma directly.
-      Several experimental effects were proposed as QGP signatures, some of them have been already observed in heavy ion experiments~\cite{drkisiel}.
+      Hence, the several experimental effects were proposed as QGP signatures, some of them have been already observed in heavy ion experiments~\cite{drkisiel}.
       As matter created in the heavy ions collisions is supposed to behave like a fluid, one should expect appearance of collective behaviour at small transversive momenta - so called \textit{radial flow} and \textit{elliptic flow}.
-      % \subsubsection{Kinematic variables} %subsection?
-      %AK
       \subsubsection{Elliptic flow}
-        In a non-central heavy ion collisions, created region of matter has an almond shape (Fig.~\ref{fig:elliptic_flow}).
-        
+        In a non-central heavy ion collisions, created region of matter has an almond shape with its shorter axis in the \textit{reaction plane} (Fig.~\ref{fig:elliptic_flow}).
+        The pressure gradient is much larger in-plane rather than out-of-plane.
+        This causes larger acceleration and transverse velocities in-plane rather than out-of-plane.
         \begin{figure}[h]
           \centering
-          \includegraphics[width=0.6\textwidth]{elliptic_flow}
-          \caption{Overlapping region which is created in heavy ion collisions has an almond shape.~\cite{eflow}}
+          \includegraphics[width=0.5\textwidth]{elliptic_flow}
+          \caption{Overlapping region which is created in heavy ion collisions has an almond shape. Visible x-z plane is a \textit{reaction plane}. The x-y plane is a \textit{transverse plane}. The z is a direction of the beam~\cite{eflow}.}
           \label{fig:elliptic_flow}
-      \end{figure}
+        \end{figure}
+        Such differences can be investigated by studying the distribution of particles with respect to the reaction plane orientation~\cite{hip}:
+        \begin{equation}
+          E\frac{d^3 N}{d p^3} = \frac{1}{2\pi} \frac{d^2 N}{p_T d p_T d y} (1 + 2 v_1 \cos(\phi) + 2 v_2 \cos(2 \phi) + ...)~,
+          \label{eq:elliptic_flow}
+        \end{equation}
+        where $\phi$ is the angle between particle transverse momentum $p_T$ (a momentum projection on a transverse plane) and the reaction plane, $N$ is a number of particles and $E$ is an energy of a particle.
+        The $y$ variable is a \textit{rapidity} defined as:
+        \begin{equation}
+          y = \frac{1}{2} \ln \left( \frac{E+ p_L}{E - p_L} \right)~,
+        \end{equation}
+        where $p_L$ is a longitudinal component of a momentum (paralel to the beam direction).
+        The $v_n$ coefficients indicate the shape of a system.
+        For the most central collisions (b = 0 - see Fig.~\ref{fig:impact_parameter}) all coefficients vanish $\bigwedge_{n \in N_{+}} v_n = 0$ (the overlapping region has the spherical shape).
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.4\textwidth]{impact}
+          \caption{Cross-section of a heavy ion collision in a transverse plane. $\Psi_R$ is an angle between transverse plane and the reaction plane. The \textit{b} parameter is an \textit{impact parameter} - a distance between centers of nuclei during a collision. An impact parameter is related with the centrality of a collision and a volume of the quark-gluon plasma~\cite{hip}.}
+          \label{fig:impact_parameter}
+        \end{figure}
+        The Fourier series elements in the parentheses in~(\ref{eq:elliptic_flow}) represent different kinds of a flow.
+        The first value: ``1'' represents the \textit{radial flow} - an isotropic flow in every direction.
+        Next coefficient $v_1$ is responsible for direct flow.
+        The $v_2$ coefficient is a measure of elliptic anisotropy (\textit{elliptic flow}).
+        The $v_2$ has to build up in the early stage of a collision - later the system becomes too dilute: space asymmetry and the pressure gradient vanish.
+        Therefore the observation of elliptic flow means that the created matter was in fact a strongly interacting matter.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.7\textwidth]{elliptic_flow_experimental}
+          \caption{\textit{Lower:} The elliptic flow $v_2$ follows the hydrodynamical predictions for an ideal fluid perfectly. Note that $> 99\%$ of all final hadrons have $p_T < 1.5$~GeV/c. \textit{Upper left:} The $v_2$ plotted versus transverse kinetic energy $KE_T = m_T - m_0 = \sqrt{p_T^2 + m_0^2} - m_0$. The $v_2$ follows different universal curves for mesons and baryons. \textit{Upper right:} When scaled by the number of valence quarks, the $v_2$ follows the same universal curve for all hadrons and for all values of scaled transverse kinetic energy~\cite{heinz}.}
+          \label{fig:elliptic_flow_experimental}
+        \end{figure}
 
+        The $v_2$ coefficient was measured already at CERN SPS, LHC and RHIC.
+        For the first time hydrodynamics successfully described the collision dynamics as the measured $v_2$ reached hydrodynamic limit (Fig.~\ref{fig:elliptic_flow_experimental}).
+        As expected, there is a mass ordering of $v_2$ as a function of $p_T$ (lower plot in the Fig.~\ref{fig:elliptic_flow_experimental}) with pions having the largest and protons the smallest anisotropy.
+        In the upper plots in the Fig.~\ref{fig:elliptic_flow_experimental} there is a $v_2$ as a function of transverse kinetic energy.
+        The left plot shows the two unversal trend lines for baryons and mesons.
+        After the scaling of $v_2$ and the kinetic energy by the number of valence quarks, all of the hadrons follow the same universal curve.
+        Those plots show that strong collectivity is observed in heavy ion collisions.
+
+      \pagebreak
       \subsubsection{Transverse radial flow}
       %JEREMI
       \subsubsection{Direct photon slope}
