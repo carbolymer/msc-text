@@ -7,13 +7,13 @@
     In the 1970s, a new theory of fundamental particles and their interaction emerged.
     A new concept, which concerns the electromagnetic, weak and strong nuclear interactions between know particles.
     This theory is called \textit{The Standard Model}.
-    There are seventeen named particles in the standard model, organized into the chart shown below (Fig. \ref{standard_model}).
+    There are seventeen named particles in the standard model, organized into the chart shown below (Fig. \ref{fig:standard_model}).
     Fundamental particles are divided into two families: \textit{fermions} and \textit{bosons}.
      \begin{figure}[h]
        \centering
        \includegraphics[width=0.9\textwidth]{standard_model}
        \caption{The Standard Model of elementary particles~\cite{sm_svg}.}
-       \label{standard_model}
+       \label{fig:standard_model}
      \end{figure}
      
     Fermions are the building blocks of matter.
@@ -22,10 +22,10 @@
     Quarks are known to bind into doublets (\textit{mesons}), triplets (\textit{baryons}) and recently confirmed four-quark states.\footnote{The LHCb experiment at CERN in Geneva confirmed recently existence of $Z$(4430) - a particle consisting of four quarks~\cite{fourquark}.}
     Two of baryons, with the longest lifetimes, are forming a nucleus: a proton and a neutron.
     A proton is build from two up quarks and one down, and neutron consists of two down quarks and one up.
-    A proton is found to be a stable particle (at least it has a lifetime larger than $10^35$ years) and a free neutron has a mean lifetime about $8.8\times10^2$ s.
+    A proton is found to be a stable particle (at least it has a lifetime larger than $10^{35}$ years) and a free neutron has a mean lifetime about $8.8\times10^2$ s.
     Fermions, that can exist independently are called \textit{leptons}.
     Neutrinos are a subgroup of leptons, which are only influenced by weak interaction.
-    Fermions can be divided into three generations (three columns in the Figure \ref{standard_model}).
+    Fermions can be divided into three generations (three columns in the Figure \ref{fig:standard_model}).
     Generation I particles can combine into hadrons with the longest life spans. 
     Generation II and III consists of unstable particles which form also unstable hadrons. 
     
@@ -35,13 +35,295 @@
     The weak force is mediated by $W^{\pm}$ and $Z^0$ bosons, electromagnetic force is carried by photons $\gamma$ and the carriers of a strong interaction are gluons \textit{g}.
     The fifth boson is a Higgs boson which is responsible for giving other particles mass. 
  
- 
   %
   % ========
   \section{Quantum Chromodynamics}
   % ========
+    %
+    % ========
+    \subsection{Quarks and gluons}
+    % ========
+      Quarks interact with each other through the strong interaction.
+      The mediator of this force is a \textit{gluon} - a massless and chargeless particle.
+      In the quantum chromodynamics (QCD) - theory describing strong interaction - there are six types of ``charges'' (like electrical charges in the electrodynamics) called \textit{colours}.
+      The colours were introduced because some of the observed particles, like $\Delta^{-}$, $\Delta^{++}$ and $\Omega^{-}$ appeared to consist of three quarks with the same flavour (\textit{ddd}, \textit{uuu} and \textit{sss} respectively), which was in conflict with the Pauli principle.
+      One quark can carry one of the three colours (usually called \textit{red}, \textit{green} and \textit{blue}) and antiquark one of the three anti-colours respectively.
+      Only colour-neutral (or white) particles could exist.
+      Mesons are assumed to be a colour-anticolour pair, while baryons are \textit{red-green-blue} triplets.
+      Gluons also are colour-charged and there are 8 types of gluons.
+      Therefore they can interact with themselves~\cite{perkins}.
+    %
+    % ========
+    \subsection{Quantum Chromodynamics potential}
+    % ========
+      As a result of that gluons are massless, one can expect, that the static potential in the QCD will have the similar form like one in the electrodynamics e.g. $\sim 1/r$ (through an analogy to photons).
+      In reality the QCD potential is assumed to have the form of~\cite{perkins}
+      \begin{equation}
+        V_s = - \frac{4}{3} \frac{\alpha_s}{r} + kr~,
+        \label{eq:qcd_potential}
+      \end{equation}
+      where the $\alpha_s$ is a coupling constant of the strong force and the $kr$ part is related with the \textit{confinement}.
+      In comparison to the electromagnetic force, a value of the strong coupling constant is $\alpha_s \approx 1$ and the electromagnetic one is $\alpha = 1/137$.
+
+      The fact that quarks does not exist separately, but they are always bound, is called a confinement.
+      As two quarks are pulled apart, the linear part $kr$ in the (\ref{eq:qcd_potential}) becomes dominant and the potential becomes proportional to the distance.
+      This situation resembles stretching of a string.
+      At some point, when the string is so large it is energetically favourable to create a quark-antiquark pair.
+      At this moment such pair (or pairs) is formed, the string breaks and the confinement is preserved (Fig. \ref{fig:string_break}).
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.25\textwidth]{string_break}
+        \caption{A string break and a creation of a pair quark-anti-quark~\cite{dfck}.}
+        \label{fig:string_break}
+      \end{figure}
+      
+      On the other hand, for the small $r$, an interaction between the quarks and gluons is dominated by the Coulomb-like term $-\frac{4}{3} \frac{\alpha_s}{r}$.
+      The coupling constant $\alpha_s$ depends on the four-momentum $Q^2$ transferred in the interaction.
+      This dependence is presented in Fig.~\ref{fig:strong_cc}.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{strong_cc}
+        \caption{The coupling parameter $\alpha_s$ dependence on four-momentum transfer~$Q^2$~\cite{pdg}.}
+        \label{fig:strong_cc}
+      \end{figure}
+      The value $\alpha_s$ decreases with increasing momentum transfer and the interaction becomes weak for large $Q^2$, i.e. $\alpha_s (Q) \to 0$.
+      Because of weakening of coupling constant, quarks at large energies (or small distances) are starting to behave like free particles.
+      This phenomenon is known as an \textit{asymptotic freedom}.      
+      The QCD potential has also temperature dependence - the force strength ``melts'' with the temperature increase.
+      Therefore the asymptotic freedom is expected to appear in either the case of high baryon densities (small distances between quarks) or very high temperatures.
+      This temperature dependence is illustrated in the Fig.~\ref{fig:qcd_potential}.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.62\textwidth]{qcd_potential_t}
+        \caption{The QCD potential for a pair quark-antiquark as a function of distance for different temperatures. A value of a potential decreases with the temperature~\cite{dfck}.}
+        \label{fig:qcd_potential}
+      \end{figure}
+      
+      If the coupling constant $\alpha_s$ is small, one can use perturbative methods to calculate physical observables.
+      Perturbative QCD (pQCD) successfully describes hard processes (with large $Q^2$), such as jet production in high energy proton-antiproton collisions.
+      The applicability of pQCD is defined by the \textit{scale parameter} $\Lambda_{QCD} \approx$~200~MeV.
+      If $Q \gg \Lambda_{QCD}$ then the process is in the perturbative domain and can be described by pQCD.
+      A description of soft processes (when $Q <$~1~GeV) is a problem in QCD - perturbative theory breaks down at this scale.
+      Therefore, to describe processes with low $Q^2$, one has to use alternative methods like Lattice QCD.
+      Lattice QCD (LQCD) is non-perturbative implementation of a field theory in which QCD quantities are calculated on a discrete space-time grid.
+      LQCD allows to obtain properties of matter in equilibrium, but there are some limitations.
+      Lattice QCD requires fine lattice spacing to obtain precise results - therefore large computational resources are necessary.
+      With the constant growth of computing power this problem will become less important.
+      The second problem is that lattice simulations are possible only for baryon density $\mu_B = $~0.
+      At $\mu_B \neq 0$, Lattice QCD breaks down because of the sign problem~\cite{qcd_fodor}.
+      
+    %
+    % ========
+    \subsection{The quark-gluon plasma}
+    % ========
+      The new state of matter in which quarks are no longer confined is known as a \textit{quark-gluon plasma} (QGP).
+      The predictions coming from the discrete space-time Lattice QCD calculations reveal a phase transition from the hadronic matter to the quark-gluon plasma at the high temperatures and baryon densities.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{lqcd}
+        \caption{A number of degrees of freedom as a function of a temperature~\cite{karsch}.}
+        \label{fig:lqcd}
+      \end{figure}
+      The results obtained from such calculations are shown on Fig.~\ref{fig:lqcd}.
+      The energy density $\epsilon$ which is divided by $T^4$ is a measure of number of degrees of freedom in the system.
+      One can observe significant rise of this value, when the temperature increases past the critical value $T_C$.
+      Such increase is signaling a phase transition - the formation of QGP~\cite{drkisiel}.
+      The values of the energy densities plotted in Fig.~\ref{fig:lqcd} do not reach the Stefan-Boltzmann limit $\epsilon_{SB}$ (marked with arrows), which corresponds to an ideal gas.
+      This can indicate some residual interactions in the system.
+      According to the results from the RHIC\footnote{Relativistic Heavy Ion Collider at Brookhaven National Laboratory in Upton, New York}, the new phase of matter behaves more like an ideal fluid, than like a gas~\cite{bartke}.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth]{phase_diagram}
+        \caption{Phase diagram coming from the Lattice QCD calculations~\cite{drkisiel}.}
+        \label{fig:phase_diagram}
+      \end{figure}
+
+      One of the key questions, to which current heavy ion physics tries to find an answer is the value of a critical temperature $T_C$ as a function of a baryon chemical potential $\mu_B$ (baryon density), where the phase transition occur.
+      The results coming from the Lattice QCD are presented in the Fig.~\ref{fig:phase_diagram}.
+      The phase of matter in which quarks and gluons are deconfined is expected to exist at large temperatures.
+      In the region of small temperatures and high baryon densities, a different state is supposed to appear - a \textit{colour superconductor}.
+      The phase transition between hadronic matter and QGP is thought to be of 1$^\text{st}$ order at $\mu_B \gg 0$.
+      However as $\mu_B \to 0$ quarks' masses become significant and a sharp transition transforms into a rapid but smooth cross-over.
+      It is believed that in Pb-Pb collisions observed at the LHC\footnote{Large Hadron Collider at CERN, Geneva}, the created matter has high enough temperature to be in the quark-gluon plasma phase, then cools down and converts into hadrons, undergoing a smooth transition~\cite{drkisiel}.
   %
   % ========
   \section{Relativistic heavy ion collisions}
   % ========
-%powrot do poczatkow wszechswiata
+    %
+    % ========
+    \subsection{Stages of heavy ion collision}
+    % ========
+
+      To create the quark-gluon plasma one has to achieve high enough temperatures and baryon densities.
+      Such conditions can be recreated in the heavy ion collisions at the high energies.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=1\textwidth]{collision}
+        \caption{Left: stages of a heavy ion collision simulated in the UrQMD model. Right: schematic view of a heavy ion collision evolution~\cite{drkisiel}.}
+        \label{fig:colision}
+      \end{figure}
+      The left side of the Figure~\ref{fig:colision} shows simplified picture of a central collision of two highly relativistic nuclei in the centre-of-mass reference frame.
+      The colliding nuclei are presented as thin disks because of the Lorentz contraction.
+      In the central region, where the energy density is the highest, a new state of matter - the quark-gluon plasma - is supposedly created.
+      Afterwards, the plasma expands ad cools down, quarks combine into hadrons and their mutual interactions cease when the system reaches the \textit{freeze-out} temperature.
+      Subsequently, produced free hadrons move towards the detectors.
+
+      On the right side of the Figure~\ref{fig:colision} there is presented a space-time evolution of a collision process, plotted in the light-cone variables (z, t).
+      The two highly relativistic nuclei are traveling basically along the light cone until they collide at the centre of diagram. 
+      Nuclear fragments emerge from the collision again along the (forward) light cone, while the matter between fragmentation zones populates the central region.
+      This hot and dense matter is believed to be in the state of the quark-gluon plasma.
+      There exist several frameworks to describe this transition to the QGP phase, for example: QCD string breaking, QCD parton cascades or colour glass condensate evolving into glasma and later into quark-gluon plasma~\cite{florkowski}.
+      \paragraph{String breaking}
+      In the string picture, the nuclei pass through each other forming colour strings.
+      This is analogous to the situation depicted in the Fig~\ref{fig:string_break} -  the colour string is created between quarks inside particular nucleons in nuclei.
+      In the next step strings decay~/~fragment forming quarks and gluons or directly hadrons.
+      This approach becomes invalid at very high energies, when the strings overlap and cannot be treated as independent objects.
+      \paragraph{Parton cascade}
+      The parton\footnote{A parton is a common name for a quark and a gluon.} cascade model is based on the pQCD.
+      The colliding nuclei are treated as clouds of quarks and which penetrate through each other.
+      The key element of this method is the time evolution of the partion phase-space distributions, which is governed by a relativistic Boltzmann equation with a collision term that contains dominant perturbative QCD interations.
+      The bottleneck of the parton cascade model is the low energies regime, where the $Q^2$ is too small to be described by the perturbative theory.
+      \paragraph{Colour glass condensate}
+      The colour glass condensate assumes, that the hadron can be viewed as a tightly packed system of interacting gluons.
+      The saturation of gluons increases with energy, hence the total number of gluons may increase without the bound.
+      Such a saturated and weakly coupled gluon system is called a colour glass condensate.
+      The fast gluons in the condensate are Lorentz contracted and redistributed on the two very thin sheets representing two colliding nuclei.
+      The sheets are perpendicular to the beam axis.
+      The fast gluons produce mutually orthogonal colour magnetic and electric fields, that only exist on the sheets.
+      Immediately after the collision, i.e. just after the passage of the two gluonic sheets after each other, the longitudinal electric and magnetic fields are produced forming the \textit{glasma}.
+      The glasma fields decay through the classical rearrangement of the fields into radiation of gluons.
+      Also decays due to the quantum pair creations are possible.
+      In this way, the quark-gluon plasma is produced.
+      \\
+
+      Interactions within the created quark-gluon plasma bring the system into the local statistical equilibrium, hence its further evolution can be described by the relativistic hydrodynamics.
+      The hydrodynamic expansion causes that the system becomes more and more dilute.
+      The phase transition from the quark-gluon plasma to the hadronic gas occurs.
+      Further expansion causes a transition from the strongly interaction hadronic gas to weakly interacting system of hadrons which move freely to the detectors.
+      Such decoupling of hadrons is called the \textit{freeze-out}.
+      The freeze-out can be divided into two phases: the chemical freeze-out and the thermal one.
+      The \textit{chemical freeze-out} occurs when the inelastic collisions between constituents of the hadron gas stop.
+      As the system evolves from the chemical freeze-out to the thermal freeze-out the dominant processes are elastic collisions (such as, for example $\pi+\pi\to$ $\rho \to$ $\pi+\pi$) and strong decays of heavier resonances which populate the yield of stable hadrons.
+      The \textit{thermal freeze-out} is the stage of the evolution of matter, when the strongly coupled system transforms to a weakly coupled one (consisting of essentially free particles).
+      In other words this is the moment, where the hadrons practically stop to interact.
+      Obviously, the temperatures corresponding to the two freeze-outs satisfy the condition
+      \begin{equation}
+        T_{chem} > T_{therm}~,
+      \end{equation}
+      where $T_{chem}$ (inferred from the ratios of hadron multiplicities) is the temperature of the chemical freeze-out, and $T_{therm}$ (obtained from the investigation of the transverse-momentum spectra) is the temperature of the thermal freeze-out~\cite{florkowski}.
+
+    %taken from grebieszkow's HIP 7th lecture - HIC dynamics
+    %
+    % ========
+    \subsection{QGP signatures}
+    % ========
+      The quark-gluon plasma is a very short living and unstable state of matter.
+      One cannot investigate the properties of a plasma and confirm its existence directly.
+      Hence, the several experimental effects were proposed as QGP signatures, some of them have been already observed in heavy ion experiments~\cite{drkisiel}.
+      As matter created in the heavy ions collisions is supposed to behave like a fluid, one should expect appearance of collective behaviour at small transverse momenta - so called \textit{elliptic flow} and \textit{radial flow}.
+      The next signal is the temperature range obtained from the measurements of \textit{direct photons}, which gives us information, that the system created in heavy ion collisions is far above the critical temperature obtained from the LQCD calculations.
+      The \textit{puzzle in the di-lepton spectrum} can be explained by the modification of spectral shape of vector mesons (mostly $\rho$ meson) in the presence of a dense medium.
+      This presence of a medium can also shed light on the \textit{jet quenching} phenomena - the suppression occurence in the high $p_T$ domain.
+      \subsubsection{Elliptic flow}
+        In a non-central heavy ion collisions, created region of matter has an almond shape with its shorter axis in the \textit{reaction plane} (Fig.~\ref{fig:elliptic_flow}).
+        The pressure gradient is much larger in-plane rather than out-of-plane.
+        This causes larger acceleration and transverse velocities in-plane rather than out-of-plane.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.5\textwidth]{elliptic_flow}
+          \caption{Overlapping region which is created in heavy ion collisions has an almond shape. Visible x-z plane is a \textit{reaction plane}. The x-y plane is a \textit{transverse plane}. The z is a direction of the beam~\cite{eflow}.}
+          \label{fig:elliptic_flow}
+        \end{figure}
+        Such differences can be investigated by studying the distribution of particles with respect to the reaction plane orientation~\cite{hip}:
+        \begin{equation}
+          E\frac{d^3 N}{d p^3} = \frac{1}{2\pi} \frac{d^2 N}{p_T d p_T d y} (1 + 2 v_1 \cos(\phi) + 2 v_2 \cos(2 \phi) + ...)~,
+          \label{eq:elliptic_flow}
+        \end{equation}
+        where $\phi$ is the angle between particle transverse momentum $p_T$ (a momentum projection on a transverse plane) and the reaction plane, $N$ is a number of particles and $E$ is an energy of a particle.
+        The $y$ variable is a \textit{rapidity} defined as:
+        \begin{equation}
+          y = \frac{1}{2} \ln \left( \frac{E+ p_L}{E - p_L} \right)~,
+        \end{equation}
+        where $p_L$ is a longitudinal component of a momentum (paralel to the beam direction).
+        The $v_n$ coefficients indicate the shape of a system.
+        For the most central collisions (b = 0 - see Fig.~\ref{fig:impact_parameter}) all coefficients vanish $\bigwedge_{n \in N_{+}} v_n = 0$ (the overlapping region has the spherical shape).
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.4\textwidth]{impact}
+          \caption{Cross-section of a heavy ion collision in a transverse plane. $\Psi_R$ is an angle between transverse plane and the reaction plane. The \textit{b} parameter is an \textit{impact parameter} - a distance between centers of nuclei during a collision. An impact parameter is related with the centrality of a collision and a volume of the quark-gluon plasma~\cite{hip}.}
+          \label{fig:impact_parameter}
+        \end{figure}
+        The Fourier series elements in the parentheses in~(\ref{eq:elliptic_flow}) represent different kinds of a flow.
+        The first value: ``1'' represents the \textit{radial flow} - an isotropic flow in every direction.
+        Next coefficient $v_1$ is responsible for \textit{direct flow}.
+        The $v_2$ coefficient is a measure of elliptic anisotropy (\textit{elliptic flow}).
+        The $v_2$ has to build up in the early stage of a collision - later the system becomes too dilute: space asymmetry and the pressure gradient vanish.
+        Therefore the observation of elliptic flow means that the created matter was in fact a strongly interacting matter.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.8\textwidth]{elliptic_flow_experimental}
+          \caption{\textit{Lower:} The elliptic flow $v_2$ follows the hydrodynamical predictions for an ideal fluid perfectly. Note that $> 99\%$ of all final hadrons have $p_T < 1.5$~GeV/c. \textit{Upper left:} The $v_2$ plotted versus transverse kinetic energy $KE_T = m_T - m_0 = \sqrt{p_T^2 + m_0^2} - m_0$. The $v_2$ follows different universal curves for mesons and baryons. \textit{Upper right:} When scaled by the number of valence quarks, the $v_2$ follows the same universal curve for all hadrons and for all values of scaled transverse kinetic energy~\cite{heinz}.}
+          \label{fig:elliptic_flow_experimental}
+        \end{figure}
+
+        The $v_2$ coefficient was measured already at CERN SPS, LHC and RHIC.
+        For the first time hydrodynamics successfully described the collision dynamics as the measured $v_2$ reached hydrodynamic limit (Fig.~\ref{fig:elliptic_flow_experimental}).
+        As expected, there is a mass ordering of $v_2$ as a function of $p_T$ (lower plot in the Fig.~\ref{fig:elliptic_flow_experimental}) with pions having the largest and protons the smallest anisotropy.
+        In the upper plots in the Fig.~\ref{fig:elliptic_flow_experimental} there is a $v_2$ as a function of transverse kinetic energy.
+        The left plot shows the two unversal trend lines for baryons and mesons.
+        After the scaling of $v_2$ and the kinetic energy by the number of valence quarks, all of the hadrons follow the same universal curve.
+        Those plots show that strong collectivity is observed in heavy ion collisions.
+      \pagebreak
+      \subsubsection{Transverse radial flow}
+        Elliptic flow described previously is caused by the pressure gradients which must also produce a more simple collective behaviour of matter - a~movement inside-out, called radial flow.
+        Particles are pushed to higher momenta and they move away from the center of the collision.
+        A source not showing collective behaviour, like pp collisions, produces particle spectra that can be fitted by a power-law~\cite{drkisiel}:
+        \begin{equation}
+          \frac{1}{2\pi p_T} \frac{d^2 N}{d p_T d \eta} = C \left( 1 +\frac{p_T}{p_0} \right)~.
+        \end{equation}
+        The $\eta$ variable is a \textit{pseudorapidity} defined as follows:
+        \begin{equation}
+          \eta = \frac{1}{2} \ln \left( \frac{p + p_L}{p - p_L} \right) = -\ln \left(\frac{\theta}{2} \right)~,
+        \end{equation}
+        where $\theta$ is an emission angle $\cos \theta = p_L / p$~.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=1\textwidth]{mt_spectra}
+          \caption{Invariant yield of particles versus transverse mass $m_T = \sqrt{p^2_T + m_0^2}$ for $\pi^{\pm}$, $K^{\pm}$, $p$ and $\bar{p}$ at mid-rapidity for p+p collisions (bottom) and Au+Au events from 70-80\% (second bottom) to 0-5\% (top) centrality~\cite{mtspectra}.}
+          \label{fig:invariant_yield}
+        \end{figure}
+
+        The hydrodynamical expansion of a system gives the same flow velocity kick for different kind of particles - ones with bigger masses will gain larger $p_T$ boost.
+        This causes increase of the yield of particles with larger transverse momenta.
+        In the invariant yield plots one can observe the decrease of the slope parameter, especially for the heavier hadrons.
+        This is presented in the Fig.~\ref{fig:invariant_yield}.
+        The most affected spectra are ones of kaons (b) and protons (c).
+        One can notice decrease of the slope parameter for heavy ion collisions (plots from second bottom to top) comparing to the proton-proton collisions (bottom ones), where no boost from radial flow should occur~\cite{drkisiel}.
+
+      \subsubsection{Direct photons}
+        The direct photons are photons, which are not coming from the final state hadrons decays.
+        Their sources can be various interaction from charged particles created in the collision, either at the partonic or at the hadronic level.
+        Direct photons are considered to be an excellent probe of the early stage of the collision.
+        This is because their mean free path is very large to the created system in the collision.
+        Thus photons created at the early stage leave the system without suffering any interaction and retain information about this stage, in particular about its temperature.
+
+        One can distinguish two kinds of direct photons: \textit{thermal} and \textit{prompt}.
+        Thermal photons can be emitted from the strong processes in the quark-gluon plasma involving quarks and gluons or hot hadronic matter (e.g. processes: $\pi\pi \to \rho \gamma$, $\pi\rho \to \pi \gamma$).
+        Thermal photons can be observed in the low $p_T$ region.
+        Prompt photons are believed to come from ``hard'' collisions of initial state partons belonging to the colliding nuclei.
+        The prompt photons can be described using the pQCD.
+        They will dominate the high $p_T$ region.
+        The analysis of transverse momentum of spectra of direct photons revealed, that the temperature of the source of thermal photons produced in heavy ion collisions at RHIC is in the range 300-600 MeV (Fig.~\ref{fig:direct_photons}).
+        Hence the direct photons had to come from a system whose temperature is far above from the critical temperature for QGP creation.
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.7\textwidth]{direct_photons}
+          \caption{Thermal photons spectra for the central Au+Au collisions at $\sqrt{s_{NN}}=$~200~GeV at computed within different hydrodynamical models compared with the pQCD calculations (solid line) and experimental data from PHENIX (black dots)~\cite{rapp_xu}.}
+          \label{fig:direct_photons}
+        \end{figure}
+
+
+      \subsubsection{Puzzle in di-lepton mass spectrum}
+
+      \subsubsection{Jet quenching}
+
