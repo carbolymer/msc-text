@@ -23,7 +23,34 @@
   \section{Theoretical approach}
   % ========
     Intensity interferometry in heavy ion physics uses similar mathematical formalism as the astronomy HBT measurement.
-    Through the measurement of correlation between particles as a function of their relative momenta $\vect{q} = \vect{p_1} - \vect{p_2}$ one can deduce the average separation between emitting sources.
+    Through the measurement of correlation between particles as a function of their relative momentum one can deduce the average separation between emitting sources.
+
+    %
+    % ========
+    \subsection{Conventions used}
+    % ========
+      In heavy ion collisions to describe particular directions, components of momentum and location of particles, one uses naming convention called the Bertsch-Pratt coordinate system.
+      This system is presented in the Fig.~\ref{fig:coordinate-system}.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{coordinate_system}
+        \caption{Bertsch-Pratt direction naming convention used in heavy ion collision.}
+        \label{fig:coordinate-system}
+      \end{figure}
+      The three directions are called \textit{longitudinal}, \textit{outward} and \textit{sideward}.
+      The longitudinal direction is parallel to the beam axis.
+      The plane perpendicular to the beam axis is called a \textit{transverse plane}.
+      A projection of a particle pair momentum $\vect{k} = (\vect{p}_a + \vect{p}_b)/2$ on a transverse plane (a \textit{transverse momentum} $\vect{k}_T$) determines \textit{outward} direction: $(\vect{k})_{out} = \vect{k}_T$.
+      A direction perpendicular to the longitudinal and outward is called \textit{sideward}.
+
+      A particle pair is usually described using two coordinate systems.
+      The first one, \textit{Longitudinally Co-Moving System} (\textbf{LCMS}) is moving along the particle pair with the longitudinal direction, in other words, the pair longitudinal momentum vanishes: $(\vect{p}_a)_{long} = -(\vect{p}_b)_{long} $.
+      The second system is called \textit{Pair Rest Frame} (\textbf{PRF}).
+      In the PRF the centre of mass rests: $\vect{p}_a = -\vect{p}_b$.
+      Variables which are expressed in the PRF are marked with a star (e.g. $\vect{k}^{*}$).
+
+      The most important variables used to describe particle pair are their total momentum $\vect{P} = \vect{p}_a + \vect{p}_b$ and relative momentum $\vect{q} = \vect{p_a} - \vect{p_b}$.
+      In the PRF one has $\vect{q} = 2 \vect{k}^{*}$, where $\vect{k}^{*}$ is a momentum of the first particle in PRF.
     %
     % ========
     \subsection{Two particle wave function}
@@ -52,7 +79,7 @@
     % ========
     \subsection{Source emission function}
     % ========
-      To describe particle emitting source, one uses a single emission function:
+      To describe particle emitting source, one uses a single emission function~\cite{nonidfemto}:
       \begin{equation}
         \label{eq:source-single-3d}
         S_A(\vect{x}_1,\vect{p}_1) = \int S(\vect{x}_1,\vect{p}_1,\vect{x}_2,\vect{p}_2,...,\vect{x}_N,\vect{p}_N)
@@ -65,6 +92,34 @@
         d \vect{x}_3 d \vect{p}_3 ... d \vect{x}_N d \vect{p}_N~.
       \end{equation}
       Emission functions $S(\cdot)$ can be interpreted as a probability to emit a particle, or a pair of particles from a given space-time point with a given momentum.
+      In principle, the source emission function should encode all physics aspects of the particle emission process i.e. the symmetrization for bosons and fermions, as well as the two-body and many body Final State Interactions.
+      Instead of this, one assume that each particle's emission process is independent - the interaction between final-state particles after their creation is independent from their emission process.
+      The assumption of this independence allows to construct two-particle emission function from single particle emission functions via a convolution~\cite{nonidfemto}:
+      \begin{equation}
+        \label{eq:source-two-conv}
+        \begin{split}
+          S(\vect{k}^{*},\vect{r}^{*}) = \int S_A ( \vect{p}_1, \vect{x}_1 ) S_B ( \vect{p}_2, \vect{x}_2 )
+          \delta \left[\vect{k}^{*} - \frac{\vect{p}_1+\vect{p}_2}{2} \right]
+          \delta \left[\vect{r}^{*} - (\vect{x}_1+\vect{x}_2) \right] \\
+          \times~d^4 \vect{x}_1 d^4 \vect{x}_2 d^4 \vect{x}_1 d^3 \vect{p}_1 d^3 \vect{p}_2
+        \end{split}
+      \end{equation}
+      In case of identical particles, ($S_A = S_B$) several simplifications can be made.
+      A convolution of the two same Gaussian distributions is also a Gaussian distribution with $\sigma$ multiplied by $\sqrt{2}$.
+      Femtoscopy can give information only about two-particle emission function, but when considering Gaussian distribution as a source function in Eq.~\ref{eq:source-two-conv}, one can obtain a $\sigma$ of a single emission function from a two-particle emission function.
+      The Eq.~\ref{eq:source-two-conv} is not reversible - an information about $S_A(\cdot)$ cannot be derived from $S_{AB}(\cdot)$.
+      An exception from this rule is a Gaussian source function, hence it is often used in femtoscopic calculations.
+      % - intro cd wzor gauss 3d z Rinv (A3 NonidFemto) @ PRF
+      % - jakobian
+      % - equal time approx - DOPISAC DO FUNKCJI FALOWEJ Z APPENDIX A NONIDFEMTO
+      % - dopisac do konwencji equal time approx!!!
+      % - wzor 1d z Rinv @ PRF
+      % - " More sophisticated emission function from RHIC/SPS..."
+      % - wzor 3D @ LCMS - equal time approx
+      % - wzor 1D @ PRF
+      % - ^ aproksymacja 3D gauss w 1D pseudo-gauss
+      % - ^ "non-gaussian features in long r region"
+      % - ^^ ten wykres: X -> relative separation -> r
 
     %
     % ========
