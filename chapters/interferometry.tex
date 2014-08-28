@@ -49,8 +49,20 @@
       In the PRF the centre of mass rests: $\vect{p}_a = -\vect{p}_b$.
       Variables which are expressed in the PRF are marked with a star (e.g. $\vect{k}^{*}$).
 
+      The transition of space-time coordinates from LCMS to PRF is simply a boost along the outward direction, with the transverse velocity of the pair~$\beta_t = (\vect{v}/c)_{out}$~\cite{nonidfemto}:
+      \begin{align}
+        \label{eq:lcmstoprf}
+        r^{*}_{out} &= \gamma_{t}(r_{out} - \beta_{t} \Delta t)\\
+        r^{*}_{side} &= r_{side}\\
+        r^{*}_{long} &= r_{long}\\
+        \Delta t^{*} &= \gamma_{t}(\Delta t - \beta_{t} r_{out})~,
+      \end{align}
+      where $\gamma_{t} = (1-\beta^{2}_{t})^{-1/2}$ is the Lorentz factor.
+      However, in calculations performed in this work the equal time approximation, which assumes that particles in a pair were produced at the same time in PRF - the $\Delta t^{*}$ is neglected.
+
       The most important variables used to describe particle pair are their total momentum $\vect{P} = \vect{p}_a + \vect{p}_b$ and relative momentum $\vect{q} = \vect{p_a} - \vect{p_b}$.
       In the PRF one has $\vect{q} = 2 \vect{k}^{*}$, where $\vect{k}^{*}$ is a momentum of the first particle in PRF.
+
     %
     % ========
     \subsection{Two particle wave function}
@@ -109,11 +121,16 @@
       Femtoscopy can give information only about two-particle emission function, but when considering Gaussian distribution as a source function in Eq.~\ref{eq:source-two-conv}, one can obtain a $\sigma$ of a single emission function from a two-particle emission function.
       The Eq.~\ref{eq:source-two-conv} is not reversible - an information about $S_A(\cdot)$ cannot be derived from $S_{AB}(\cdot)$.
       An exception from this rule is a Gaussian source function, hence it is often used in femtoscopic calculations.
-      % - intro cd wzor gauss 3d z Rinv (A3 NonidFemto) @ PRF
-      % - jakobian
-      % - equal time approx - DOPISAC DO FUNKCJI FALOWEJ Z APPENDIX A NONIDFEMTO
-      % - dopisac do konwencji equal time approx!!!
-      % - wzor 1d z Rinv @ PRF
+      Considering pairs of identical particles, an emission function is assumed to be described by the following equation in the Pair Rest Frame~\cite{nonidfemto}:
+      \begin{equation}
+        S^{PRF}_{1D} (\vect{r}^{*}) = \exp \left( - \frac{ {r_{out}^*}^{2} + {r_{side}^*}^{2} + {r_{long}^*}^{2}}{4 {R_{inv}}^2} \right)~.
+      \end{equation}
+      To change from the three-dimensional variables to the one-dimensional variable one requires introduction of the proper Jacobian~${r^*}^2$:
+      \begin{equation}
+        S^{PRF}_{1D} (r^{*}) = {r^*}^{2} \exp \left( \frac{{r^*}^{2}}{4 {R_{inv}}^2} \right)~.
+      \end{equation}
+      The ``4'' in the denominator before the ``standard deviation'' $R_{inv}$ in the Gaussian distribution comes from the convolution of the two Gaussian distributions, which multiplies the $R_{inv}$ by a factor of $\sqrt{2}$.
+
       % - " More sophisticated emission function from RHIC/SPS..."
       % - wzor 3D @ LCMS - equal time approx
       % - wzor 1D @ PRF
