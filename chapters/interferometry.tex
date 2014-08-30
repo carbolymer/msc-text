@@ -58,7 +58,7 @@
         \Delta t^{*} &= \gamma_{t}(\Delta t - \beta_{t} r_{out})~,
       \end{align}
       where $\gamma_{t} = (1-\beta^{2}_{t})^{-1/2}$ is the Lorentz factor.
-      However, in calculations performed in this work the equal time approximation, which assumes that particles in a pair were produced at the same time in PRF - the $\Delta t^{*}$ is neglected.
+      However, in calculations performed in this work the equal time approximation is used, which assumes that particles in a pair were produced at the same time in PRF - the $\Delta t^{*}$ is neglected.
 
       The most important variables used to describe particle pair are their total momentum $\vect{P} = \vect{p}_a + \vect{p}_b$ and relative momentum $\vect{q} = \vect{p_a} - \vect{p_b}$.
       In the PRF one has $\vect{q} = 2 \vect{k}^{*}$, where $\vect{k}^{*}$ is a momentum of the first particle in PRF.
@@ -103,7 +103,7 @@
         S_{AB}(\vect{x}_1,\vect{p}_1,\vect{x}_2,\vect{p}_2) = \int S(\vect{x}_1,\vect{p}_1,\vect{x}_2,\vect{p}_2,...,\vect{x}_N,\vect{p}_N)
         d \vect{x}_3 d \vect{p}_3 ... d \vect{x}_N d \vect{p}_N~.
       \end{equation}
-      Emission functions $S(\cdot)$ can be interpreted as a probability to emit a particle, or a pair of particles from a given space-time point with a given momentum.
+      Emission function $S(\cdot)$ can be interpreted as a probability to emit a particle, or a pair of particles from a given space-time point with a given momentum.
       In principle, the source emission function should encode all physics aspects of the particle emission process i.e. the symmetrization for bosons and fermions, as well as the two-body and many body Final State Interactions.
       Instead of this, one assume that each particle's emission process is independent - the interaction between final-state particles after their creation is independent from their emission process.
       The assumption of this independence allows to construct two-particle emission function from single particle emission functions via a convolution~\cite{nonidfemto}:
@@ -126,18 +126,73 @@
         S^{PRF}_{1D} (\vect{r}^{*}) = \exp \left( - \frac{ {r_{out}^*}^{2} + {r_{side}^*}^{2} + {r_{long}^*}^{2}}{4 {R_{inv}}^2} \right)~.
       \end{equation}
       To change from the three-dimensional variables to the one-dimensional variable one requires introduction of the proper Jacobian~${r^*}^2$:
-      \begin{equation}
-        S^{PRF}_{1D} (r^{*}) = {r^*}^{2} \exp \left( \frac{{r^*}^{2}}{4 {R_{inv}}^2} \right)~.
-      \end{equation}
+      \begin{empheq}[innerbox=\fbox, right=~.]{align}
+        \label{eq:source-1d-prf}
+        S^{PRF}_{1D} (r^{*}) = {r^*}^{2} \exp \left( - \frac{{r^*}^{2}}{4 {R_{inv}}^2} \right)
+      \end{empheq}
       The ``4'' in the denominator before the ``standard deviation'' $R_{inv}$ in the Gaussian distribution comes from the convolution of the two Gaussian distributions, which multiplies the $R_{inv}$ by a factor of $\sqrt{2}$.
 
-      % - " More sophisticated emission function from RHIC/SPS..."
-      % - wzor 3D @ LCMS - equal time approx
-      % - wzor 1D @ PRF
-      % - ^ aproksymacja 3D gauss w 1D pseudo-gauss
-      % - ^ "non-gaussian features in long r region"
-      % - ^^ ten wykres: X -> relative separation -> r
+      A more complex form of emission function was used by all RHIC and SPS experiments in identical pion femtoscopy:
+      \begin{empheq}[innerbox=\fbox, right=~.]{align}
+        \label{eq:source-3d-lcms}
+        S^{LCMS}_{3D} (\vect{r}) = \exp \left( 
+          - \frac{ r_{out}^{2}}{4 {R_{out}}^2}
+          - \frac{ r_{side}^{2}}{4 {R_{side}}^2}
+          - \frac{ r_{long}^{2}}{4 {R_{long}}^2}
+        \right)
+      \end{empheq}
+      The main difference of this source function is that it has three different and independent widths $R_{out}$, $R_{side}$, $R_{long}$ and they are defined in the LCMS, not in PRF.
+      Unlike in PRF, in LCMS an equal-time approximation is not used.
+      For identical particles this is not a problem - only Coulomb interaction inside a wave function depends on $\Delta t$.
+      %
+      % ========
+      \subsubsection{Relationship between one-dimensional and three-dimensional source sizes}
+      % ========
+      Up to now, most of femtoscopic measurements were limited only to averaged source size $R^L_{av}$ (the letter ``L'' in superscript stands for LCMS):
+      \begin{equation}
+        S^{LCMS}_{1D} (\vect{r}) = \exp \left( - \frac{ {r_{out}}^{2} + {r_{side}}^{2} + {r_{long}}^{2}}{2 {R^{L}_{av}}^2} \right)~.
+      \end{equation}
+      The relationship between between $S^{LCMS}_{1D}(\cdot)$ and $S^{LCMS}_{3D}(\cdot)$ is given by:
+      \begin{equation}
+        \begin{split}
+        \label{eq:source-1d-from-3d}
+        S^{LCMS}_{3D} (r) = \int \exp \left( 
+          - \frac{ r_{out}^{2}}{2 {R^L_{out}}^2}
+          - \frac{ r_{side}^{2}}{2 {R^L_{side}}^2}
+          - \frac{ r_{long}^{2}}{2 {R^L_{long}}^2}
+        \right)
+        \\ \times~\delta \left(
+          r - \sqrt{ r_{out}^{2} + r_{side}^{2} + r_{long}^{2}}
+        ~\right)
+        d r_{out} d r_{side} d r _{long}~.
+        \end{split}
+      \end{equation}
+      The one-dimensional source size corresponding to the three-dimensional one can be approximated by the following form:
+      \begin{equation}
+        \label{eq:source-1d-lcms}
+        S^{LCMS}_{1D} (r) = {r}^{2} \exp \left( - \frac{r^{2}}{2 {R^L_{av}}^2} \right)~.
+      \end{equation}
+      The equation above assumes that $R^L_{out} = R^L_{side} = R^L_{long}$ hence $R^L_{av} = R^L_{out}$.
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.7\textwidth]{3dg21d}
+        \caption{An averaged three-dimensional Gaussian source function with different widths was averaged into one-dimensional function. To illustrate deformations, one-dimensional Gaussian distribution was fitted.}
+        \label{fig:3dgaussian}
+      \end{figure}
+      If this condition is not satisfied, one can not give explicit mathematical relation between one-dimensional and three-dimensional source sizes.
+      However, for realistic values of $R$ (i.e. for similar values of $R_{out}$, $R_{side}$, $R_{long}$), the $S^{LCMS}_{3D}$ from Eq.~\ref{eq:source-1d-from-3d} is not very different from Gaussian distribution and can be well approximated by Eq.~\ref{eq:source-1d-from-3d}.
 
+      A deformation of an averaged source function in case of big differences in $R_{out}$, $R_{side}$, $R_{long}$ is presented in the Fig.~\ref{fig:3dgaussian}.
+      A three-dimensional Gaussian distribution with varying widths was averaged into one-dimensional function using the Eq.~\ref{eq:source-1d-from-3d}.
+      Afterwards, an one-dimensional Gaussian distribution was fitted.
+      One can notice a heavy tail of an averaged distribution in long $r$ region, which makes an approximation using one-dimensional distribution in this case quite inaccurate.
+      
+      Using Eq.~\ref{eq:source-1d-from-3d} and Eq.~\ref{eq:source-1d-lcms} one can obtain a relation between one-dimensional width and the three-dimensional ones.
+      Through numerical calculations one can find the following approximate relation~\cite{nonidfemto}:
+      \begin{empheq}[innerbox=\fbox, right=~.]{align}
+        R^{L}_{av} = \sqrt{ \left. \left( {R^L_{out}}^2 + {R^L_{side}}^2 + {R^L_{long}}^2 \right) \middle/ 3 \right. }
+      \end{empheq}
+      This equation does not depend on the pair velocity, hence it is valid in the PRF and LCMS.
     %
     % ========
     \subsection{Theoretical correlation function}
