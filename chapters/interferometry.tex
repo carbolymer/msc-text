@@ -192,22 +192,55 @@
       \begin{empheq}[innerbox=\fbox, right=~.]{align}
         R^{L}_{av} = \sqrt{ \left. \left( {R^L_{out}}^2 + {R^L_{side}}^2 + {R^L_{long}}^2 \right) \middle/ 3 \right. }
       \end{empheq}
-      This equation does not depend on the pair velocity, hence it is valid in the PRF and LCMS.
+      This equation does not depend on the pair velocity, hence it is valid in the LCMS and PRF.
     %
     % ========
     \subsection{Theoretical correlation function}
     % ========
-
+      The fundamental object in a particle interferometry is a correlation function.
+      The correlation function is defined as:
+      \begin{equation}
+        C(\vect{p}_a,\vect{p}_b) = \frac{P_2(\vect{p}_a,\vect{p}_b)}{P_1(\vect{p}_a) P_1(\vect{p}_b)}~,
+      \end{equation}
+      where $P_2$ is a conditional probability to observe a particle with momentum $\vect{p}_b$ if particle with momentum $\vect{p}_b$ was also observed.
+      A $P_1$ is a probability to observe a particle with a given momentum.
+      The relationship between source emission function, pair wave function and the correlation function is described by the following equation:
+      \begin{equation}
+        C(\vect{p}_1,\vect{p}_2) = \int S_{AB}(\vect{p}_1,\vect{x}_1,\vect{p}_2,\vect{x}_2)
+          |\Psi_{AB}|^2 d^4 \vect{x}_1 d^4 \vect{x}_2
+      \end{equation}
+      Substituting the one-dimensional emission function (Eq.~\ref{eq:source-1d-prf}) into the integral above yields the following form of correlation function in PRF:
+      \begin{empheq}[innerbox=\fbox, right=~,]{align}
+        C(q) = 1 + \lambda \exp \left( - R_{inv}^2 q^2 \right)
+      \end{empheq}
+      where $q$ is a momentum difference between two particles.
+      When using the three-dimensional emission function (Eq.~\ref{eq:source-3d-lcms}) one gets the following correlation function defined in the LCMS:
+      \begin{empheq}[innerbox=\fbox, right=~,]{align}
+        C(\vect{q}) = 1+ \lambda \exp \left( -R_{out}^2 q_{O}^2 -R_{side}^2 q_{S}^2 -R_{long}^2 q_{L}^2  \right)
+      \end{empheq}
+      where $q_O$, $q_S$, $q_L$ are $\vect{q}$ components in the outward, sideward and longitudinal direction.
+      The $\lambda$ parameter in the equations above determines correlation strength.
+      The lambda parameter has values in the range $\lambda \in [-0.5,1]$ and it depends on a pair type.
+      In case of pairs of identical bosons (like $\pi$-$\pi$ or $K$-$K$) the lambda parameter $\lambda \to 1$. For identical fermions (e.g. $p$-$p$) $\lambda \to$~-0.5.
+      Values of $\lambda$ observed experimentally are lower than 1 (for bosons) and greater than -0.5 (for fermions).
+      There are few explanations to this effect: detector efficiencies, inclusion of misidentified particles in a used sample or inclusion of non-correlated pairs (when one or both particles come from e.g. long-lived resonance).
+      The analysis carried out in this work uses data from a model, therefore the detector efficiency and particle purity is not taken into account.
     %
     % ========
     \subsection{Spherical harmonics decomposition of a correlation function}
     % ========
+      Results coming from a analysis using three-dimensional correlation function in Cartesian coordinates are quite difficult to visualize.
+      To do that one usually performs a projection into a one dimension in outward, sideward and longitudinal directions. 
+      Doing that, one loose important information about a correlation function 
+
   %
   % ========
   \section{Experimental approach}
   % ========
 
   % include drkisiel p. 35?
+
+  % 1D vs 3D
 
   %
   % ========
