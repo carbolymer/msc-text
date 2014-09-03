@@ -66,7 +66,7 @@
       In comparison to the electromagnetic force, a value of the strong coupling constant is $\alpha_s \approx 1$ and the electromagnetic one is $\alpha = 1/137$.
 
       The fact that quarks does not exist separately, but they are always bound, is called a confinement.
-      As two quarks are pulled apart, the linear part $kr$ in the (\ref{eq:qcd_potential}) becomes dominant and the potential becomes proportional to the distance.
+      As two quarks are pulled apart, the linear part $kr$ in the Eq.~\ref{eq:qcd_potential} becomes dominant and the potential becomes proportional to the distance.
       This situation resembles stretching of a string.
       At some point, when the string is so large it is energetically favourable to create a quark-antiquark pair.
       At this moment such pair (or pairs) is formed, the string breaks and the confinement is preserved (Fig. \ref{fig:string_break}).
@@ -194,7 +194,7 @@
       The glasma fields decay through the classical rearrangement of the fields into radiation of gluons.
       Also decays due to the quantum pair creations are possible.
       In this way, the quark-gluon plasma is produced.
-      \\
+
 
       Interactions within the created quark-gluon plasma bring the system into the local statistical equilibrium, hence its further evolution can be described by the relativistic hydrodynamics.
       The hydrodynamic expansion causes that the system becomes more and more dilute.
@@ -223,7 +223,7 @@
       As matter created in the heavy ions collisions is supposed to behave like a fluid, one should expect appearance of collective behaviour at small transverse momenta - so called \textit{elliptic flow} and \textit{radial flow}.
       The next signal is the temperature range obtained from the measurements of \textit{direct photons}, which gives us information, that the system created in heavy ion collisions is far above the critical temperature obtained from the LQCD calculations.
       The \textit{puzzle in the di-lepton spectrum} can be explained by the modification of spectral shape of vector mesons (mostly $\rho$ meson) in the presence of a dense medium.
-      This presence of a medium can also shed light on the \textit{jet quenching} phenomena - the suppression occurence in the high $p_T$ domain.
+      This presence of a medium can also shed light on the \textit{jet quenching} phenomenon - the suppression occurence in the high $p_T$ domain.
       \subsubsection{Elliptic flow}
         In a non-central heavy ion collisions, created region of matter has an almond shape with its shorter axis in the \textit{reaction plane} (Fig.~\ref{fig:elliptic_flow}).
         The pressure gradient is much larger in-plane rather than out-of-plane.
@@ -253,7 +253,7 @@
           \caption{Cross-section of a heavy ion collision in a transverse plane. $\Psi_R$ is an angle between transverse plane and the reaction plane. The \textit{b} parameter is an \textit{impact parameter} - a distance between centers of nuclei during a collision. An impact parameter is related with the centrality of a collision and a volume of the quark-gluon plasma~\cite{hip}.}
           \label{fig:impact_parameter}
         \end{figure}
-        The Fourier series elements in the parentheses in~(\ref{eq:elliptic_flow}) represent different kinds of a flow.
+        The Fourier series elements in the parentheses in Eq.~\ref{eq:elliptic_flow} represent different kinds of a flow.
         The first value: ``1'' represents the \textit{radial flow} - an isotropic flow in every direction.
         Next coefficient $v_1$ is responsible for \textit{direct flow}.
         The $v_2$ coefficient is a measure of elliptic anisotropy (\textit{elliptic flow}).
@@ -322,8 +322,41 @@
           \label{fig:direct_photons}
         \end{figure}
 
-
       \subsubsection{Puzzle in di-lepton mass spectrum}
+        The invariant mass spectra (Fig.~\ref{fig:di-lepton}) of lepton pairs reveal many peaks corresponding to direct decays of various mesons into a lepton pair.
+        The continuous background in this plot is caused by the decays of hadrons into more than two leptons (including so-called \textit{Dalitz decays} into a lepton pair and a photon).
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=1\textwidth]{di-lepton}
+          \caption{Left: Invariant mass spectrum of $e^{+}$-$e^{-}$ pairs in Pb+Au collisions at 158\textit{A}~GeV compared to the sum coming from the hadron decays predictions. Right: The expectations coming from model calculations assuming a dropping of the $\rho$ mass (blue) or a spread of the $\rho$ width in the medium (red)~\cite{marin}.}
+          \label{fig:di-lepton}
+        \end{figure}
+        Particular hadron decay channels, which contribute to this spectrum are shown in the Fig.~\ref{fig:di-lepton} with the coloured lines and their sum with the black one.
+        The sum (called \textit{the hadronic cocktail}) of various components describes experimental spectra coming from the simple collisions (like p+p or p+A) quite well with the statistical and systematical uncertainties~\cite{bartke}.
+        This situation is different considering more complicated systems i.e. A+A.
+        Spectra coming from Pb+Au collisions are presented on the plots in the Fig.~\ref{fig:di-lepton}.
+        The ``hadronic cocktail'' does not describe the data, in the mass range between the $\pi$ and the $\rho$ mesons a significant excess of electron pairs over the calculated sum is observed.
+        Theoretical explanation of this phenomenon assumes modification of the spectral shape of vector mesons in a dense medium.
+        Two different interpretations of this increase were proposed: a decrease of meson mass with the medium density and increase of the meson width in the dense medium.
+        In principle, one could think of simultaneous occurrence of both effects: mass shift and resonance broadening.
+        Experimental results coming from the CERES disfavour the mass shift hypothesis indicating only broadening of resonance peaks (Fig.~\ref{fig:di-lepton}b)~\cite{bartke}.
 
       \subsubsection{Jet quenching}
+        A jet is defined as a group of particles with close vector momenta and high energies.
+        It has its beginning when the two partons are going in opposite directions and have energy big enough to produce new quark-antiquark pair and then radiate gluons.
+        This process can be repeated many times and it results in two back-to-back jets of hadrons.
+        It has been found that jets in the opposite hemisphere (\textit{away-side jets}) show a very different pattern in d+Au and Au+Au collisions.
+        This is shown in the azimuthal correlations in the~Fig.~\ref{fig:di-jet}.
+        In d+Au collisions, like in p+p, a pronounced away-side jet appears around $\Delta \phi = \pi$, exactly opposite to the trigger jet, what is typical for di-jet events.
+        In central Au+Au collisions the away jet is suppressed. 
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=0.6\textwidth]{dijet}
+          \caption{Azimuthal angle difference $\Delta \phi$ distributions for different colliding systems at $\sqrt{s_{NN}}$ = 200 GeV. Transverse momentum cut: $p_T >$ 2 GeV. For the Au+Au collisions the away-side jet is missing~\cite{rhic_jets}.}
+          \label{fig:di-jet}
+        \end{figure}
+        When the jet has its beginning near the surface of the quark-qluon plasma, one of the jets (\textit{near-side jet}) leaves the system almost without any interactions.
+        This jet is visible on the correlation plot as a high peak at $\Delta \phi = 0$.
+        However, the jet moving towards the opposite direction has to penetrate a dense medium.
+        The interaction with the plasma causes energy dissipation of particles and is visible on an azimuthal correlation plot as disappearance of the away-side jet~\cite{bartke}.
 
