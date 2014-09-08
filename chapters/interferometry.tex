@@ -224,15 +224,49 @@
       In case of pairs of identical bosons (like $\pi$-$\pi$ or $K$-$K$) the lambda parameter $\lambda \to 1$. For identical fermions (e.g. $p$-$p$) $\lambda \to$~-0.5.
       Values of $\lambda$ observed experimentally are lower than 1 (for bosons) and greater than -0.5 (for fermions).
       There are few explanations to this effect: detector efficiencies, inclusion of misidentified particles in a used sample or inclusion of non-correlated pairs (when one or both particles come from e.g. long-lived resonance).
-      The analysis carried out in this work uses data from a model, therefore the detector efficiency and particle purity is not taken into account.
+      The analysis carried out in this work uses data from a model, therefore the detector efficiency and particle purity is not taken into account~\cite{nonidfemto}.
     %
     % ========
     \subsection{Spherical harmonics decomposition of a correlation function}
     % ========
-      Results coming from a analysis using three-dimensional correlation function in Cartesian coordinates are quite difficult to visualize.
-      To do that one usually performs a projection into a one dimension in outward, sideward and longitudinal directions. 
-      Doing that, one may loose important information about a correlation function, because this is only a limited view of the full three-dimensional structure.
-      
+      Results coming from an analysis using three-dimensional correlation function in Cartesian coordinates are quite difficult to visualize.
+      To do that, one usually performs a projection into a one dimension in outward, sideward and longitudinal directions. 
+      One may loose important information about a correlation function in this procedure, because it gives only a limited view of the full three-dimensional structure.
+      Recently, a more advanced way of presenting correlation function - a spherical harmonics decomposition, was proposed.
+      The three-dimensional correlation function is decomposed into an infinite set of components in a form of one-dimensional histograms $C^m_l (q)$.
+      In this form, a correlation function is defined as a sum of a series~\cite{sh}:
+      \begin{equation}
+        C(\vect{q}) = \sum_{l,m} C^m_l (q) Y^m_l(\theta, \phi)~,
+      \end{equation}
+      where $Y^m_l(\theta,\phi)$ is a spherical harmonic function.
+      Spherical harmonics are an orthogonal set of solutions to the Laplace's equation in spherical coordinates
+      Hence, in this approach, a correlation function is defined as a function of $q$, $\theta$ and $\phi$.
+      To obtain $C^m_l$ coefficients in the series, one has to calculate the following integral:
+      \begin{equation}
+        C^m_l(q) = \int_\Omega C(q,\theta,\phi) Y^m_l (\theta,\phi) d \Omega~,
+      \end{equation}
+      where $\Omega$ is a full solid angle.
+
+      Spherical harmonics representation has several important advantages.
+      The main advantage of this decomposition is that it requires less statistics than traditional analysis performed in Cartesian coordinates.
+      Another one is that it encodes full three-dimensional information in a set of one-dimensional plots. 
+      In principle it does not have to be an advantage, because full description of a correlation function requires infinite number of \textit{l}, \textit{m} components.
+      But it so happens that the intrinsic symmetries of a pair distribution in a femtoscopic analysis result in most of the components to vanish.
+      For the identical particles correlation functions, all coefficients with odd values of \textit{l} and \textit{m} disappear.
+      % Because the values of a correlation function are real, the imaginary part of a series are equal to zero ($\Im C^m_l = 0$).
+      It has also been shown, that the most significant portion of femtoscopic data is stored in the components with the lowest \textit{l} values.
+      It is expected that, the main femtoscopic information is contained in the following components~\cite{nonidfemto}:
+      \begin{align}
+        C^0_0 &\to R_{LCMS}~, \\
+        \Re C^0_2 &\to \frac{R_T}{R_{long}}~, \\
+        \Re C^2_2 &\to \frac{R_{out}}{R_{side}}~,
+      \end{align}
+      where $R_{LCMS} = \sqrt{ \left. \left( {R_{out}}^2 + {R_{side}}^2 + {R_{long}}^2 \right) \middle/ 3 \right. }$ and $R^{T} = \sqrt{ \left. \left( R_{out}^2 + R_{side}^2 \right) \middle/2 \right. }$.
+      The $C^0_0$ is sensitive to the overall size of a correlation function.
+      The $\Re C^0_2$ carries the information about the ratio of the transverse to the longitudinal radii, due to its $\cos^2(\theta)$ weighting in $Y^0_2$.
+      The component $\Re C^2_2$ with its $\cos^2(\phi)$ weighting encodes the ratio between outward and sideward radii.
+      Thus, the spherical harmonics method allows to obtain and analyze full three-dimensional femtoscopic information from a correlation function~\cite{nonidfemto}.
+
   %
   % ========
   \section{Experimental approach}
