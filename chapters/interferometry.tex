@@ -200,12 +200,14 @@
       The fundamental object in a particle interferometry is a correlation function.
       The correlation function is defined as:
       \begin{equation}
+        \label{eq:th_cf}
         C(\vect{p}_a,\vect{p}_b) = \frac{P_2(\vect{p}_a,\vect{p}_b)}{P_1(\vect{p}_a) P_1(\vect{p}_b)}~,
       \end{equation}
       where $P_2$ is a conditional probability to observe a particle with momentum $\vect{p}_b$ if particle with momentum $\vect{p}_b$ was also observed.
       A $P_1$ is a probability to observe a particle with a given momentum.
       The relationship between source emission function, pair wave function and the correlation function is described by the following equation:
       \begin{equation}
+        \label{eq:cf_integral}
         C(\vect{p}_1,\vect{p}_2) = \int S_{AB}(\vect{p}_1,\vect{x}_1,\vect{p}_2,\vect{x}_2)
           |\Psi_{AB}|^2 d^4 \vect{x}_1 d^4 \vect{x}_2
       \end{equation}
@@ -271,6 +273,30 @@
   % ========
   \section{Experimental approach}
   % ========
+    It was stated earlier, that the theoretical correlation function is defined as a probability to observe two particles together divided by the product of probabilities to observe each of the separately (Eq.~\ref{eq:th_cf}). 
+    In order to calculate experimental correlation function, one follows the approach presented below.
+    One has to construct two histograms: the \textit{numerator} $N$ and the \textit{denominator} $D$ with the particle pairs momenta, where particles are coming from the same event.
+    Those histograms can be one-dimensional (as a function of $|\vect{q}|$), three dimensional (a function of three components of $\vect{q}$ in LCMS) or a set of one-dimensional histogram representing components of the spherical harmonic decomposition of the distribution.
+    The second histogram, $D$ is filled for each pair with the weight 1.0 at a corresponding relative momentum $\vect{q} = 2 \vect{k^*}$.
+    The first one, $N$ is filled with the same procedure, but the weight is calculated as $|\Psi_{ab}(\vect{r^*},\vect{k^*})|^2$.
+    A division $N/D$ gives the correlation function $C$.
+    This procedure can be simply written as~\cite{nonidfemto}:
+    \begin{equation}
+      % C(\vect{k^*}) = \frac{N}{D} =  \frac{\int d D(\vect{r^*, k^*}) |\Psi_{ab}(\vect{r^*},\vect{k^*})|^2}{\int d D(\vect{r^*, k^*})}~,
+      \label{eq:cf_experimental}
+      C(\vect{k^*}) = \frac{N}{D} =  \frac{\sum\limits_{n_i \in D} \delta(\vect{k^*}_i - \vect{k^*}) |\Psi_{ab}(\vect{r^*}_i,\vect{k^*}_i)|^2 }{\sum\limits_{n_i \in D} \delta(\vect{k^*}_i - \vect{k^*})}~.
+    \end{equation}
+    The $D$ histogram represents the set of all particle pairs used in calculations.
+    The~$n_i$ is a pair with the its relative momentum $\vect{k^*}_i$ and relative separation $\vect{r^*}_i$.
+    The~wave function used in Eq.~\ref{eq:cf_experimental} has one of the following forms:
+    \begin{align}
+      |\Psi_{\pi\pi}(\vect{r^*},\vect{k^*})|^2 = |\Psi_{KK}(\vect{r^*},\vect{k^*})|^2 &= 1 + \cos(2 \vect{k^*} \vect{r^*})~, \\
+      |\Psi_{pp}(\vect{r^*},\vect{k^*})|^2 &= 1 - \frac{1}{2} \cos(2 \vect{k^*} \vect{r^*})~.
+    \end{align}
+    The first one is used in case of bosons, and the latter one is for identical fermions.
+    Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
+
+
 
   % include drkisiel p. 35?
 
