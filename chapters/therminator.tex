@@ -46,6 +46,7 @@
   \end{equation}
   The stress tensor $\pi^{\mu\nu}$ and the bulk viscosity $\Pi$ are solutions of dynamical equations in the second order viscous hydrodynamic framework~\cite{israel}.
   The comparison of hydrodynamics calculations with the experimental results reveal, that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
+  The bulk viscosity over entropy value used in calculations is $\zeta /s$~=~0.04~\cite{visc_hydro}.
   
   When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
   \begin{equation}
@@ -93,18 +94,40 @@
       The following integral yields the total number of created particles~\cite{therminator2}:
       \begin{equation}
         \label{eq:cooper-frye}
-        N = (2s+1) \int \frac{d^3p}{(2\pi)^3 E_p} \int d\Sigma_{\mu}(x)p^\mu f(x,p) ,
+        N = (2s+1) \int \frac{d^3p}{(2\pi)^3 E_p} \int d\Sigma_{\mu} p^\mu f(p_\mu u^\mu)~,
       \end{equation}
-      where
-      \begin{equation}
-        \label{eq:phase-space-dist}
-        f(p \cdot u) = \left\{ \exp\left[ \frac{p_\mu u^\mu - (B \mu_B + I_3 \mu_{I_3}+S\mu_S + C \mu_C)}{T} \right] \pm 1 \right\}^{-1}
-      \end{equation}
-      is the phase-space distribution for particles (for stable ones and resonances).
-      For the Fermi-Dirac distribution in the Eq.~\ref{eq:phase-space-dist} there is a plus sign and for Bose-Einstein statistics minus sign respectively.
-      The thermodynamic quantities appearing in the $f(\cdot)$ are $T$ - temperature, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, $\mu_S$ - strange chemical potential, $\mu_C$ - charmed chemical potential and the $s$ is a spin of a particle.
+      where $f(p_\mu u^\mu)$
+      is the phase-space distribution of particles (for stable ones and resonances).
       One can simply derive from Eq.~\ref{eq:cooper-frye}, the dependence of the momentum density~\cite{cooperfrye}:
       \begin{equation}
-        E \frac{d N}{d^3 p} = \int f(x,p)p^\mu d \Sigma_\mu .
+        E \frac{d^3 N}{d p^3} = \int  d \Sigma_\mu f(p_\mu u^\mu)p^\mu~.
       \end{equation}
-      The equations presented above are directly used in the \verb|THERMINATOR| to generate the hadrons with the Monte-Carlo method.
+      The momentum distribution $f$ contains non-equilibrium corrections:
+      \begin{equation}
+        f = f_0 + \delta f_{shear} + \delta f_{bulk}~,
+      \end{equation}
+      where 
+      \begin{equation}
+        \label{eq:phase-space-dist}
+        f_0(p_\mu u^\mu) = \left\{ \exp\left[ \frac{p_\mu u^\mu - (B \mu_B + I_3 \mu_{I_3}+S\mu_S + C \mu_C)}{T} \right] \pm 1 \right\}^{-1}
+      \end{equation}
+      In case of fermions, in the Eq.~\ref{eq:phase-space-dist} there is a plus sign and for bosons, minus sign respectively.
+      The thermodynamic quantities appearing in the $f_0(\cdot)$ are $T$ - temperature, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, $\mu_S$ - strange chemical potential, $\mu_C$ - charmed chemical potential and the $s$ is a spin of a particle.
+      The hydrodynamic calculations yield the flow velocity at freeze-out as well as the stress and bulk viscosity tensors required to calculate non-equilibrium corrections to the momentum distribution used in Eq.~\ref{eq:cooper-frye}.
+      The term coming from shear viscosity has a form~\cite{visc_hydro}
+      \begin{equation}
+        \delta f_{shear} = f_0 (1 \pm f_0) \frac{1}{2T^2 (e + p)} p^\mu p^\nu \pi_{\mu\nu}
+      \end{equation}
+      and bulk viscosity
+      \begin{equation}
+        \delta f_{bulk} = C f_0 (1 \pm f_0) \left( \frac{(u^\mu p_\mu)^2}{3 u^\mu p_\mu} - c^2_s u^\mu p_\mu\right) \Pi
+      \end{equation}
+      where $c_s$ is sound velocity and
+      \begin{equation}
+        \frac{1}{C} = \frac{1}{3} \frac{1}{(2\pi)^3}\sum\limits_{hadrons} \int d^3 p \frac{m^2}{E} f_0 (1 \pm f_0) \left( \frac{p^2}{3E} - c_s^2 E \right)~.
+      \end{equation}
+
+      The equations presented above are directly used in the \verb|THERMINATOR| to generate the primordial hadrons (created during freeze-out) with the Monte-Carlo method.
+      Resonances produced in this way, propagate and decay, in cascades if necessary. 
+      For every generated particle, its origin point either on a hypersurface or is associated with the point of the decay of the parent particle.
+      This information is kept in the simulation due to its importance for the femtoscopic analysis.
