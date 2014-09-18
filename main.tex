@@ -133,7 +133,10 @@
 \cleardoublepage
 \pagestyle{empty}
 \pagenumbering{gobble}
+\begingroup
+\let\clearpage\relax
 \tableofcontents
+\endgroup
 \cleardoublepage
 \pagestyle{headings}
 \pagenumbering{arabic}

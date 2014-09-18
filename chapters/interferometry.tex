@@ -302,14 +302,46 @@
     \end{align}
     The first one is used in case of bosons, and the latter one is for identical fermions.
     Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
-
-
-
   % include drkisiel p. 35?
-
   % 1D vs 3D
- 
+
   %
   % ========
   \section{Scaling of femtoscopic radii}
   % ========
+    In the hydrodynamic models describing expansion of a quark-gluon plasma, particles are emitted from the source elements.
+    Each of the source elements is moving with the velocity $u_\mu$ given by hydrodynamic equations.
+    Because solutions of those equations are smooth, nearby source elements have similar velocities.
+    Each emitted particle from a certain source element is boosted with the flow velocity $u_\mu$ according to the point of origin.
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.7\textwidth]{cf_width_dep}
+      \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum are more correlated~\cite{pratt_pion}.}
+      \label{fig:cf_width}
+    \end{figure}
+    Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
+    If the two particles are emitted far away from each other (a pair with small $|\vect{k}_T|$), the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta in order to be in region of interference effect.
+    This effect is visible in a width of a correlation function in the Fig.~\ref{fig:cf_width}.
+    The correlation function gets broader for greater values of $|\vect{k}_T|$ and the femtoscopic radius $R$ becomes smaller~\cite{drkisiel,pratt_pion}.
+    %
+    % ========
+    \subsection{Scaling in LCMS}
+    % ========
+      Hydrodynamic calculations performed in LCMS show that femtoscopic radii in outward, sideward, and longitudinal direction show dependence on $m_T~=~\sqrt{k^2_T + m}$, where $m$ is a mass of a particle~\cite{akkelin_sinyukov}.
+      This dependence can be expressed as follows:
+      \begin{equation}
+        \label{eq:r_scaling}
+        R_x = \alpha m_T^{-\beta}~,
+      \end{equation}
+      where $x$ subscript indicates that this equation applies to $R_{out}$, $R_{side}$ and $R_{long}$ radii.
+      The $\beta$ exponent is approximately equal 0.5.
+      In case of strong transversal expansion of the source, the decrease of longitudinal interferometry radius can be more quick than $m_T^{-0.5}$, hence one can expect for longitudinal radii lower values of $\beta <$~0.5~\cite{akkelin_sinyukov}.
+      % \/ do wynikow
+      % the scaling behavior shows that hydro produces common collective behavior in both transverse dimensions
+    %
+    % ========
+    \subsection{Scaling in PRF}
+    % ========
+
+
+
