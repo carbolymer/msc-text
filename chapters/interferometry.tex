@@ -49,15 +49,15 @@
       In the PRF the centre of mass rests: $\vect{p}_a = -\vect{p}_b$.
       Variables which are expressed in the PRF are marked with a star (e.g. $\vect{k}^{*}$).
 
-      The transition of space-time coordinates from LCMS to PRF is simply a boost along the outward direction, with the transverse velocity of the pair~$\beta_t = (\vect{v}/c)_{out}$~\cite{nonidfemto}:
+      The transition of space-time coordinates from LCMS to PRF is simply a boost along the outward direction, with the transverse velocity of the pair~$\beta_T = (\vect{v}/c)_{out}$~\cite{nonidfemto}:
       \begin{align}
         \label{eq:lcmstoprf}
-        r^{*}_{out} &= \gamma_{t}(r_{out} - \beta_{t} \Delta t)\\
+        r^{*}_{out} &= \gamma_{t}(r_{out} - \beta_T \Delta t)\\
         r^{*}_{side} &= r_{side}\\
         r^{*}_{long} &= r_{long}\\
-        \Delta t^{*} &= \gamma_{t}(\Delta t - \beta_{t} r_{out})~,
+        \Delta t^{*} &= \gamma_T(\Delta t - \beta_T r_{out})~, 
       \end{align}
-      where $\gamma_{t} = (1-\beta^{2}_{t})^{-1/2}$ is the Lorentz factor.
+      where $\gamma_T = (1-\beta^{2}_T)^{-1/2}$ is the Lorentz factor.
       However, in calculations performed in this work the equal time approximation is used, which assumes that particles in a pair were produced at the same time in PRF - the $\Delta t^{*}$ is neglected.
 
       The most important variables used to describe particle pair are their total momentum $\vect{P} = \vect{p}_a + \vect{p}_b$ and relative momentum $\vect{q} = \vect{p_a} - \vect{p_b}$.
@@ -302,14 +302,73 @@
     \end{align}
     The first one is used in case of bosons, and the latter one is for identical fermions.
     Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
-
-
-
   % include drkisiel p. 35?
-
   % 1D vs 3D
- 
+
   %
   % ========
   \section{Scaling of femtoscopic radii}
   % ========
+    In the hydrodynamic models describing expansion of a quark-gluon plasma, particles are emitted from the source elements.
+    Each of the source elements is moving with the velocity $u_\mu$ given by hydrodynamic equations.
+    Because solutions of those equations are smooth, nearby source elements have similar velocities.
+    Each emitted particle from a certain source element is boosted with the flow velocity $u_\mu$ according to the point of origin.
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.7\textwidth]{cf_width_dep}
+      \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum are more correlated~\cite{pratt_pion}.}
+      \label{fig:cf_width}
+    \end{figure}
+    Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
+    If the two particles are emitted far away from each other (a pair with small $|\vect{k}_T|$), the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta in order to be in region of interference effect.
+    This effect is visible in a width of a correlation function in the Fig.~\ref{fig:cf_width}.
+    The correlation function gets broader for greater values of $|\vect{k}_T|$ and the femtoscopic radius $R$ becomes smaller~\cite{drkisiel,pratt_pion}.
+    %
+    % ========
+    \subsection{Scaling in LCMS}
+    % ========
+      Hydrodynamic calculations performed in LCMS show that femtoscopic radii in outward, sideward, and longitudinal direction show dependence on transverse mass $m_T~=~\sqrt{k^2_T + m}$, where $m$ is a mass of a particle~\cite{akkelin_sinyukov}.
+      Moreover, experimental results show  that this scaling is observed for $R_{LCMS}$ radii also.
+      This dependence can be expressed as follows:
+      \begin{empheq}[innerbox=\fbox, right=~,]{align}
+        \label{eq:r_scaling}
+        R_i = \alpha m_T^{-\beta}
+      \end{empheq}
+      where $i$ subscript indicates that this equation applies to $R_{out}$, $R_{side}$ and $R_{long}$ radii.
+      The $\beta$ exponent is approximately equal 0.5.
+      In case of strong transversal expansion of the emitting source, the decrease of longitudinal interferometry radius can be more quick than $m_T^{-0.5}$, hence one can expect for longitudinal radii lower values of $\beta <$~0.5~\cite{akkelin_sinyukov}.
+      % \/ do wynikow
+      % the scaling behavior shows that hydro produces common collective behavior in both transverse dimensions
+    %
+    % ========
+    \subsection{Scaling in PRF}
+    % ========
+      In the collisions at the LHC energies, pions are most abundant particles and their multiplicities are large enough to enable three-dimensional analysis.
+      However, for heavier particles, such as kaons and protons statistical limitations arise.
+      Hence it is often possible to only measure one-dimensional radius $R_{inv}$ for those particles.
+      The $R_{inv}$ is then calculated in the PRF.
+      The transition from LCMS to PRF is a Lorentz boost in the direction of pair transverse momentum with velocity $\beta_T = p_T / m_T$.
+      Hence only $R_{out}$ radius changes:
+      \begin{equation}
+        R_{out}^* = \gamma_T R_{out}~.
+      \end{equation} 
+      The one-dimensional $R_{inv}$ radius is direction-averaged source size in PRF.
+      One can notice, that such power-law scaling of $R_{inv}$ described by Eq.~\ref{eq:r_scaling} is not observed.
+      To recover such scaling in PRF one has to take into consideration two effects when transforming variables from LCMS to PRF: overall radius growths and source distribution becomes non-Gaussian, while developing long-range tails (see Fig.\ref{fig:3dgaussian} for an example).
+      The interplay of these two effects can be accounted with an approximate formula:
+      \begin{equation}
+        R_{inv} = \sqrt{ \left. \left( {R_{out}}^2\sqrt{\gamma_T} + {R_{side}}^2 + {R_{long}}^2 \right) \middle/ 3 \right. }~.
+      \end{equation}
+      Assuming that all radii are equal $R_{out} = R_{side} = R_{long}$ this formula can be simplified:
+      \begin{empheq}[innerbox=\fbox, right=~.]{align}
+        R_{LCMS} \approx R_{inv} \times \left[ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. \right]^{-1/2}
+      \end{empheq}
+      This approximate formula allows to restore power-law behaviour of the scaled radii not only when the radii are equal, but also when their differences are small (for explanation see the last part of the section~3.2.3).
+
+      This method of recovering scaling in PRF can be used as a tool for the search of hydrodynamic collectivity between pions, kaons and protons in heavy ion collisions with the measurement of one-dimensional radius in PRF.
+
+
+
+
+
+
