@@ -2,7 +2,7 @@
 % fix page break in toc
 % \addtocontents{toc}{\protect\newpage}
 \chapter{Results}
-  For the purposes of the femtoscopic analysis, events were generated using \verb|THERMINATOR| model for eight different sets of initial conditions corresponding the following centrality ranges: 0-5\%, 0-10\%, 10-20\%, 20-30\%, 30-40\%, 40-50\%, 50-60\% and 60-70\% for the Pb-Pb collisions at the centre of mass energy $\sqrt{s_{NN}} = 2.76$~TeV.
+  For the purposes of the femtoscopic analysis, events were generated using \verb|THERMINATOR| model for eight different sets of initial conditions corresponding the following centrality ranges: 0-5\%, 0-10\%, 10-20\%, 20-30\%, 30-40\%, 40-50\%, 50-60\% and 60-70\% for the Pb-Pb collisions at the centre of mass energy $\sqrt{s_{NN}}~=~2.76$~TeV.
   %
   % ========
   \section{Identical particles correlations}
@@ -14,28 +14,51 @@
     % ========
     \subsection{Spherical harmonics components}
     % ========
+
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cf3dpi}}
-        \caption{no caption}
+        \caption{Spherical harmonics coefficients of the two-pion correlation function. From the top left: $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$. Only few centrality bins are presented for increased readability.}
       \label{fig:cf3dpi}
       \end{figure}
 
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cf3dk}}
-        \caption{no caption}
+        \caption{Spherical harmonics coefficients of the two-kaon correlation function. From the top left: $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$. Only few centrality bins are presented for increased readability. The $\Re C^2_2$ is noisy, but one can still notice that it differs from zero and is becoming negative.}
       \label{fig:cf3dk}
       \end{figure} 
 
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cf3dp}}
-        \caption{no caption}
+        \caption{Spherical harmonics coefficients of the two-proton correlation function. From the top left: $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$. Only few centrality bins are presented for increased readability. The $\Re C^0_2$ and $\Re C^2_2$ are noisy, but one can still notice, that they differ from zero and are becoming positive.}
       \label{fig:cf3dp}
       \end{figure}
 
-      foo bar foo bar foo bar foo bar
+      The three-dimensional correlation functions as functions of relative momentum $q_{LCMS}$ were calculated in a form of spherical harmonics components series accordingly to the Eq.~\ref{eq:sh_decomposition}.
+      In the femtoscopic analysis of identical particles, the most important information is stored in the $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$.
+      Correlation functions obtained in this procedure for different centrality bins for the pairs of pions, kaons and protons are presented in the Fig.~\ref{fig:cf3dpi}, \ref{fig:cf3dk} and \ref{fig:cf3dp}.
+      
+      Coefficients for pairs of identical bosons (pions and kaons) are shown in the Fig.~\ref{fig:cf3dpi} and \ref{fig:cf3dk}.
+      The increase of a correlation in the low momenta regime is clearly visible in the $\Re C^0_0$ component and has its source in the Bose-Einstein statistics.
+      The $\Re C_0^0$ resembles one-dimensional correlation function and in fact it encodes information about overall source radius.
+      The second coefficient $\Re C^0_2$ differs from zero (is negative), which yields the information about the ratio $R_T / R_{long}$.
+      The $\Re C^2_2$ stores the $R_{out} / R_{side}$ ratio and one can notice that is non-vanishing (is also negative).
+
+      The correlation function for a pair of identical fermions is in the Fig.~\ref{fig:cf3dp}.
+      An influence of Fermi-Dirac statistics has its effect in the decrease of a correlation down to 0.5 at low relative momentum, which can be observed in $\Re C^0_0$.
+      The $\Re C^0_2$ and $\Re C^2_2$ coefficients differ from zero and become positive.
+
+      The common effect for the spherical harmonics form of a correlation function is the ``mirroring'' of the shape of the $\Re C^0_0$ coefficient - when correlation function decreases, the $\Re C^0_2$ and $\Re C^2_2$ are becoming positive and vice versa.
+      This is quite different behaviour than in the case of correlations of non-identical particles, where the $\Re C^0_2$ still behaves in the same manner, but $\Re C_2^2$ has the opposite sign to the $\Re C^0_2$~\cite{nonidfemto}.
+
+      In all cases, the correlation function gets wider with the peripherality of a collision.
+      This phenomena is clearly visible in the $\Re C^0_0$.
+      Other components are also affected by this effect, this is especially noticeable in the case of kaons and pions.
+      For the protons, the results are noisy, hence it is not clearly visible.
+
+      The quantitative analysis of the trends in the shape (described by the femtoscopic radii) of a three-dimensional correlation function is performed in the next section of this chapter.
     \FloatBarrier
     %
     % ========
