@@ -7,7 +7,7 @@
   % ========
   \section{Identical particles correlations}
   % ========
-    The correlation functions were calculated separately for the following different pairs of identical particles: $\pi$-$\pi$, $K$-$K$ and  $p$-$p$ for nine $k_T$ bins (in GeV/c): 0.1-0.2, 0.2-0.3, 0.3-0.4, 0.4-0.5, 0.6-0.7, 0.7-0.8, 0.8-1.0 and 1.0-1.2.
+    The correlation functions (three-dimensional and one-dimensional) were calculated separately for the following different pairs of identical particles: $\pi$-$\pi$, $K$-$K$ and  $p$-$p$ for nine $k_T$ bins (in GeV/c): 0.1-0.2, 0.2-0.3, 0.3-0.4, 0.4-0.5, 0.6-0.7, 0.7-0.8, 0.8-1.0 and 1.0-1.2.
     In case of kaons, $k_T$ ranges start from 0.3 and for pions from 0.4 and for both of them the maximum value is 1.0.
     The $k_T$ ranges for the heavier particles were limited to maintain sufficient multiplicity to perform reliable calculations.
     %
@@ -53,41 +53,59 @@
       The common effect for the spherical harmonics form of a correlation function is the ``mirroring'' of the shape of the $\Re C^0_0$ coefficient - when correlation function decreases, the $\Re C^0_2$ and $\Re C^2_2$ are becoming positive and vice versa.
       This is quite different behaviour than in the case of correlations of non-identical particles, where the $\Re C^0_2$ still behaves in the same manner, but $\Re C_2^2$ has the opposite sign to the $\Re C^0_2$~\cite{nonidfemto}.
 
-      In all cases, the correlation function gets wider with the peripherality of a collision.
-      This phenomena is clearly visible in the $\Re C^0_0$.
+      In all cases, the correlation function gets wider with the peripherality of a collision i.e. the correlation function for most central collisions (0-10\%) is much narrower than for the most peripheral ones (60-70\%).
+      This phenomena in clearly visible the $\Re C^0_0$ coefficients.
       Other components are also affected by this effect, this is especially noticeable in the case of kaons and pions.
-      For the protons, the results are noisy, hence it is not clearly visible.
+      For the protons, the results are noisy, hence this effect is not distinguishable.
 
-      The quantitative analysis of the trends in the shape (described by the femtoscopic radii) of a three-dimensional correlation function is performed in the next section of this chapter.
+      % The quantitative analysis of the trends in the shape (described by the femtoscopic radii) of a three-dimensional correlation function is performed in the next section of this chapter.
+
     \FloatBarrier
+    \clearpage
     %
     % ========
     \subsection{Centrality dependence of a correlation function}
     % ========
-    % napisac o singletowym bozonow i trypletowym protonow
-    % pokazac poszerzenie CF vs k_T oraz vs centralnosc
+      The centrality dependence of a correlation function is especially visible in one-dimensional correlation functions.
+      This effect is presented in the Fig.~\ref{fig:centr_dep} - the width is smaller in the most central collisions.
+      Hence, the femtoscopic radii (proportional to the inverse of width) is increasing with the centrality.
+      An explanation for this growth is that in the most central collisions, a size of a created system is larger than for the peripheral ones.
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cfvsctr}}
-        \caption{no caption}
+        \caption{One-dimensional correlation function for pions, kaons and protons for different centralities.}
       \label{fig:centr_dep}
       \end{figure}
     \FloatBarrier
+    \clearpage
     %
     % ========
     \subsection{$k_T$ dependence of a correlation function}
     % ========
+      In the Fig.~\ref{fig:kt_dep} there are presented one-dimensional correlation functions for pions, kaons and protons for the same centrality bin, but different $k_T$ ranges.
+      One can observe in all cases of the particle types, appearance of the same trend: with the increase of the total transverse momentum of a pair, the width of a correlation function increases and the femtoscopic radius decreases.
+      The plots in the Fig.~\ref{fig:kt_dep} were zoomed in to show the influence of $k_T$.
+
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cfvskt}}
-        \caption{no caption}
+        \caption{One-dimensional correlation functions for pions, kaons and protons, for the same centrality bin and different $k_T$ ranges. The plot was zoomed in to the region which illustrates the $k_T$ dependence in the best way. Only few of the calculated ranges are presented for better readability.}
       \label{fig:kt_dep}
       \end{figure}
     \FloatBarrier
+    \clearpage
   %
   % ========
   \section{Results of the fitting procedure}
   % ========
+  In order to perform a quantitative analysis of a wide range of correlation functions, the theoretical formulas were fitted to the calculated experimental-like ones.
+  In this procedure, the femtoscopic radii for the three-dimensional as well as one-dimensional correlation functions were extracted.
+
+
+  !!! Przerysowac \ref{fig:kt_dep} - label dla pionow w legendzie jest w dziwnym miejscu
+
+  !!! \ref{fig:centr_dep} - markery dla kaonow w legendzie sa w dziwnym miejscu
+
     %
     % ========
     \subsection{Femtoscopic radii scaling with the transverse mass}
