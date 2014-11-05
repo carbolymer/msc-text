@@ -98,26 +98,28 @@
   % ========
   \section{Results of the fitting procedure}
   % ========
-  In order to perform a quantitative analysis of a wide range of correlation functions, the theoretical formulas were fitted to the calculated experimental-like ones.
+  In order to perform a quantitative analysis of a wide range of correlation functions, the theoretical formulas were fitted to the calculated experimental-like data.
   In this procedure, the femtoscopic radii for the three-dimensional as well as one-dimensional correlation functions were extracted.
-
-
-  !!! Przerysowac \ref{fig:kt_dep} - label dla pionow w legendzie jest w dziwnym miejscu
-
-  !!! \ref{fig:centr_dep} - markery dla kaonow w legendzie sa w dziwnym miejscu
-
     %
     % ========
     \subsection{Femtoscopic radii scaling with the transverse mass}
     % ========
-      \begin{figure}[h]
+      The main goal of this analysis is a verification of a transverse mass scaling of different particles types.
+      The radii are plotted as a function of a transverse mass $m_T = \sqrt{k_T^2 +m^2}$ and the following power-law is fitted:
+      \begin{equation}
+        R_x = \alpha {m_T}^{-\beta}~,
+      \end{equation}
+      where the $\alpha$ and $\beta$ are free parameters.
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/piradii}}
-        \caption{no caption~\cite{alice_pion}~\cite{galazyn}.}
+        \caption{Femtoscopic radii in LCMS for all centrality bins as a function of $m_T$. The dashed lines are power-law fits. The most central collisions (0-5\%) are compared to the results from ALICE~\cite{alice_pion}. The two datasets are shifted to the right for visibility~\cite{galazyn}.}
       \label{fig:piradii}
       \end{figure}
 
-
+      In the Fig.~\ref{fig:piradii} there are femtoscopic radii in the outward, sideward and longitudinal direction of the analysis of two-pion correlation functions in LCMS.
+      The dashed lines are fits of the power law to the data.
+      The results for the top 5\% central collisions (star-shaped markers in the Fig.~\ref{fig:piradii}) are with the good agreement with the experimental data from ALICE~\cite{alice_pion}.
 
       \begin{figure}[h]
         \centering
@@ -125,8 +127,6 @@
         \caption{no caption~\cite{galazyn}.}
       \label{fig:kradii}
       \end{figure}
-
-
 
       \begin{figure}[h]
         \centering
@@ -162,6 +162,7 @@
         \caption{no caption~\cite{galazyn}.}
       \label{fig:piradii}
       \end{figure}
+
 
     \FloatBarrier
   %
