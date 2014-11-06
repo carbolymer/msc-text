@@ -15,21 +15,21 @@
     \subsection{Spherical harmonics components}
     % ========
 
-      \begin{figure}[h]
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cf3dpi}}
         \caption{Spherical harmonics coefficients of the two-pion correlation function. From the top left: $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$. Only few centrality bins are presented for increased readability.}
       \label{fig:cf3dpi}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cf3dk}}
         \caption{Spherical harmonics coefficients of the two-kaon correlation function. From the top left: $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$. Only few centrality bins are presented for increased readability. The $\Re C^2_2$ is noisy, but one can still notice that it differs from zero and is becoming negative.}
       \label{fig:cf3dk}
       \end{figure} 
 
-      \begin{figure}[h]
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cf3dp}}
         \caption{Spherical harmonics coefficients of the two-proton correlation function. From the top left: $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$. Only few centrality bins are presented for increased readability. The $\Re C^0_2$ and $\Re C^2_2$ are noisy, but one can still notice, that they differ from zero and are becoming positive.}
@@ -100,71 +100,99 @@
   % ========
   In order to perform a quantitative analysis of a wide range of correlation functions, the theoretical formulas were fitted to the calculated experimental-like data.
   In this procedure, the femtoscopic radii for the three-dimensional as well as one-dimensional correlation functions were extracted.
+  The main goal of this analysis is a verification of a transverse mass scaling of different particles types.
+  The radii are plotted as a function of a transverse mass $m_T = \sqrt{k_T^2 +m^2}$ and the following power-law is fitted:
+  \begin{equation}
+    \label{eq:power-law}
+    R_x = \alpha {m_T}^{-\beta}~,
+  \end{equation}
+  where the $\alpha$ and $\beta$ are free parameters.
     %
     % ========
-    \subsection{Femtoscopic radii scaling with the transverse mass}
+    \subsection{The three-dimensional femtoscopic radii scaling}
     % ========
-      The main goal of this analysis is a verification of a transverse mass scaling of different particles types.
-      The radii are plotted as a function of a transverse mass $m_T = \sqrt{k_T^2 +m^2}$ and the following power-law is fitted:
-      \begin{equation}
-        R_x = \alpha {m_T}^{-\beta}~,
-      \end{equation}
-      where the $\alpha$ and $\beta$ are free parameters.
       \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/piradii}}
-        \caption{Femtoscopic radii in LCMS for all centrality bins as a function of $m_T$. The dashed lines are power-law fits. The most central collisions (0-5\%) are compared to the results from ALICE~\cite{alice_pion}. The two datasets are shifted to the right for visibility~\cite{galazyn}.}
-      \label{fig:piradii}
+        \caption{Femtoscopic radii in LCMS coming from two-pion correlation functions for all centrality bins as a function of $m_T$. The dashed lines are power-law fits. The most central collisions (0-5\%) are compared to the results from ALICE~\cite{alice_pion}. The two datasets are shifted to the right for visibility~\cite{galazyn}.}
+        \label{fig:piradii}
       \end{figure}
 
       In the Fig.~\ref{fig:piradii} there are femtoscopic radii in the outward, sideward and longitudinal direction of the analysis of two-pion correlation functions in LCMS.
       The dashed lines are fits of the power law to the data.
-      The results for the top 5\% central collisions (star-shaped markers in the Fig.~\ref{fig:piradii}) are with the good agreement with the experimental data from ALICE~\cite{alice_pion}.
-
-      \begin{figure}[h]
+      One can notice, that the power law describes well data points with a 5\% accuracy.
+      The $\beta$ parameter for the outward direction is in the order of 0.45.
+      For the sideward direction, this parameter has the similar value, but it is lower for the most peripheral collisions.
+      In case of the longitudinal direction, the $\beta$ has greater value, up to 0.75.
+      A larger value in case of longitudinal direction is an indication of a strong transverse expansion of created system.
+      In the Fig.~\ref{fig:piradii} there are also compared results for the top 5\% central collisions (star-shaped markers) with experimental data from ALICE~\cite{alice_pion}.
+      The experimental results are consistent with the ones coming from the model predictions.
+      % \begin{figure}[b]
+      %   \centering
+      %   \centerline{\includegraphics[width=1.05\textwidth]{results/piradii_vs_nch}}
+      %   \caption{no caption~\cite{galazyn}.}
+      % \label{fig:piradii}
+      % \end{figure}   
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/kradii}}
-        \caption{no caption~\cite{galazyn}.}
+        \caption{Femtoscopic radii extracted from two-kaon correlation functions for different centrality bins as a function of $m_T$.~\cite{galazyn}.}
       \label{fig:kradii}
       \end{figure}
 
-      \begin{figure}[h]
+      The Fig.~\ref{fig:kradii} presents femtoscopic radii coming from the kaon calculations.
+      The $R_{out}$, $R_{side}$ and $R_{long}$ fall also with the power-law within the 5\% accuracy.
+      The $\beta$ parameter was larger in case of kaons: 0.59 in outward direction, 0.54 in the sideward and 0.86 for longitudinal.
+
+      The results for two-proton analysis are shown in the Fig.~\ref{fig:pradii}.
+      The Eq.~\ref{eq:power-law} was fitted to the data and tells that the protons also follow the $m_T$ scaling within 5\% range.
+      The $\beta$ parameter values were even bigger for the outward ( 0.58 ), sideward ( 0.61 ) and longitudinal ( 1.09 ) directions than for the other particle types. 
+
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/pradii}}
-        \caption{no caption~\cite{galazyn}.}
+        \caption{Femtoscopic radii extracted from two-proton correlation functions for different centrality bins as a function of $m_T$.~\cite{galazyn}.}
       \label{fig:pradii}
-      \end{figure}    
+      \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/allradii_lcms}}
-        \caption{no caption~\cite{galazyn}.}
+        \caption{The results from the calculations for the pions, kaons and protons in for the three centralities presented on the common plot. One can notice that radii for particular centralities and different particle types follow the common power-law scaling.~\cite{galazyn}.}
       \label{fig:allradii}
       \end{figure}    
 
-      \begin{figure}[h]
-        \centering
-        \centerline{\includegraphics[width=1.05\textwidth]{results/piradii_vs_nch}}
-        \caption{no caption~\cite{galazyn}.}
-      \label{fig:piradii}
-      \end{figure}    
-
-      \begin{figure}[h]
+      The Fig.~\ref{fig:allradii} presents results for the pions, kaons and protons as a function of $m_T$.
+      Considering differences in the $\beta$ value for the fits for different particles, one can suspect that there is no common scaling between different kinds of particles.
+      However, when all of the results shown on the same plot, they are aligning on the common curve and the scaling is well preserved.
+      The scaling accuracy is 3\%, 5\% and 4\% for the 0-10\%, 20-30\% and 60-70\% for the outward direction.
+      For the sideward radii the scaling is better, with the average deviations 2\%, 2\% and 3\% respectively.
+      In case of longitudinal direction the accuracy is 6\%, 5\% and 3\% for the three centralities.
+      The $\beta$ parameter for the outward direction is close to the 0.42 in all cases.
+      For the sideward direction it varies from 0.28 to 0.47 and is bigger for more central collisions.
+      Regarding longitudinal radii, the exponent is bigger than the other two: $\beta \in [0.62 ; 0.72]$~.
+      Considering all results, the plotted radii are following the common power-law scaling within the 5\% accuracy for all directions, centralities and particle types.
+      \FloatBarrier
+      %
+      % ========
+      \subsection{Scaling of one-dimensional radii}
+      % ========
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/scaling_test}}
         \caption{no caption~\cite{galazyn}.}
-      \label{fig:piradii}
+      \label{fig:scaling_test}
       \end{figure}    
 
-      \begin{figure}[h]
+      \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=0.55\textwidth]{results/rinvreff}}
         \caption{no caption~\cite{galazyn}.}
-      \label{fig:piradii}
+      \label{fig:rinveff}
       \end{figure}
 
 
-    \FloatBarrier
+      \FloatBarrier
   %
   % ========
   \section{Discussion of results}
