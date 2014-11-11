@@ -213,6 +213,7 @@
       \end{equation}
       Substituting the one-dimensional emission function (Eq.~\ref{eq:source-1d-prf}) into the integral above yields the following form of correlation function in PRF:
       \begin{empheq}[innerbox=\fbox, right=~,]{align}
+        \label{eq:cf_1d}
         C(q) = 1 + \lambda \exp \left( - R_{inv}^2 q^2 \right)
       \end{empheq}
       where $q$ is a momentum difference between two particles.
@@ -245,6 +246,7 @@
       Hence, in this approach, a correlation function is defined as a function of $q$, $\theta$ and $\phi$.
       To obtain $C^m_l$ coefficients in the series, one has to calculate the following integral:
       \begin{equation}
+        \label{eq:sh_decomposition}
         C^m_l(q) = \int_\Omega C(q,\theta,\phi) Y^m_l (\theta,\phi) d \Omega~,
       \end{equation}
       where $\Omega$ is a full solid angle.
@@ -327,7 +329,7 @@
     % ========
     \subsection{Scaling in LCMS}
     % ========
-      Hydrodynamic calculations performed in LCMS show that femtoscopic radii in outward, sideward, and longitudinal direction show dependence on transverse mass $m_T~=~\sqrt{k^2_T + m}$, where $m$ is a mass of a particle~\cite{akkelin_sinyukov}.
+      Hydrodynamic calculations performed in LCMS show that femtoscopic radii in outward, sideward, and longitudinal direction show dependence on transverse mass $m_T~=~\sqrt{k^2_T + m^2}$, where $m$ is a mass of a particle~\cite{akkelin_sinyukov}.
       Moreover, experimental results show  that this scaling is observed for $R_{LCMS}$ radii also.
       This dependence can be expressed as follows:
       \begin{empheq}[innerbox=\fbox, right=~,]{align}
@@ -336,7 +338,7 @@
       \end{empheq}
       where $i$ subscript indicates that this equation applies to $R_{out}$, $R_{side}$ and $R_{long}$ radii.
       The $\beta$ exponent is approximately equal 0.5.
-      In case of strong transversal expansion of the emitting source, the decrease of longitudinal interferometry radius can be more quick than $m_T^{-0.5}$, hence one can expect for longitudinal radii lower values of $\beta <$~0.5~\cite{akkelin_sinyukov}.
+      In case of strong transversal expansion of the emitting source, the decrease of longitudinal interferometry radius can be more quick than $m_T^{-0.5}$, hence one can expect for longitudinal radii greater values of $\beta >$~0.5~\cite{akkelin_sinyukov}.
       % \/ do wynikow
       % the scaling behavior shows that hydro produces common collective behavior in both transverse dimensions
     %
@@ -354,7 +356,7 @@
       \end{equation} 
       The one-dimensional $R_{inv}$ radius is direction-averaged source size in PRF.
       One can notice, that such power-law scaling of $R_{inv}$ described by Eq.~\ref{eq:r_scaling} is not observed.
-      To recover such scaling in PRF one has to take into consideration two effects when transforming variables from LCMS to PRF: overall radius growths and source distribution becomes non-Gaussian, while developing long-range tails (see Fig.\ref{fig:3dgaussian} for an example).
+      To recover such scaling in PRF one has to take into consideration two effects when transforming variables from LCMS to PRF: overall radius growths and source distribution becomes non-Gaussian, while developing long-range tails (see Fig.~\ref{fig:3dgaussian} for an example).
       The interplay of these two effects can be accounted with an approximate formula:
       \begin{equation}
         R_{inv} = \sqrt{ \left. \left( {R_{out}}^2\sqrt{\gamma_T} + {R_{side}}^2 + {R_{long}}^2 \right) \middle/ 3 \right. }~.

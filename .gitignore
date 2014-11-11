@@ -7,6 +7,7 @@
 *.bbl
 *.blg
 figures/*.pdf
+figures/results/*.pdf
 figures/analysis/radii/*.pdf
 figures/analysis/cf/*.pdf
 octave-workspace
