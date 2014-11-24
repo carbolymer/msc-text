@@ -133,6 +133,7 @@
   %
   % ========
   \section{Events generation procedure}
+  \label{sec:events-generation}
   % ========
     The equations presented in the previous section are directly used in the \verb|THERMINATOR| to generate the primordial hadrons (created during freeze-out) with the Monte-Carlo method.
     This procedure consists of 3 main steps, where the first two are performed only once per given parameter set.
@@ -146,7 +147,7 @@
     \subsubsection{Multiplicity calculation}
       In order to generate events, a multiplicity of each particle must be known.
       The multiplicities are obtained through a numerical integration of distribution functions (Eq.~\ref{eq:cooper-frye}) in the given integration ranges determined by the model parameters.
-      The multiplicities also depend only on the model parameters and they are only calculated once at the beginning of the event generation~\cite{therminator}.
+      The multiplicities also depend only on the model parameters and they are also only calculated once at the beginning of the event generation~\cite{therminator}.
     \subsubsection{Events and particles generation}
       Each of the events produced by \verb|THERMINATOR| are generated separately.
       At first, the multiplicities for each of particle type are generated as random numbers from a Poisson distribution, with the mean being the average particle multiplicity determined in the previous step.
@@ -165,7 +166,7 @@
       The decays proceed sequentially from the heaviest particles to the lightest.
       Unstable products of decays are added to the particles generated in the current event and are processed in the subsequent steps.
       If a particle has several decay channels, one of them is selected randomly with the appropriate probability corresponding to the branching ratio provided in the input files.
-      \verb|THERMINATOR| implements two-body and three-body decays.
+      \verb|THERMINATOR| in the hadronic cascade process performs two-body and three-body decays.
 
 
       At the beginning of the cascade decay, the lifetime $\tau$ of a particle with mass $M$, moving with the four-momentum $p^\mu$, is generated randomly according to the exponential decay law $\exp(-\Gamma\tau)$.
@@ -174,7 +175,7 @@
         x^\mu_{decay} = x^\mu_{origin} + \frac{p^\mu}{M}\tau~,
       \end{equation}
       where $x^\mu_{origin}$ is a space-time position, where the unstable particle was generated.
-      At the $x^\mu_{decay}$ point, daughter particles with energies and momenta determined by the conservation laws are generated.
+      At the $x^\mu_{decay}$ point decay occurs and daughter particles with energies and momenta determined by the conservation laws are generated.
       Fig.~\ref{fig:resonances-decay} illustrates the cascade decay process~\cite{therminator}.
       \begin{figure}[h]
         \centering

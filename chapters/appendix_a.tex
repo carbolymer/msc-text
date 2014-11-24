@@ -6,11 +6,25 @@
   In order to perform analysis with sufficient statistics, a large amount of generated events was required.
   To handle this task of generation large amount of data, a computer cluster at Faculty of Physics at Warsaw University of Technology was used.
   This cluster consists of 20 nodes with the following hardware configuration: \mbox{Intel\textregistered} \mbox{Core\texttrademark~2 Quad} CPU \mbox{Q6600 @ 2.40GHz,} \mbox{8GB RAM} with Scientific~Linux~5.8.
-  To execute many \verb|THERMINATOR| processes, TORQUE~\cite{torque} Resource Manager was used.
+  The communication between nodes is realized by the TORQUE Resource Manager~\cite{torque}.
+  To control process of launching multiple event generators and collecting the data, the following scripts were written using \verb|Bash| scripting language:
   \begin{description}
-    \item[skynet.sh] bar
+    \item[skynet.sh] This is a script in a form of a batch job for TORQUE.
+      It simply launches multiple \verb|THERMINATOR| processes in the same working directory with the separate output directory for each job.
+      This solution has two advantages: saves space and computation time.
+      A single freeze-out hypersurface file has size about 230~MB and when running 20 instances of generator this approach allows to avoid time- and space-consuming copying of the whole \verb|THERMINATOR| directory before running the application.
+      The second advantage is a sharing of files containing information about particles' multiplicities and maximum integrands between generator processes (more detailed description is in Section~\ref{sec:events-generation}).
+      One can simply execute this batch job using the following command (an example usage):
       \\\verb|qsub -q long -t 0-19 skynet.sh -v dir=th_5.7,events=6000|
-    \item[merge\_events.sh] merge
-      \\\verb&find /data/source -iname "event*.root" -type f \&
-      \\\verb& | merge_events.sh&
+      It adds 20 event generators (with task ids from 0 to 19) to the queue, sets the \verb|THERMINATOR| directory as \verb|th_5.7| and sets a number of simulated events to 6000 for each process.
+      One has to execute this command in the directory one level higher than \verb|th_5.7| directory.
+    \item[merge\_events.sh] After the generation process, one has to merge calculated events into one directory.
+      This task requires renaming of a large number of \verb|THERMINATOR| event files.
+      Each event generator job produces files named with a certain pattern, starting from event000.root with increasing number.
+      In order to move the event files and preserve continuity in the numbering, a simple script was written.
+      An example of usage:
+      \\\verb&find /data/source -iname "event*.root" -type f \ &
+      \\\verb& | merge_events.sh&\\
+      This command will find all the event files in the directory /data/source, move and rename those files accordingly to the numeration of events in the current working directory.
   \end{description}
+  Sources of these two scripts are available on-line at \url{https://github.com/carbolymer/msc/tree/master/alix}.
