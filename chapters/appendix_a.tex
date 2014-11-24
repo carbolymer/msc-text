@@ -3,3 +3,14 @@
 % ========
 \chapter{Scripts for events generation}
 % ========
+  In order to perform analysis with sufficient statistics, a large amount of generated events was required.
+  To handle this task of generation large amount of data, a computer cluster at Faculty of Physics at Warsaw University of Technology was used.
+  This cluster consists of 20 nodes with the following hardware configuration: \mbox{Intel\textregistered} \mbox{Core\texttrademark~2 Quad} CPU \mbox{Q6600 @ 2.40GHz,} \mbox{8GB RAM} with Scientific~Linux~5.8.
+  To execute many \verb|THERMINATOR| processes, TORQUE~\cite{torque} Resource Manager was used.
+  \begin{description}
+    \item[skynet.sh] bar
+      \\\verb|qsub -q long -t 0-19 skynet.sh -v dir=th_5.7,events=6000|
+    \item[merge\_events.sh] merge
+      \\\verb&find /data/source -iname "event*.root" -type f \&
+      \\\verb& | merge_events.sh&
+  \end{description}
