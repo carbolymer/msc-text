@@ -116,7 +116,7 @@
         \end{split}
       \end{equation}
       In case of identical particles, ($S_A = S_B$) several simplifications can be made.
-      A convolution of the two same Gaussian distributions is also a Gaussian distribution with $\sigma$ multiplied by $\sqrt{2}$.
+      A convolution of the two identical Gaussian distributions is also a Gaussian distribution with $\sigma$ multiplied by $\sqrt{2}$.
       Femtoscopy can give information only about two-particle emission function, but when considering Gaussian distribution as a source function in Eq.~\ref{eq:source-two-conv}, one can obtain a $\sigma$ of a single emission function from a two-particle emission function.
       The Eq.~\ref{eq:source-two-conv} is not reversible - an information about $S_A(\cdot)$ cannot be derived from $S_{AB}(\cdot)$.
       An exception from this rule is a Gaussian source function, hence it is often used in femtoscopic calculations.
@@ -194,7 +194,7 @@
       This equation does not depend on the pair velocity, hence it is valid in the LCMS and PRF.
     %
     % ========
-    \subsection{Theoretical correlation function}
+    \subsection{Analytical form of a correlation function}
     \label{sec:correlation-function}
     % ========
       The fundamental object in a particle interferometry is a correlation function.
@@ -203,7 +203,7 @@
         \label{eq:th_cf}
         C(\vect{p}_a,\vect{p}_b) = \frac{P_2(\vect{p}_a,\vect{p}_b)}{P_1(\vect{p}_a) P_1(\vect{p}_b)}~,
       \end{equation}
-      where $P_2$ is a conditional probability to observe a particle with momentum $\vect{p}_b$ if particle with momentum $\vect{p}_b$ was also observed.
+      where $P_2$ is a conditional probability to observe a particle with momentum $\vect{p}_b$ if particle with momentum $\vect{p}_a$ was also observed.
       A $P_1$ is a probability to observe a particle with a given momentum.
       The relationship between source emission function, pair wave function and the correlation function is described by the following equation:
       \begin{equation}
@@ -233,7 +233,7 @@
     \subsection{Spherical harmonics decomposition of a correlation function}
     % ========
       Results coming from an analysis using three-dimensional correlation function in Cartesian coordinates are quite difficult to visualize.
-      To do that, one usually performs a projection into a one dimension in outward, sideward and longitudinal directions. 
+      To do that, one usually performs a projection into one dimension in outward, sideward and longitudinal directions. 
       One may loose important information about a correlation function in this procedure, because it gives only a limited view of the full three-dimensional structure.
       Recently, a more advanced way of presenting correlation function - a spherical harmonics decomposition, was proposed.
       The three-dimensional correlation function is decomposed into an infinite set of components in a form of one-dimensional histograms $C^m_l (q)$.
@@ -247,12 +247,12 @@
       To obtain $C^m_l$ coefficients in the series, one has to calculate the following integral:
       \begin{equation}
         \label{eq:sh_decomposition}
-        C^m_l(q) = \int_\Omega C(q,\theta,\phi) Y^m_l (\theta,\phi) d \Omega~,
+        C^m_l(q) = \int_\Omega C(q,\theta,\phi) Y^{m*}_l (\theta,\phi) d \Omega~,
       \end{equation}
       where $\Omega$ is a full solid angle.
 
       Spherical harmonics representation has several important advantages.
-      The main advantage of this decomposition is that it requires less statistics than traditional analysis performed in Cartesian coordinates.
+      The main one is that it requires less statistics than traditional analysis performed in Cartesian coordinates.
       Another one is that it encodes full three-dimensional information in a set of one-dimensional plots. 
       In principle it does not have to be an advantage, because full description of a correlation function requires infinite number of \textit{l}, \textit{m} components.
       But it so happens that the intrinsic symmetries of a pair distribution in a femtoscopic analysis result in most of the components to vanish.
