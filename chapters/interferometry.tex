@@ -300,9 +300,13 @@
     The~wave function used in Eq.~\ref{eq:cf_experimental} has one of the following forms:
     \begin{align}
       |\Psi_{\pi\pi}(\vect{r^*},\vect{k^*})|^2 = |\Psi_{KK}(\vect{r^*},\vect{k^*})|^2 &= 1 + \cos(2 \vect{k^*} \vect{r^*})~, \\
+      \label{eq:pp-wf}
       |\Psi_{pp}(\vect{r^*},\vect{k^*})|^2 &= 1 - \frac{1}{2} \cos(2 \vect{k^*} \vect{r^*})~.
     \end{align}
     The first one is used in case of bosons, and the latter one is for identical fermions.
+    A wave function for pair of spin-1/2 fermions (Eq.~\ref{eq:pp-wf}) is a superposition of two possible states: singlet state (with spin equal to 0 and one state) and triplet state (with spin equal to 1 and three possible eigenstates).
+    For a singlet state, a wave function is symmetric, and for triplet state, it is antisymmetric.
+    Therefore, the coefficient before cosine in the $|\Psi_{pp}|^2$ is equal to \mbox{$(-1) \times 3/4 + 1 \times 1/4 = -1/2$}.
     Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
   % include drkisiel p. 35?
   % 1D vs 3D
@@ -319,7 +323,7 @@
     \begin{figure}[h]
       \centering
       \includegraphics[width=0.7\textwidth]{cf_width_dep}
-      \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum are more correlated~\cite{pratt_pion}.}
+      \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum have a wider correlation (smaller apparent source)~\cite{pratt_pion}.}
       \label{fig:cf_width}
     \end{figure}
     Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
@@ -369,9 +373,3 @@
       This approximate formula allows to restore power-law behaviour of the scaled radii not only when the radii are equal, but also when their differences are small (for explanation see the last part of the section~3.2.3).
 
       This method of recovering scaling in PRF can be used as a tool for the search of hydrodynamic collectivity between pions, kaons and protons in heavy ion collisions with the measurement of one-dimensional radius in PRF.
-
-
-
-
-
-
