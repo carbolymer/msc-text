@@ -83,7 +83,7 @@
       This anti-symmetrization or symmetrization implies the correlation effect coming from the Fermi-Dirac or Bose-Einstein statistics accordingly.
 
       To provide full description of a system consisting of two charged hadrons, one has to include in the wave function besides quantum statistics also Coulomb and strong Final State Interactions.
-      The aim of this work is analysis of femtoscopic radii proportional to the inverse of a width of a correlation function (for detailed description see Section~\ref{sec:correlation-function}).
+      The aim of this work is an analysis of femtoscopic radii proportional to the inverse of a width of a correlation function (for detailed description see Section~\ref{sec:correlation-function}).
       Since we are not interested in the direct comparison of experimental correlation functions with their analytical forms, the following simplification can be made.
       A width of identical particles correlation function is determined by effects coming from quantum statistics, hence one can ignore influence of Final State Interactions, which in this case is small. Taking into account only quantum statistics can reduce complexity of calculations and save computation time.
     %
@@ -297,6 +297,7 @@
     \end{equation}
     The $D$ histogram represents the set of all particle pairs used in calculations.
     The~$n_i$ is a pair with the its relative momentum $\vect{k^*}_i$ and relative separation $\vect{r^*}_i$.
+    Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
     The~wave function used in Eq.~\ref{eq:cf_experimental} has one of the following forms:
     \begin{align}
       |\Psi_{\pi\pi}(\vect{r^*},\vect{k^*})|^2 = |\Psi_{KK}(\vect{r^*},\vect{k^*})|^2 &= 1 + \cos(2 \vect{k^*} \vect{r^*})~, \\
@@ -304,10 +305,10 @@
       |\Psi_{pp}(\vect{r^*},\vect{k^*})|^2 &= 1 - \frac{1}{2} \cos(2 \vect{k^*} \vect{r^*})~.
     \end{align}
     The first one is used in case of bosons, and the latter one is for identical fermions.
-    A wave function for pair of spin-1/2 fermions (Eq.~\ref{eq:pp-wf}) is a superposition of two possible states: singlet state (with spin equal to 0 and one state) and triplet state (with spin equal to 1 and three possible eigenstates).
+    A wave function for pair of spin-1/2 fermions (Eq.~\ref{eq:pp-wf}) is a superposition of two possible states: singlet state (with spin equal to 0 and one eigenstate) and triplet state (with spin equal to 1 and three possible eigenstates).
     For a singlet state, a wave function is symmetric, and for triplet state, it is antisymmetric.
-    Therefore, the coefficient before cosine in the $|\Psi_{pp}|^2$ is equal to \mbox{$(-1) \times 3/4 + 1 \times 1/4 = -1/2$}.
-    Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
+    In other words the $|\Psi_{pp}|^2$ encodes correlation coming from Bose-Einstein statistics (with weight $1/4$) and anti-correlation from Fermi-Dirac distribution (with weight $3/4$).
+    % the coefficient before cosine in the $|\Psi_{pp}|^2$ is equal to \mbox{$(-1) \times 3/4 + 1 \times 1/4 = -1/2$}.
   % include drkisiel p. 35?
   % 1D vs 3D
 
@@ -316,20 +317,37 @@
   \section{Scaling of femtoscopic radii}
   \label{ch:pi-scaling}
   % ========
-    In the hydrodynamic models describing expansion of a quark-gluon plasma, particles are emitted from the source elements.
-    Each of the source elements is moving with the velocity $u_\mu$ given by hydrodynamic equations.
-    Because solutions of those equations are smooth, nearby source elements have similar velocities.
-    Each emitted particle from a certain source element is boosted with the flow velocity $u_\mu$ according to the point of origin.
+    A particle interferometry formalism presented in the previous sections assumes that particle emitting source is static.
+    This is not the case in heavy ion collisions at LHC.
+    An existence of transverse radial and elliptic flow suggest that created system is dynamic.
+    To address this issue, a concept of \textit{lengths of homogeneity} was introduced.
+    It is defined as:
+    \begin{equation}
+      \frac{|f(p,x + \lambda) - f(p,x)|}{f(p,x)} = 1~,
+    \end{equation}
+    where $\lambda$ is the homogeneity length.
+    It can be interpreted as the distance at which relative change of the source Wigner function $f$ becomes large.
+    One can measure the lengths of homogeneity of a system using femtoscopic radii.
+    This concept can be intuitively explained on a basis of hydrodynamic models.
+    Each source element is emitting particles with a velocity which is a combination of two components: a fluid cell velocity $\beta_f$ (which is taken from the flow field $u_{\mu}(\vect{x^{\mu}})$) and thermal velocity $\beta_{th}$ (which has random direction).
+    These particles can combine into pairs of small relative momenta and become correlated.
+    If two particles are emitted far ($|\vect{x}_a - \vect{x}_b| > \lambda$) away from each other, the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta to be in the region of interference effect.
+    This effect is presented in Fig.~\ref{fig:cf_width}.
+    An increase of a correlation is visible for pairs with low relative momenta~\cite{drkisiel}.
+    % In the hydrodynamic models describing expansion of a quark-gluon plasma, particles are emitted from the source elements.
+    % Each of the source elements is moving with the velocity $u_\mu$ given by hydrodynamic equations.
+    % Because solutions of those equations are smooth, nearby source elements have similar velocities.
+    % Each emitted particle from a certain source element is boosted with the flow velocity $u_\mu$ according to the point of origin.
     \begin{figure}[h]
       \centering
       \includegraphics[width=0.7\textwidth]{cf_width_dep}
       \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum have a wider correlation (smaller apparent source)~\cite{pratt_pion}.}
       \label{fig:cf_width}
     \end{figure}
-    Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
-    If the two particles are emitted far away from each other (a pair with small $|\vect{k}_T|$), the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta in order to be in region of interference effect.
-    This effect is visible in a width of a correlation function in the Fig.~\ref{fig:cf_width}.
-    The correlation function gets broader for greater values of $|\vect{k}_T|$ and the femtoscopic radius $R$ becomes smaller~\cite{drkisiel,pratt_pion}.
+    % Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
+    % If the two particles are emitted far away from each other (a pair with small $|\vect{k}_T|$), the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta in order to be in region of interference effect.
+    % This effect is visible in a width of a correlation function in the Fig.~\ref{fig:cf_width}.
+    % The correlation function gets broader for greater values of $|\vect{k}_T|$ and the femtoscopic radius $R$ becomes smaller~\cite{drkisiel,pratt_pion}.
     %
     % ========
     \subsection{Scaling in LCMS}
