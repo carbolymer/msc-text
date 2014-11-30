@@ -89,6 +89,7 @@
     %
     % ========
     \subsection{Source emission function}
+    \label{sec:source-emission-function}
     % ========
       To describe particle emitting source, one uses a single emission function~\cite{nonidfemto}:
       \begin{equation}
@@ -189,6 +190,7 @@
       Using Eq.~\ref{eq:source-1d-from-3d} and Eq.~\ref{eq:source-1d-lcms} one can obtain a relation between one-dimensional width and the three-dimensional ones.
       Through numerical calculations one can find the following approximate relation~\cite{nonidfemto}:
       \begin{empheq}[innerbox=\fbox, right=~.]{align}
+        \label{eq:3dradiito1d}
         R^{L}_{av} = \sqrt{ \left. \left( {R^L_{out}}^2 + {R^L_{side}}^2 + {R^L_{long}}^2 \right) \middle/ 3 \right. }
       \end{empheq}
       This equation does not depend on the pair velocity, hence it is valid in the LCMS and PRF.
@@ -334,20 +336,12 @@
     If two particles are emitted far ($|\vect{x}_a - \vect{x}_b| > \lambda$) away from each other, the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta to be in the region of interference effect.
     This effect is presented in Fig.~\ref{fig:cf_width}.
     An increase of a correlation is visible for pairs with low relative momenta~\cite{drkisiel}.
-    % In the hydrodynamic models describing expansion of a quark-gluon plasma, particles are emitted from the source elements.
-    % Each of the source elements is moving with the velocity $u_\mu$ given by hydrodynamic equations.
-    % Because solutions of those equations are smooth, nearby source elements have similar velocities.
-    % Each emitted particle from a certain source element is boosted with the flow velocity $u_\mu$ according to the point of origin.
     \begin{figure}[h]
       \centering
       \includegraphics[width=0.7\textwidth]{cf_width_dep}
       \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum have a wider correlation (smaller apparent source)~\cite{pratt_pion}.}
       \label{fig:cf_width}
     \end{figure}
-    % Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
-    % If the two particles are emitted far away from each other (a pair with small $|\vect{k}_T|$), the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta in order to be in region of interference effect.
-    % This effect is visible in a width of a correlation function in the Fig.~\ref{fig:cf_width}.
-    % The correlation function gets broader for greater values of $|\vect{k}_T|$ and the femtoscopic radius $R$ becomes smaller~\cite{drkisiel,pratt_pion}.
     %
     % ========
     \subsection{Scaling in LCMS}
@@ -370,24 +364,32 @@
     % ========
       In the collisions at the LHC energies, pions are most abundant particles and their multiplicities are large enough to enable three-dimensional analysis.
       However, for heavier particles, such as kaons and protons statistical limitations arise.
-      Hence it is often possible to only measure one-dimensional radius $R_{inv}$ for those particles.
+      Hence it is often possible to only measure one-dimensional direction-averaged radius $R_{inv}$ for those particles.
       The $R_{inv}$ is then calculated in the PRF.
       The transition from LCMS to PRF is a Lorentz boost in the direction of pair transverse momentum with velocity $\beta_T = p_T / m_T$.
-      Hence only $R_{out}$ radius changes:
+      Hence only $R_{out}$ changes:
       \begin{equation}
         R_{out}^* = \gamma_T R_{out}~.
       \end{equation} 
-      The one-dimensional $R_{inv}$ radius is direction-averaged source size in PRF.
-      One can notice, that such power-law scaling of $R_{inv}$ described by Eq.~\ref{eq:r_scaling} is not observed.
-      To recover such scaling in PRF one has to take into consideration two effects when transforming variables from LCMS to PRF: overall radius growths and source distribution becomes non-Gaussian, while developing long-range tails (see Fig.~\ref{fig:3dgaussian} for an example).
-      The interplay of these two effects can be accounted with an approximate formula:
+      A Lorentz factor $\gamma_T = m_T / m$ depends on the particle type, therefore for the lighter particles (and for the same $m_T$) $\gamma_T$ is much larger, which causes bigger growth of $R_{out}$ and overall radius.
+      This transformation to PRF breaks the scaling observed in the LCMS radii.
+
+      This increase of radius in the outward direction induces overall source size growth and whatsoever the source distribution function becomes non-gaussian.
+      In this case the source function is developing long-range tails and its one-dimensional projection is much narrower than Gaussian distribution.
+      This deformation is presented in Fig.~\ref{fig:3dgaussian}.
+      The influence of these effects can be expressed with an approximate formula:
       \begin{equation}
+        \label{eq:rinv_avg}
         R_{inv} = \sqrt{ \left. \left( {R_{out}}^2\sqrt{\gamma_T} + {R_{side}}^2 + {R_{long}}^2 \right) \middle/ 3 \right. }~.
       \end{equation}
-      Assuming that all radii are equal $R_{out} = R_{side} = R_{long}$ this formula can be simplified:
+      Because the averaging of the radii is done in quadrature, one would have expected appearance of $\gamma_T^2$ instead of $\sqrt{\gamma_T}$ in this equation.
+      However the Monte-Carlo procedure shows that this is not the case and the actual growth is smaller than the naive expectation.
+      Numerical simulations yield that this increase is best described with the $\sqrt{\gamma_T}$ in the Eq.~\ref{eq:rinv_avg}~\cite{galazyn}.
+
+      Assuming that radii in all directions are equal $R_{out} = R_{side} = R_{long}$, Eq.~\ref{eq:rinv_avg} can be reverted using Eq.~\ref{eq:3dradiito1d} to express relationship between LCMS and PRF overall radii~\cite{galazyn}:
       \begin{empheq}[innerbox=\fbox, right=~.]{align}
         R_{LCMS} \approx R_{inv} \times \left[ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. \right]^{-1/2}
       \end{empheq}
-      This approximate formula allows to restore power-law behaviour of the scaled radii not only when the radii are equal, but also when their differences are small (for explanation see the last part of the section~3.2.3).
+      This approximate formula allows to restore power-law behaviour of the scaled radii not only when the radii are equal, but also when their differences are small (for explanation see the last part of the Section~\ref{sec:source-emission-function}).
 
       This method of recovering scaling in PRF can be used as a tool for the search of hydrodynamic collectivity between pions, kaons and protons in heavy ion collisions with the measurement of one-dimensional radius in PRF.
