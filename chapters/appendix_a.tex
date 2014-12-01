@@ -36,4 +36,19 @@
   % ========
   \section{Calculations of experimental-like correlation functions}
   % ========
-    TODO
+    Correlation functions used in this analysis were calculated using \verb|tpi| software written by Adam Kisiel and was designed for reading event files from \verb|THERMINATOR|.
+    It uses \verb|ROOT| library for calculations and storage of the data.
+    The application provides functionality of calculation of one-dimensional correlation function in PRF, three-dimensional one in LCMS and its spherical harmonics decomposition (see Section~\ref{sec:sh}).
+    The exact numerical procedure of computation of a correlation function is presented in Section~\ref{sec:exp-approach}.
+    \verb|tpi| allows to perform calculations with the following options:
+    \begin{itemize}
+      \item Pair type - there are pion-pion, kaon-kaon, proton-proton and many more pairs available (including ones consisting of non-identical particles)
+      \item Multiple $k_T$ subranges from 0.21 to 1.2 GeV/c
+      \item Possibility to include Coulomb interaction
+      \item Number of events to mix
+      \item Maximum freeze-out time
+      \item Choice of method of background calculation in correlation function (mixing events or using particles from the same event)
+    \end{itemize}
+    This program generates results stored in the \textit{*.root} files in a form of histograms.
+    Output file contains numerators, denominators and correlation functions from one-dimensional and three-dimensional analysis.
+    Moreover, the spherical harmonics series coefficients up to \textit{l}~=~3 with signal and background histograms are stored.
