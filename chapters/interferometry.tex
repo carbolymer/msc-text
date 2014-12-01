@@ -2,6 +2,7 @@
 %
 % ========
 \chapter{Particle interferometry}
+\label{ch:pi}
 % ========
   Two-particle interferometry (also called \textit{femtoscopy}) gives a possibility to investigate space-time characteristics of the particle-emitting source created in heavy ion collisions.
   Through the study of particle correlations, their momentum distributions can be used to obtain information about the spatial extent of the created system.
@@ -10,21 +11,18 @@
   % ========
   \section{HBT interferometry}
   % ========
-    In the 1956 Robert Hanbury Brown and Richard Q. Twiss proposed a method which through analysis of interference between photons allowed to investigate angular dimensions of stars.
-    The most important result from the Hanbury-Brown-Twiss experiments is that two indistinguishable particles can produce an interference effect.
-    There is almost no difference between normal interferometry and HBT method, except that the latter one does not take into account information about phase shift of registered particles.
-    At the beginning this method was used in astronomy for photon interference, but this effect can be used also to measure extent of any emitting source.
-    This method was adapted to heavy ion collisions to investigate dimensions of a system created in those collisions by studying correlations of identical particles~\cite{nonidfemto}.
-    The main difference between HBT method in astronomy and femtoscopy is that the first one is based on space-time HBT correlations and the latter one uses momentum correlations.
-    The momentum correlations yield the space-time picture of the source, whereas the space-time HBT correlations provide the characteristic relative momenta of emitted photons, which gives the angular size of the star without the knowledge of its radius and lifetime~\cite{florkowski}.
-  % \section{Intensity interferometry in heavy ion collisions}
+    In the 1956 Robert Hanbury Brown and Richard Q. Twiss proposed a method which allowed to investigate angular dimensions of stars through analysis of interference between photons.
+    They performed a measurement of the intensity of a beam of light coming from a star using two separated detectors.
+    In a signal plotted as a function of distance between detectors an interference effect was observed, revealing a positive correlation, despite the fact that no phase information was collected.
+    Hanbury, Brown and Twiss used this interference signal to calculate the angular size of a star with the excellent resolution.
+    This method was designed to be used in astronomy, however HBT interferometry can be used also to measure extent of any emitting source.
+    Therefore it was adapted to heavy ion collisions to investigate dimensions of a particle-emitting source~\cite{drkisiel}.
   %
   % ========
   \section{Theoretical approach}
   % ========
     Intensity interferometry in heavy ion physics uses similar mathematical formalism as the astronomy HBT measurement.
-    Through the measurement of correlation between particles as a function of their relative momentum one can deduce the average separation between emitting sources.
-
+    The difference between them is that femtoscopy uses a two-particle relative momentum and yields the space-time picture of a source, whereas the latter method uses the distance between detectors to calculate angular size of the star.
     %
     % ========
     \subsection{Conventions used}
@@ -85,11 +83,13 @@
       This anti-symmetrization or symmetrization implies the correlation effect coming from the Fermi-Dirac or Bose-Einstein statistics accordingly.
 
       To provide full description of a system consisting of two charged hadrons, one has to include in the wave function besides quantum statistics also Coulomb and strong Final State Interactions.
-      Considering identical particles systems, the quantum statistics is a main source of a correlation.
-      Hence, in case of space-time analysis of particle emitting source, effects coming from the Coulomb and Strong interactions can be neglected.
+      The aim of this work is an analysis of femtoscopic radii proportional to the inverse of a width of a correlation function (for detailed description see Section~\ref{sec:correlation-function}).
+      Since we are not interested in the direct comparison of experimental correlation functions with their analytical forms, the following simplification can be made.
+      A width of identical particles correlation function is determined by effects coming from quantum statistics, hence one can ignore influence of Final State Interactions, which in this case is small. Taking into account only quantum statistics can reduce complexity of calculations and save computation time.
     %
     % ========
     \subsection{Source emission function}
+    \label{sec:source-emission-function}
     % ========
       To describe particle emitting source, one uses a single emission function~\cite{nonidfemto}:
       \begin{equation}
@@ -117,7 +117,7 @@
         \end{split}
       \end{equation}
       In case of identical particles, ($S_A = S_B$) several simplifications can be made.
-      A convolution of the two same Gaussian distributions is also a Gaussian distribution with $\sigma$ multiplied by $\sqrt{2}$.
+      A convolution of the two identical Gaussian distributions is also a Gaussian distribution with $\sigma$ multiplied by $\sqrt{2}$.
       Femtoscopy can give information only about two-particle emission function, but when considering Gaussian distribution as a source function in Eq.~\ref{eq:source-two-conv}, one can obtain a $\sigma$ of a single emission function from a two-particle emission function.
       The Eq.~\ref{eq:source-two-conv} is not reversible - an information about $S_A(\cdot)$ cannot be derived from $S_{AB}(\cdot)$.
       An exception from this rule is a Gaussian source function, hence it is often used in femtoscopic calculations.
@@ -190,12 +190,14 @@
       Using Eq.~\ref{eq:source-1d-from-3d} and Eq.~\ref{eq:source-1d-lcms} one can obtain a relation between one-dimensional width and the three-dimensional ones.
       Through numerical calculations one can find the following approximate relation~\cite{nonidfemto}:
       \begin{empheq}[innerbox=\fbox, right=~.]{align}
+        \label{eq:3dradiito1d}
         R^{L}_{av} = \sqrt{ \left. \left( {R^L_{out}}^2 + {R^L_{side}}^2 + {R^L_{long}}^2 \right) \middle/ 3 \right. }
       \end{empheq}
       This equation does not depend on the pair velocity, hence it is valid in the LCMS and PRF.
     %
     % ========
-    \subsection{Theoretical correlation function}
+    \subsection{Analytical form of a correlation function}
+    \label{sec:correlation-function}
     % ========
       The fundamental object in a particle interferometry is a correlation function.
       The correlation function is defined as:
@@ -203,7 +205,7 @@
         \label{eq:th_cf}
         C(\vect{p}_a,\vect{p}_b) = \frac{P_2(\vect{p}_a,\vect{p}_b)}{P_1(\vect{p}_a) P_1(\vect{p}_b)}~,
       \end{equation}
-      where $P_2$ is a conditional probability to observe a particle with momentum $\vect{p}_b$ if particle with momentum $\vect{p}_b$ was also observed.
+      where $P_2$ is a conditional probability to observe a particle with momentum $\vect{p}_b$ if particle with momentum $\vect{p}_a$ was also observed.
       A $P_1$ is a probability to observe a particle with a given momentum.
       The relationship between source emission function, pair wave function and the correlation function is described by the following equation:
       \begin{equation}
@@ -233,7 +235,7 @@
     \subsection{Spherical harmonics decomposition of a correlation function}
     % ========
       Results coming from an analysis using three-dimensional correlation function in Cartesian coordinates are quite difficult to visualize.
-      To do that, one usually performs a projection into a one dimension in outward, sideward and longitudinal directions. 
+      To do that, one usually performs a projection into one dimension in outward, sideward and longitudinal directions. 
       One may loose important information about a correlation function in this procedure, because it gives only a limited view of the full three-dimensional structure.
       Recently, a more advanced way of presenting correlation function - a spherical harmonics decomposition, was proposed.
       The three-dimensional correlation function is decomposed into an infinite set of components in a form of one-dimensional histograms $C^m_l (q)$.
@@ -247,12 +249,12 @@
       To obtain $C^m_l$ coefficients in the series, one has to calculate the following integral:
       \begin{equation}
         \label{eq:sh_decomposition}
-        C^m_l(q) = \int_\Omega C(q,\theta,\phi) Y^m_l (\theta,\phi) d \Omega~,
+        C^m_l(q) = \int_\Omega C(q,\theta,\phi) Y^{m*}_l (\theta,\phi) d \Omega~,
       \end{equation}
       where $\Omega$ is a full solid angle.
 
       Spherical harmonics representation has several important advantages.
-      The main advantage of this decomposition is that it requires less statistics than traditional analysis performed in Cartesian coordinates.
+      The main one is that it requires less statistics than traditional analysis performed in Cartesian coordinates.
       Another one is that it encodes full three-dimensional information in a set of one-dimensional plots. 
       In principle it does not have to be an advantage, because full description of a correlation function requires infinite number of \textit{l}, \textit{m} components.
       But it so happens that the intrinsic symmetries of a pair distribution in a femtoscopic analysis result in most of the components to vanish.
@@ -274,6 +276,7 @@
   %
   % ========
   \section{Experimental approach}
+  \label{sec:exp-approach}
   % ========
     The correlation function is defined as a probability to observe two particles together divided by the product of probabilities to observe each of them separately (Eq.~\ref{eq:th_cf}). 
     Experimentally this is achieved by dividing two distributions of relative momentum of pairs of particles coming from the same event and the equivalent distribution of pairs where each particle is taken from different collisions.
@@ -297,34 +300,49 @@
     \end{equation}
     The $D$ histogram represents the set of all particle pairs used in calculations.
     The~$n_i$ is a pair with the its relative momentum $\vect{k^*}_i$ and relative separation $\vect{r^*}_i$.
+    Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
     The~wave function used in Eq.~\ref{eq:cf_experimental} has one of the following forms:
     \begin{align}
       |\Psi_{\pi\pi}(\vect{r^*},\vect{k^*})|^2 = |\Psi_{KK}(\vect{r^*},\vect{k^*})|^2 &= 1 + \cos(2 \vect{k^*} \vect{r^*})~, \\
+      \label{eq:pp-wf}
       |\Psi_{pp}(\vect{r^*},\vect{k^*})|^2 &= 1 - \frac{1}{2} \cos(2 \vect{k^*} \vect{r^*})~.
     \end{align}
     The first one is used in case of bosons, and the latter one is for identical fermions.
-    Mathematically, the procedure of calculating the Eq.~\ref{eq:cf_experimental} is equivalent to a calculation of an integral in Eq.~\ref{eq:cf_integral} through a Monte-Carlo method.
+    A wave function for pair of spin-1/2 fermions (Eq.~\ref{eq:pp-wf}) is a superposition of two possible states: singlet state (with spin equal to 0 and one eigenstate) and triplet state (with spin equal to 1 and three possible eigenstates).
+    For a singlet state, a wave function is symmetric, and for triplet state, it is antisymmetric.
+    In other words the $|\Psi_{pp}|^2$ encodes correlation coming from Bose-Einstein statistics (with weight $1/4$) and anti-correlation from Fermi-Dirac distribution (with weight $3/4$).
+    % the coefficient before cosine in the $|\Psi_{pp}|^2$ is equal to \mbox{$(-1) \times 3/4 + 1 \times 1/4 = -1/2$}.
   % include drkisiel p. 35?
   % 1D vs 3D
 
   %
   % ========
   \section{Scaling of femtoscopic radii}
+  \label{ch:pi-scaling}
   % ========
-    In the hydrodynamic models describing expansion of a quark-gluon plasma, particles are emitted from the source elements.
-    Each of the source elements is moving with the velocity $u_\mu$ given by hydrodynamic equations.
-    Because solutions of those equations are smooth, nearby source elements have similar velocities.
-    Each emitted particle from a certain source element is boosted with the flow velocity $u_\mu$ according to the point of origin.
+    A particle interferometry formalism presented in the previous sections assumes that particle emitting source is static.
+    This is not the case in heavy ion collisions at LHC.
+    An existence of transverse radial and elliptic flow suggest that created system is dynamic.
+    To address this issue, a concept of \textit{lengths of homogeneity} was introduced.
+    It is defined as:
+    \begin{equation}
+      \frac{|f(p,x + \lambda) - f(p,x)|}{f(p,x)} = 1~,
+    \end{equation}
+    where $\lambda$ is the homogeneity length.
+    It can be interpreted as the distance at which relative change of the source Wigner function $f$ becomes large.
+    One can measure the lengths of homogeneity of a system using femtoscopic radii.
+    This concept can be intuitively explained on a basis of hydrodynamic models.
+    Each source element is emitting particles with a velocity which is a combination of two components: a fluid cell velocity $\beta_f$ (which is taken from the flow field $u_{\mu}(\vect{x^{\mu}})$) and thermal velocity $\beta_{th}$ (which has random direction).
+    These particles can combine into pairs of small relative momenta and become correlated.
+    If two particles are emitted far ($|\vect{x}_a - \vect{x}_b| > \lambda$) away from each other, the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta to be in the region of interference effect.
+    This effect is presented in Fig.~\ref{fig:cf_width}.
+    An increase of a correlation is visible for pairs with low relative momenta~\cite{drkisiel}.
     \begin{figure}[h]
       \centering
       \includegraphics[width=0.7\textwidth]{cf_width_dep}
-      \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum are more correlated~\cite{pratt_pion}.}
+      \caption{Correlation function width dependence on total pair momentum. Pion pairs with a large total momentum have a wider correlation (smaller apparent source)~\cite{pratt_pion}.}
       \label{fig:cf_width}
     \end{figure}
-    Hence particles emitted close to each other (pairs with large transverse momentum $|\vect{k}_T|$) will gain the similar velocity boost, they can combine into pairs with small relative momenta ($|\vect{q}|$) and therefore become correlated.
-    If the two particles are emitted far away from each other (a pair with small $|\vect{k}_T|$), the flow field $u_\mu$ in their point of emission might be very different and it will be impossible for them to have sufficiently small relative momenta in order to be in region of interference effect.
-    This effect is visible in a width of a correlation function in the Fig.~\ref{fig:cf_width}.
-    The correlation function gets broader for greater values of $|\vect{k}_T|$ and the femtoscopic radius $R$ becomes smaller~\cite{drkisiel,pratt_pion}.
     %
     % ========
     \subsection{Scaling in LCMS}
@@ -347,30 +365,32 @@
     % ========
       In the collisions at the LHC energies, pions are most abundant particles and their multiplicities are large enough to enable three-dimensional analysis.
       However, for heavier particles, such as kaons and protons statistical limitations arise.
-      Hence it is often possible to only measure one-dimensional radius $R_{inv}$ for those particles.
+      Hence it is often possible to only measure one-dimensional direction-averaged radius $R_{inv}$ for those particles.
       The $R_{inv}$ is then calculated in the PRF.
       The transition from LCMS to PRF is a Lorentz boost in the direction of pair transverse momentum with velocity $\beta_T = p_T / m_T$.
-      Hence only $R_{out}$ radius changes:
+      Hence only $R_{out}$ changes:
       \begin{equation}
         R_{out}^* = \gamma_T R_{out}~.
       \end{equation} 
-      The one-dimensional $R_{inv}$ radius is direction-averaged source size in PRF.
-      One can notice, that such power-law scaling of $R_{inv}$ described by Eq.~\ref{eq:r_scaling} is not observed.
-      To recover such scaling in PRF one has to take into consideration two effects when transforming variables from LCMS to PRF: overall radius growths and source distribution becomes non-Gaussian, while developing long-range tails (see Fig.~\ref{fig:3dgaussian} for an example).
-      The interplay of these two effects can be accounted with an approximate formula:
+      A Lorentz factor $\gamma_T = m_T / m$ depends on the particle type, therefore for the lighter particles (and for the same $m_T$) $\gamma_T$ is much larger, which causes bigger growth of $R_{out}$ and overall radius.
+      This transformation to PRF breaks the scaling observed in the LCMS radii.
+
+      This increase of radius in the outward direction induces overall source size growth and whatsoever the source distribution function becomes non-gaussian.
+      In this case the source function is developing long-range tails and its one-dimensional projection is much narrower than Gaussian distribution.
+      This deformation is presented in Fig.~\ref{fig:3dgaussian}.
+      The influence of these effects can be expressed with an approximate formula:
       \begin{equation}
+        \label{eq:rinv_avg}
         R_{inv} = \sqrt{ \left. \left( {R_{out}}^2\sqrt{\gamma_T} + {R_{side}}^2 + {R_{long}}^2 \right) \middle/ 3 \right. }~.
       \end{equation}
-      Assuming that all radii are equal $R_{out} = R_{side} = R_{long}$ this formula can be simplified:
+      Because the averaging of the radii is done in quadrature, one would have expected appearance of $\gamma_T^2$ instead of $\sqrt{\gamma_T}$ in this equation.
+      However the Monte-Carlo procedure shows that this is not the case and the actual growth is smaller than the naive expectation.
+      Numerical simulations yield that this increase is best described with the $\sqrt{\gamma_T}$ in the Eq.~\ref{eq:rinv_avg}~\cite{galazyn}.
+
+      Assuming that radii in all directions are equal $R_{out} = R_{side} = R_{long}$, Eq.~\ref{eq:rinv_avg} can be reverted using Eq.~\ref{eq:3dradiito1d} to express relationship between LCMS and PRF overall radii~\cite{galazyn}:
       \begin{empheq}[innerbox=\fbox, right=~.]{align}
         R_{LCMS} \approx R_{inv} \times \left[ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. \right]^{-1/2}
       \end{empheq}
-      This approximate formula allows to restore power-law behaviour of the scaled radii not only when the radii are equal, but also when their differences are small (for explanation see the last part of the section~3.2.3).
+      This approximate formula allows to restore power-law behaviour of the scaled radii not only when the radii are equal, but also when their differences are small (for explanation see the last part of the Section~\ref{sec:source-emission-function}).
 
       This method of recovering scaling in PRF can be used as a tool for the search of hydrodynamic collectivity between pions, kaons and protons in heavy ion collisions with the measurement of one-dimensional radius in PRF.
-
-
-
-
-
-

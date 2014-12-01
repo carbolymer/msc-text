@@ -8,7 +8,7 @@
   \section{Identical particles correlations}
   % ========
     The correlation functions (three-dimensional and one-dimensional) were calculated separately for the following different pairs of identical particles: $\pi$-$\pi$, $K$-$K$ and  $p$-$p$ for nine $k_T$ bins (in GeV/c): 0.1-0.2, 0.2-0.3, 0.3-0.4, 0.4-0.5, 0.6-0.7, 0.7-0.8, 0.8-1.0 and 1.0-1.2.
-    In case of kaons, $k_T$ ranges start from 0.3 and for pions from 0.4 and for both of them the maximum value is 1.0.
+    In case of kaons, $k_T$ ranges start from 0.3 and for protons from 0.4 and for both of them the maximum value is 1.0.
     The $k_T$ ranges for the heavier particles were limited to maintain sufficient multiplicity to perform reliable calculations.
     %
     % ========
@@ -44,12 +44,13 @@
       Coefficients for pairs of identical bosons (pions and kaons) are shown in the Fig.~\ref{fig:cf3dpi} and \ref{fig:cf3dk}.
       The wave function symmetrization (Bose-Einstein statistics) causes the increase of a correlation in the low relative momenta regime ($q_{LCMS}<0.06$~GeV/c or even $q_{LCMS}<0.12$~GeV/c for more peripheral collisions).
       It is clearly visible in the $\Re C^0_0$ component.
-      The $\Re C_0^0$ resembles one-dimensional correlation function and in fact it encodes information about overall source radius.
+      The $\Re C_0^0$ resembles one-dimensional correlation function and in the sense that it encodes information about the overall source radius.
       The second coefficient $\Re C^0_2$ differs from zero (is negative), which yields the information about the ratio $R_T / R_{long}$.
-      The $\Re C^2_2$ stores the $R_{out} / R_{side}$ ratio and one can notice that is non-vanishing (is also negative).
+      The $\Re C^2_2$ stores the information about $R_{out} / R_{side}$ ratio and one can notice that is non-vanishing (is also negative).
 
       The correlation function for a pair of identical fermions is presented in the Fig.~\ref{fig:cf3dp}.
-      An influence of wave function anti-symmetrization (Fermi-Dirac statistics) has its effect in the decrease of a correlation down to 0.5 at low relative momentum ($q_{LCMS}<0.1$~GeV/c or $q_{LCMS}<0.15$~GeV/c for more peripheral collisions), which can be observed in $\Re C^0_0$.
+      A wave function for a pair of protons is a composition of singlet (described by Bose-Einstein statistics) and triplet state (described by the Fermi-Dirac statistics - see Section~\ref{sec:exp-approach}).
+      An influence of Fermi-Dirac statistics has its effect in the decrease of a correlation down to 0.5 at low relative momentum ($q_{LCMS}<0.1$~GeV/c or $q_{LCMS}<0.15$~GeV/c for more peripheral collisions), which can be observed in $\Re C^0_0$.
       The $\Re C^0_2$ and $\Re C^2_2$ coefficients differ from zero and are becoming positive.
 
       The common effect of the spherical harmonics form of a correlation function is the ``mirroring'' of the shape of the $\Re C^0_0$ coefficient - when correlation function increases at low $q_{LCMS}$, the $\Re C^0_2$ and $\Re C^2_2$ are becoming negative and vice versa.
@@ -122,13 +123,13 @@
         \label{fig:piradii}
       \end{figure}
 
-      In the Fig.~\ref{fig:piradii} there are presented femtoscopic radii in the outward, sideward and longitudinal directions for the analysis of two-pion correlation functions in the LCMS.
+      The femtoscopic radii in the outward, sideward and longitudinal directions for the analysis of two-pion correlation functions in the LCMS are presented~in~Fig.~\ref{fig:piradii}.
       The dashed lines are fits of the power law to the data.
-      One can notice, that the power law describes well data points with a 5\% accuracy.
+      One can notice, that the power law describes data points well with a 5\% accuracy.
       The $\beta$ fit parameter for the outward direction is in the order of 0.45.
       For the sideward direction, this parameter has the similar value, but it is lower for the most peripheral collisions.
       In case of the longitudinal direction, the $\beta$ has greater value, up to 0.75.
-      In the Fig.~\ref{fig:piradii} there are also compared results for the top 5\% central collisions (star-shaped markers) with experimental data from ALICE~\cite{alice_pion}.
+      In the Fig.~\ref{fig:piradii}, results for the top 5\% central collisions (star-shaped markers) with experimental data from ALICE~\cite{alice_pion} are also compared.
       The experimental results are consistent with the ones coming from the model predictions.
       % \begin{figure}[b]
       %   \centering
@@ -171,7 +172,7 @@
       The scaling accuracy is 3\%, 5\% and 4\% for the 0-10\%, 20-30\% and 60-70\% for the outward direction.
       For the sideward radii the scaling is better, with average deviations 2\%, 2\% and 3\% respectively.
       In case of longitudinal direction the accuracy is 6\%, 5\% and 3\% for the three centralities.
-      The $\beta$ parameter for the outward direction is close to the 0.42 in all cases.
+      The $\beta$ parameter for the outward direction is close to 0.42 in all cases.
       For the sideward direction it varies from 0.28 to 0.47 and is bigger for more central collisions.
       Regarding longitudinal radii, the exponent is bigger than the other two: $\beta \in [0.62 ; 0.72]$~.
       Considering all results, the plotted radii are following the common power-law scaling within the 5\% accuracy for all directions, centralities and particle types.
@@ -183,7 +184,7 @@
       To the one-dimensional correlation function, the corresponding function in the PRF given by the Eq.~\ref{eq:cf_1d} was fitted.
       The results from those fits are presented in the upper left plot in the Fig.~\ref{fig:scaling_test}.
       One immediately notices, that there is no common scaling of $R_{inv}$ for different kind of particles.
-      In the Fig.~\ref{fig:allradii} the radii in the outward direction for the pions, kaons and protons for the same $m_T$ are similar.
+      In Fig.~\ref{fig:allradii} the radii in the outward direction for the pions, kaons and protons for the same $m_T$ are similar.
       However, when one performs a transition from the LCMS to the PRF, the $R_{out}$ radius grows:
       \begin{equation}
         {R_{out}}^{*} = \gamma_T R_{out}~,
@@ -194,7 +195,7 @@
 
       In the Fig.~\ref{fig:allradii} there is visible scaling in the outward, sideward and longitudinal direction.
       Hence one can expect an appearance of such scaling in a direction-averaged radius calculated in the LCMS.
-      This radius is presented in the Fig.~\ref{fig:scaling_test} (bottom) and indeed the $R_{LCMS}$ exhibits power-law scaling with the $m_T$.
+      This radius is presented in the Fig.~\ref{fig:scaling_test} (bottom) and indeed the $R_{LCMS}$ exhibits power-law scaling with $m_T$.
 
       \begin{figure}[b]
         \centering
@@ -204,7 +205,7 @@
       \end{figure}
 
       One can try to account the effect of an increase of the radii in the outward direction by using the appropriate scaling factor.
-      In the Fig.~\ref{fig:scaling_test} (top right) there are femtoscopic radii in the LCMS divided by the proposed scaling factor:
+      In Fig.~\ref{fig:scaling_test} (top right), femtoscopic radii in the LCMS are divided by the proposed scaling factor:
       \begin{equation}
         f = \sqrt{ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. }~.
       \end{equation}
@@ -225,20 +226,20 @@
   % ========
     The femtoscopic radii obtained from the three-dimensional correlation function fitting exhibit the $m_T$ dependence described by the power law (Eq.~\ref{eq:power-law}).
     This scaling is preserved quite well with accuracy <10\%.
-    Observation of such scaling in a femtoscopic radii is a strong signal of appearance of a collective behaviour of a particle-emitting source created in the collision.
+    Observation of such scaling in a femtoscopic radii is a strong signal of the appearance of a collective behaviour of a particle-emitting source created in the collision.
     The data used in the analysis was coming from the hydrodynamic model, hence one can indeed expect the appearance of this scaling.
     However, the results for pion femtoscopy from the ALICE at LHC are consistent with the data from analysis performed in this thesis (Fig.~\ref{fig:piradii}).
     This is a confirmation of an applicability of hydrodynamic models in a description of an evolution of a quark-gluon plasma.
 
-    The $\beta$ parameter calculated in the fitting of the power-law to the femtoscopic radii is in the order of 0.5 in case of the radii in the transverse plane.
+    The $\beta$ parameter calculated in the fitting of the power-law to the femtoscopic radii is of the order of 0.5 in case of the radii in the transverse plane.
     This value is consistent with the hydrodynamic predictions.
     In case of longitudinal radii, the exponent is bigger (greater than 0.7), which is an indication of a strong transversal expansion in the system~\cite{akkelin_sinyukov}.
 
     A scaling described above is visible in the LCMS, however due to limited statistics, analysis in this reference frame is not always possible.
     In such case one performs calculations in the PRF.
-    The $m_T$ scaling in the PRF is not observed - this has the trivial kinematic origin.
+    The $m_T$ scaling in the PRF is not observed - this has a trivial kinematic origin.
     A transition from the PRF to LCMS causes growth of the radius in the outward direction and the common power-law scaling for different particles breaks due to differences in the $\gamma_T (m_T)$ for different particle types.
-    However one can try to deal with the radius growth and restore the scaling by multiplying the radii $R_{inv}$ by an approximate factor $\sqrt{ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. }$.
+    However one can try to deal with the radius growth and restore the scaling by dividing the radii $R_{inv}$ by an approximate factor $\sqrt{ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. }$.
     The scaled $R_{inv}$ are following the power-law and could be used as a verification of hydrodynamic behaviour in the investigated particle source.
 
     The hadronic evolution and freeze-out in the \verb|THERMINATOR| is followed by the resonance propagation and decay phase.
