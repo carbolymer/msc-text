@@ -89,13 +89,13 @@
       First column is the beginning of the $k_T$ range, second one is the ending of the range, third column contains result of the fit and the last one stores uncertainty of this value.
       In addition, plots (in the png format) of the correlation functions for each pair type and $k_T$ bin are generated inside subdirectories.
 
-      Files \textit{filelist.\{pair type\}.in} contain list of input \textit{*.root} files with correlation functions, which were processed.
+      Files \textit{filelist.\{pair type\}.in} contain list of input \textit{*.root} files with processed correlation functions.
     %
     % ========
     \subsection{Compilation}
     % ========
       This utility requires \verb|ROOT| framework and \verb|libboost-regex-dev| library.
-      Compilation can be performed using \verb|make| command inside application directory.
+      Compilation can be performed using \verb|make| command inside application's directory.
     %
     % ========
     \subsection{Usage}
@@ -104,9 +104,9 @@
       % ========
       \subsubsection{Fitting process}
       % ========
-        In order to execute fitting process, one should execute the following command:\\
+        In order to perform the fitting process, one should execute the following command:\\
         \verb|./run.sh /path/to/the/tpi/output centrality|\\
-        The \verb|/path/to/the/tpi/output| parameter is a location of \verb|tpi| output files and \verb|centrality| is a name of a directory in which the output will be stored.
+        The \verb|/path/to/the/tpi/output| parameter is a location of \verb|tpi| output files and \verb|centrality| is a name of a directory in which the results of fits will be stored.
       %
       % ========
       \subsubsection{Plotting}

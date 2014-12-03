@@ -8,7 +8,7 @@
   % ========
   \section{Events generation}
   % ========
-    In order to perform analysis with sufficient statistics, a large amount of generated events was required.
+    In order to perform analysis with sufficient statistics, a big number of events was required.
     To handle this task of generation large amount of data, a computer cluster at Faculty of Physics at Warsaw University of Technology was used.
     This cluster consists of 20 nodes with the following hardware configuration: \mbox{Intel\textregistered} \mbox{Core\texttrademark~2 Quad} CPU \mbox{Q6600 @ 2.40GHz,} \mbox{8GB RAM} with Scientific~Linux~5.8.
     The communication between nodes is realized by the TORQUE Resource Manager~\cite{torque}.
@@ -18,7 +18,7 @@
         It simply launches multiple \verb|THERMINATOR| processes in the same working directory with the separate output directory for each job.
         This solution has two advantages: saves space and computation time.
         A single freeze-out hypersurface file has size about 230~MB and when running 20 instances of generator this approach allows to avoid time- and space-consuming copying of the whole \verb|THERMINATOR| directory before running the application.
-        The second advantage is a sharing of files containing information about particles' multiplicities and maximum integrands between generator processes (more detailed description is in Section~\ref{sec:events-generation}).
+        The second advantage is sharing of files containing information about particles' multiplicities and maximum integrands between generator processes (more detailed description is in Section~\ref{sec:events-generation}).
         One can simply execute this batch job using the following command (an example usage):
         \\\verb|qsub -q long -t 0-19 skynet.sh -v dir=th_5.7,events=6000|
         It adds 20 event generators (with task ids from 0 to 19) to the queue, sets the \verb|THERMINATOR| directory as \verb|th_5.7| and sets a number of simulated events to 6000 for each process.
