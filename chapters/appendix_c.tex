@@ -4,3 +4,38 @@
 \chapter{Plotting scripts}
 \label{a:c}
 % ========
+  %
+  % ========
+  \section{Correlation functions plots}
+  % ========
+    Plots containing correlation functions were generated using two \verb|ROOT| macros written in \verb|C++|.
+    
+    The first one, \textbf{cf1DAllCentralities.C} generates two plots with one-dimen-sional correlation functions.
+    First plot presents $k_T$ dependence of a correlation function and is saved in the \textit{cfvskt.eps} file, and the second one shows influence of centrality on a correlation function (saved in the \textit{cfvsctr.eps} file.
+    In order to generate plots one has to set in the line 9, the path to the folder which contains sub-directories with files containing correlation functions.
+    One can produce eps files, using the following command:\\
+    \verb|root -l -b -q cf1DAllCentralities.C|\\
+    \textit{cfvskt.eps} and \textit{cfvsctr.eps} files will be generated in the current working directory.
+
+    The second macro, \textbf{cf3DAllCentralities.C} produces plots with spherical harmonics coefficients for pions (\textit{cf3dpi.eps}), kaons (\textit{cf3dk.eps}) and protons (\textit{cf3dp.eps}).
+    This script has similar structure to the previous one.
+    In order one has to set the proper path in the line 18 also.
+    To execute this macro, one can use the following command:\\
+    \verb|root -l -b -q cf3DAllCentralities.C|\\
+    As a result, the three files with the output plots will be generated in the current working directory.
+
+    The sources of these plotting macros are available on-line on \url{https://github.com/carbolymer/msc/tree/develop/fitting/macros}.
+  %
+  % ========
+  \section{Plots with femtoscopic radii}
+  % ========
+    Femtoscopic radii plots can be generated using fitting tool described in Appendix~\ref{a:b}.
+    To do so, one has to invoke the following command:\\
+    \verb|make plots|\\
+    This command invokes \verb|ROOT| macro \textit{src/plotter.C} which generates all plots for the every centrality automatically.
+    This macro reads the femtoscopic radii for each pair type, $k_T$ centrality bin and calculates the transverse mass for each particle kind.
+    Thereafter, to all of the femtoscopic radii as a function of transverse mass, the following formula is fitted: $R_x=\alpha m_T^{-\beta}$.
+    It should be noted, that the fitting is performed to the radii of pions, kaons and protons together.
+    As a result of the fit, for the each centrality, plot with femtoscopic radii in the outward, sideward, and longitudinal direction as well as overall radii is generated.
+    Moreover, the comparison between different centralities in PRF divided by the scaling factor (see Section~\ref{sec:pi-scaling}) and the $R_{LCMS}$ is also plotted.
+
