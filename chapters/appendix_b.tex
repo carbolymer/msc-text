@@ -1,5 +1,121 @@
 % !TEX root = ../main.tex
 %
 % ========
-\chapter{Macros for fitting}
+\chapter{Fitting utilities}
+\label{a:b}
 % ========
+  Procedure of fitting analytical formulas to experimental-like correlation functions was performed using custom software written in \verb|C++| and \verb|Bash|.
+  This application utilizes \verb|MINUIT|~\cite{minuit} package built in the \verb|ROOT| library.
+
+  The source of fitting software is available on-line at \url{https://github.com/carbolymer/msc/tree/master/fitting}.
+  %
+  % ========
+  \section{Minuit package}
+  % ========
+    The \verb|MINUIT| is a physics analysis tool for function minimization written in Fortran programming language.
+    This tool was designed for statistical analysis and it is working on $\chi^2$ or log-likelihood functions to compute the best-fit parameter values and uncertainties, including correlations between parameters.
+    It is implemented in \verb|ROOT| environment as \verb|TMinuit| class, which provides interface to the minimization tool.
+    The analysis performed in this work uses \verb|MINUIT| with the Migrad minimization method.
+    The Migrad minimizer is the best one embedded in Minuit.
+    It is a variable-metric method with inexact line search, a stable metric updating scheme, and checks for positive-definiteness~\cite{minuit}.
+  %
+  % ========
+  \section{Fitting software}
+  % ========
+    Fitting application provides tools for extraction of femtoscopic radii from correlation functions for identical particles.
+    It also provides a macro for generating plots with radii as a function of transverse mass and fitting power-law $\alpha m_T^{-\beta}$ to the results.
+    %
+    % ========
+    \subsection{Input parameters}
+    % ========
+      The application reads the output files from the \verb|tpi| program and extracts from them one-dimensional and three-dimensional correlation functions.
+      The latter ones are in a form of spherical harmonics series coefficients.
+
+      The program gives a possibility to set fit parameters for certain centrality bins, pair types and $k_T$ ranges.
+      Configuration files (\textit{*.conf}) are located inside the application's folder in the \verb|data/| directory.
+      Files with the names beginning with \textit{fitsh} contain parameters for three-dimensional fits, while \textit{fit1d} prefix indicates settings for one-dimensional ones.
+      In principle, names of the parameter files are following this pattern: \textit{\{fit type\}.\{centrality\}.\{pair type\}.\{kT range beginning\}.conf}, for example: \verb|fit1d.b3.1.pp.0.6.conf|.
+      To set parameters for all fits of the same kind of particles, one has to create file with the following name: \textit{\{fit type\}.\{pair type\}.conf}. For example, \verb|fitsh.kk.conf| file contains initial parameters for all fits for kaon pairs.
+      Similarly, one can set fit parameters for pions (\textit{pipi}) and protons correlation functions (\textit{pp}) using corresponding letters in place of \textit{kk} in the name of the file.
+
+
+      An example content of configuration file for one-dimensional fit (\textbf{fit1d}) is presented below:
+      \begin{longtable}{p{0.2\linewidth}p{0.2\linewidth}}
+        \verb|1.0 L|   & normalization\\
+        \verb|1.0 L|   & $\lambda$\\
+        \verb|4.0 L|   & $R_{inv}$\\
+        \verb|0.0 F|   & not used \\
+        \verb|0.0 F|   & not used \\
+        \verb|0.0 F|   & not used \\
+        \verb|0.0 F|   & not used \\
+      \end{longtable}
+      The \textit{F} letter after the parameter indicates fixed value (will not change during fitting process), whereas the \textit{L} parameter tells that this value will be modified.
+
+      An example configuration file for three-dimensional fit (\textbf{fitsh}):
+      \begin{longtable}{p{0.3\linewidth}p{0.5\linewidth}}
+        \verb|4.5 L 1.2 5.5|      & $R_{out}$ in fm\\
+        \verb|4.5 L 1.2 5.5|      & $R_{side}$ in fm\\
+        \verb|4.5 L 1.2 6.5|      & $R_{long}$ in fm\\
+        \verb|0.70  L 0.2 2.2|    & $\lambda$\\
+        \verb|1.14 F 1.14 1.14|   & $C_2^0$ coefficient\\
+        \verb|1.25 F 1.25 1.25|   & $C_2^2$ coefficient\\
+        \verb|1.0 L 0.8 1.2|      & overall normalization\\
+        \verb|0.0 F 0.0 0.0|      & $C_2^0$ normalization\\
+        \verb|0.0 F 0.0 0.0|      & $C_2^2$ normalization\\
+        \verb|0.25 F 0.25 0.25|   & $q_{beg}$ \\
+        \verb|0.25 F 0.25 0.25|   & $q_{slope}$ \\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|0.0 F 0.0 0.0|      & not used\\
+        \verb|IdLCYlm|            & correlation function numerator name\\
+        \verb|0.0075|             & beginning of the fitting range ($q$ in GeV/c)\\
+        \verb|0.2|                & end of the fitting range ($q$ in GeV/c)\\
+        \verb|0|                  & not used\\
+        \verb|0|                  & not used\\
+        \verb|0|                  & not used\\
+        \verb|0|                  & not used\\
+      \end{longtable}
+      This file contains extra columns specify allowed range for the value of a fit parameter.
+      The minimum of the range is determined by the value in the 3rd column, while the 4th column contains its maximum.
+
+    %
+    % ========
+    \subsection{Output format}
+    % ========
+      The application during calculations creates subdirectories for each centrality inside the \verb|data/| directory.
+      For each pair type and each of the following variables $R_{inv}$, $R_{out}$, $R_{side}$, $R_{long}$, $\lambda$ and $R_{LCMS}$, the output files \textit{*.out} with four columns are created.
+      First column is the beginning of the $k_T$ range, while the second one is its end, third column contains result of the fit and the last one stores uncertainty of this value.
+      In addition, plots (in the png format) of the correlation functions for each pair type and $k_T$ bin are generated inside subdirectories.
+
+      Files \textit{filelist.\{pair type\}.in} include list of input \textit{*.root} files with processed correlation functions.
+    %
+    % ========
+    \subsection{Compilation}
+    % ========
+      This utility requires \verb|ROOT| framework and \verb|libboost-regex-dev| library.
+      Compilation can be performed using \verb|make| command inside application's directory.
+    %
+    % ========
+    \subsection{Usage}
+    % ========
+      %
+      % ========
+      \subsubsection{Fitting process}
+      % ========
+        In order to start the fitting process, one should execute the following command:\\
+        \verb|./run.sh /path/to/the/tpi/output centrality|\\
+        The \verb|/path/to/the/tpi/output| parameter is a location of \verb|tpi| output files and \verb|centrality| is a name of a directory, where the fitting results will be stored.
+      %
+      % ========
+      \subsubsection{Plotting}
+      % ========
+        In order to plot femtoscopic radii and perform fitting of power law, one has to use the following command:\\
+        \verb|make plots|\\
+        Plots will be generated in the \verb|output| directory.
+

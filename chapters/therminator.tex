@@ -4,15 +4,15 @@
   The functionality of the code includes a generation of the stable particles and unstable resonances at the chosen hypersurface model.
   It performs the statistical hadronization which is followed by space-time evolution of particles and the decay of resonances.
   The key element of this method is an inclusion of a complete list of hadronic resonances, which contribute very significantly to the observables.
-  The second version of \verb|THERMINATOR|~\cite{therminator2} comes with a posibility to incorporate any shape of freeze-out hypersurface and the expansion velocity field, especially those generated externally with various hydrodynamic codes.
-
+  The second version of \verb|THERMINATOR|~\cite{therminator2} gives a posibility to utilize any shape of freeze-out hypersurface and the expansion velocity field, especially those generated externally with various hydrodynamic codes.
+  The event generator is written in \verb|C++| programming language and it employs \verb|ROOT|~\cite{root} analysis framework.
   %
   % ========
   \section{(3+1)-dimensional viscous hydrodynamics}
   % ========
   Most of the relativistic viscous hydrodynamic calculations are done in \mbox{(2+1)-dimensions}.
   Such simplification assumes boost-invariance of a matter created in a collision.
-  Experimental data reveals that no boost-invariant region is formed in the collisions~\cite{chmeson}.
+  Experimental data reveal that no boost-invariant region is formed in the collisions~\cite{chmeson}.
   Hence, for the better description of created system a \mbox{(3+1)-dimensional} model is required.
 
   In the four dimensional relativistic dynamics one can describe a system using a space-time four-vector $x^\nu=(ct,x,y,z)$, a velocity four-vector $u^\nu=\gamma(c,v_x,v_y,v_z)$ and a energy-momentum tensor $T^{\mu\nu}$.
@@ -23,8 +23,8 @@
     \item $T^{\alpha0}$ - an $\alpha$-momentum flux across a surface  $x^\alpha$ multiplied by $c$,
     \item $T^{\alpha\beta}$ - components of momentum flux density tensor,
   \end{itemize}
-  where $\gamma = (1-v^2/c^2)^{-1/2}$ is Lorentz factor and $\alpha,\beta \in \{1,2,3\}$.
-  Using $u^\nu$ one can express $T^{\mu\nu}$ as follows~\cite{israel}:
+  where $\gamma = (1-v^2/c^2)^{-1/2}$ is a Lorentz factor and $\alpha,\beta \in \{1,2,3\}$.
+  $T^{\mu\nu}$ can be expressed using $u^\nu$ as follows~\cite{israel}:
   \begin{equation}
     \label{eq:visc_ten}
     T^{\mu\nu}_0 = (e+p)u^\mu u^\nu - pg^{\mu\nu}
@@ -45,14 +45,15 @@
     T^{\mu\nu} = T_0^{\mu\nu} + \pi^{\mu\nu} + \Pi(g^{\mu\nu}-u^{\mu}u^{\nu}) .
   \end{equation}
   The stress tensor $\pi^{\mu\nu}$ and the bulk viscosity $\Pi$ are solutions of dynamical equations in the second order viscous hydrodynamic framework~\cite{israel}.
-  The comparison of hydrodynamics calculations with the experimental results reveal, that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
+  The comparison of hydrodynamic calculations with the experimental results reveals that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
   The bulk viscosity over entropy value used in calculations is $\zeta /s$~=~0.04~\cite{visc_hydro}.
   
-  When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
+  In the situation, when system described by $T^{\mu\nu}$ is evolving close to local thermodynamic equilibrium, then relativistic hydrodynamic equations take the following form:
+  % When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
   \begin{equation}
-    \partial_{\mu} T^{\mu\nu} = 0
+    \partial_{\mu} T^{\mu\nu} = 0~,
   \end{equation}
-  can be used to describe the dynamics of the local energy density, pressure and flow velocity.
+  which can be used to determine the dynamics of the local energy density, pressure and flow velocity.
 
   Hydrodynamic calculations are starting from the Glauber\footnote{The Glauber Model is used to calculate ``geometrical'' parameters of a collision like an impact parameter, number of participating nucleons or number of binary collisions.}
   model initial conditions.
@@ -64,9 +65,9 @@
   % ========
   \section{Statistical hadronization}
   % ========
-    Statistical description of heavy ion collision has been successfully used to quantitatively describe the \textit{soft} physics, i.e. the regime with the transverse momentum not exceeding 2 GeV.
+    Statistical description of heavy ion collisions has been successfully used to quantitatively characterize the \textit{soft} physics, i.e. the regime with the transverse momentum not exceeding 2 GeV.
     The basic assumption of the statistical approach of evolution of the quark-gluon plasma is that at some point of the space-time evolution of the fireball, the thermal equilibrium is reached.
-    When the system is in the thermal equilibrium the local phase-space densities of particles follow the Fermi-Dirac or Bose-Einstein statistical distributions.
+    When the system is in this state the local phase-space densities of particles follow the Fermi-Dirac or Bose-Einstein statistical distributions.
     At the end of the plasma expansion, the freeze-out occurs.
     The freeze-out model incorporated in \verb|THERMINATOR| assumes, that chemical and thermal freeze-outs occur at the same time.
     %
@@ -88,9 +89,9 @@
           \frac{\partial z}{\partial \alpha} & \frac{\partial z}{\partial \beta} & \frac{\partial z}{\partial \gamma} \\
         \end{vmatrix} d \alpha d \beta d \gamma
       \end{equation}
-      and the remaining components are obtained by cyclic permutations of \textit{t}, \textit{x}, \textit{y} and~\textit{z}.
+      while the remaining components are obtained by cyclic permutations of \textit{t}, \textit{x}, \textit{y} and~\textit{z}.
 
-      One can obtain the number of hadrons produced on the hypersurface $\Sigma^{\mu}$ from the Cooper-Frye formalism.
+      The number of hadrons produced on the hypersurface $\Sigma^{\mu}$ can be calculated from the Cooper-Frye formalism.
       The following integral yields the total number of created particles~\cite{therminator2}:
       \begin{empheq}[innerbox=\fbox, right={~,}]{align}
         \label{eq:cooper-frye}
@@ -98,7 +99,7 @@
       \end{empheq}
       where $f(p_\mu u^\mu)$
       is the phase-space distribution of particles (for stable ones and resonances).
-      One can simply derive from Eq.~\ref{eq:cooper-frye}, the dependence of the momentum density~\cite{cooperfrye}:
+      The dependence of the momentum density can be simply derived from Eq.~\ref{eq:cooper-frye}~\cite{cooperfrye}:
       \begin{equation}
         \label{eq:cooper-frye-diff}
         E \frac{d^3 N}{d p^3} = \int  d \Sigma_\mu f(p_\mu u^\mu)p^\mu~.
@@ -113,7 +114,7 @@
         f_0(p_\mu u^\mu) = \left\{ \exp\left[ \frac{p_\mu u^\mu - (B \mu_B + I_3 \mu_{I_3}+S\mu_S + C \mu_C)}{T} \right] \pm 1 \right\}^{-1}~.
       \end{equation}
       In case of fermions, in the Eq.~\ref{eq:phase-space-dist} there is a plus sign and for bosons, minus sign respectively.
-      The thermodynamic quantities appearing in the $f_0(\cdot)$ are $T$ - temperature, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, $\mu_S$ - strange chemical potential, $\mu_C$ - charmed chemical potential and the $s$ is a spin of a particle.
+      The thermodynamic quantities appearing in the $f_0(\cdot)$ are \mbox{$T$ - temperature}, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, \mbox{$\mu_S$ - strange} chemical potential, $\mu_C$ - charmed chemical potential and $s$ as a spin of a particle.
       The hydrodynamic calculations yield the flow velocity at freeze-out as well as the stress and bulk viscosity tensors required to calculate non-equilibrium corrections to the momentum distribution used in Eq.~\ref{eq:cooper-frye}.
       The term coming from shear viscosity has a form~\cite{visc_hydro}
       \begin{equation}
@@ -140,30 +141,31 @@
     After the generation of primordial particles, the cascade decay of unstable resonances is performed.
     \subsubsection{Determination of a maximum of an integrand}
       In order to generate particles through a Monte Carlo method, the maximum value of the distribution in the right-hand-side of Eq.~\ref{eq:cooper-frye} must be known.
-      To find this number, \verb|THERMINATOR| performs a generation of a sample consisting of a large number of a particles.
+      To find this number, \verb|THERMINATOR| performs generation of a sample consisting of a large number of particles.
       For each particle the value of a distribution is calculated and the maximum value $f_{max}$ of the sample is stored.
       A large enough sample of particles guarantees that $f_{max}$ found in this procedure is a good estimate of the maximum value of a distribution in Eq.~\ref{eq:cooper-frye}.
-      This maximum value depends on a particle type and values of parameters, but does not change from event to event, hence this procedure is performed once, at the beginning of the events generation~\cite{therminator}.
+      This maximum value depends on a particle type and values of parameters, but does not change from event to event.
+      Hence this procedure is performed once, at the beginning of the events generation~\cite{therminator}.
     \subsubsection{Multiplicity calculation}
       In order to generate events, a multiplicity of each particle must be known.
       The multiplicities are obtained through a numerical integration of distribution functions (Eq.~\ref{eq:cooper-frye}) in the given integration ranges determined by the model parameters.
-      The multiplicities also depend only on the model parameters and they are also only calculated once at the beginning of the event generation~\cite{therminator}.
+      As in the previous case, the multiplicities depend only on the model parameters and they are calculated only once at the beginning of the events generation~\cite{therminator}.
     \subsubsection{Events and particles generation}
-      Each of the events produced by \verb|THERMINATOR| are generated separately.
-      At first, the multiplicities for each of particle type are generated as random numbers from a Poisson distribution, with the mean being the average particle multiplicity determined in the previous step.
-      Then the program proceeds to generate particles from the heaviest to the lightest particle type.
+      Every event produced by \verb|THERMINATOR| is generated separately.
+      At first, the multiplicities for each of particle type are calculated as random numbers from a Poisson distribution, with the mean being the average particles multiplicity determined in the previous step.
+      Then, the program proceeds to generate particles from the heaviest to the lightest ones.
       In essence, this procedure is a generation of the set of six random numbers: three components of particle's momentum ($p_x$, $p_y$, $p_z$) and three parameters providing space-time coordinates on a freeze-out hypersurface ($\zeta$, $\phi_s$, $\theta$).
-      Event generation procedure is based on von Neumann's acceptance-rejection algorithm.
+      The events generation procedure is based on the von Neumann's acceptance-rejection algorithm.
       Firstly, the integrand in Eq.~\ref{eq:cooper-frye} is calculated using given set of numbers.
       Subsequently, a random number from uniform distribution over $[0;f_{max}]$ is compared to the value of integrand.
-      If it is lower, then the set of numbers is stored as actual particle.
+      If it is lower, then the set of numbers is stored as an actual particle.
       If this condition was not satisfied, a new set is generated.
       This procedure is repeated until the determined number of particles of each kind is generated.
-      At this point all primordial particles (stable and resonances) have been generated and stored in the event~\cite{therminator}.
+      At this point, all primordial particles (stable and resonances) have been generated and stored in the event~\cite{therminator}.
     \subsubsection{Decays of unstable particles}
-      In the next step of event generation, a simulation of decays of unstable resonances is performed.
+      In the next step of event generation, a simulation of unstable resonances decays is performed.
       A particle is considered as unstable when it has non-zero width $\Gamma$ defined in the input files of \verb|THERMINATOR|.
-      The decays proceed sequentially from the heaviest particles to the lightest.
+      The decays proceed sequentially from the heaviest to the lightest particles.
       Unstable products of decays are added to the particles generated in the current event and are processed in the subsequent steps.
       If a particle has several decay channels, one of them is selected randomly with the appropriate probability corresponding to the branching ratio provided in the input files.
       \verb|THERMINATOR| in the hadronic cascade process performs two-body and three-body decays.
@@ -174,12 +176,12 @@
       \begin{equation}
         x^\mu_{decay} = x^\mu_{origin} + \frac{p^\mu}{M}\tau~,
       \end{equation}
-      where $x^\mu_{origin}$ is a space-time position, where the unstable particle was generated.
+      where $x^\mu_{origin}$ is a position of unstable particle's creation.
       At the $x^\mu_{decay}$ point decay occurs and daughter particles with energies and momenta determined by the conservation laws are generated.
       Fig.~\ref{fig:resonances-decay} illustrates the cascade decay process~\cite{therminator}.
       \begin{figure}[h]
         \centering
         \includegraphics[width=0.55\textwidth]{resonances_decays}
-        \caption{The cascade decay in the single freeze-out model. An unstable resonance $x_N$ is formed at the freeze-out hypersurface and travels for the time $\tau_N$ depending on its lifetime and decays. If the products are also resonances ($x_{N-1}$, $x_2$) they decay further until the stable particles are formed ($x_1$)~\cite{therminator}.}
+        \caption{The cascade decay in the single freeze-out model. An unstable resonance $x_N$ is formed at the freeze-out hypersurface and travels for the time $\tau_N$ depending on its lifetime and decays. If the products are also resonances \mbox{($x_{N-1}$, $x_2$)} they decay further until the stable particles are formed ($x_1$)~\cite{therminator}.}
         \label{fig:resonances-decay}
       \end{figure}
