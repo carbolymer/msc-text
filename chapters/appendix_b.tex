@@ -22,8 +22,8 @@
   % ========
   \section{Fitting software}
   % ========
-    Fitting utility provides tools for extraction of femtoscopic radii from correlation functions for identical particles.
-    It provides also a macro for generating plots with these radii as a function of transverse mass and fitting power-law $\alpha m_T^{-\beta}$ to the results.
+    Fitting application provides tools for extraction of femtoscopic radii from correlation functions for identical particles.
+    It also provides a macro for generating plots with radii as a function of transverse mass and fitting power-law $\alpha m_T^{-\beta}$ to the results.
     %
     % ========
     \subsection{Input parameters}
@@ -31,15 +31,15 @@
       The application reads the output files from the \verb|tpi| program and extracts from them one-dimensional and three-dimensional correlation functions.
       The latter ones are in a form of spherical harmonics series coefficients.
 
-      One has a possibility to set fit parameters for certain centrality bins, pair types and $k_T$ ranges.
+      The program gives a possibility to set fit parameters for certain centrality bins, pair types and $k_T$ ranges.
       Configuration files (\textit{*.conf}) are located inside the application's folder in the \verb|data/| directory.
       Files with the names beginning with \textit{fitsh} contain parameters for three-dimensional fits, while \textit{fit1d} prefix indicates settings for one-dimensional ones.
-      In principle, names of the parameter files have to follow this pattern: \textit{\{fit type\}.\{centrality\}.\{pair type\}.\{kT range beginning\}.conf}, for example: \verb|fit1d.b3.1.pp.0.6.conf|.
-      To set parameters for all fits of the particles of the same kind, one has to create file with the following name: \textit{\{fit type\}.\{pair type\}.conf}. For example \verb|fitsh.kk.conf| contains initial parameters for all fits for kaon pairs.
-      Similarly, one can set fit parameters for pions (\textit{pipi}) and protons (\textit{pp}) using corresponding letters in place of \textit{kk} in the name of the file.
+      In principle, names of the parameter files are following this pattern: \textit{\{fit type\}.\{centrality\}.\{pair type\}.\{kT range beginning\}.conf}, for example: \verb|fit1d.b3.1.pp.0.6.conf|.
+      To set parameters for all fits of the same kind of particles, one has to create file with the following name: \textit{\{fit type\}.\{pair type\}.conf}. For example, \verb|fitsh.kk.conf| file contains initial parameters for all fits for kaon pairs.
+      Similarly, one can set fit parameters for pions (\textit{pipi}) and protons correlation functions (\textit{pp}) using corresponding letters in place of \textit{kk} in the name of the file.
 
 
-      Here is an example parameter file for one-dimensional fit (\textbf{fit1d}):
+      An example content of configuration file for one-dimensional fit (\textbf{fit1d}) is presented below:
       \begin{longtable}{p{0.2\linewidth}p{0.2\linewidth}}
         \verb|1.0 L|   & normalization\\
         \verb|1.0 L|   & $\lambda$\\
@@ -49,9 +49,9 @@
         \verb|0.0 F|   & not used \\
         \verb|0.0 F|   & not used \\
       \end{longtable}
-      The \textit{F} letter after the parameter indicates that it is a fixed value (will not change during fitting process), whereas the \textit{L} parameter tells that this value will be modified.
+      The \textit{F} letter after the parameter indicates fixed value (will not change during fitting process), whereas the \textit{L} parameter tells that this value will be modified.
 
-      An example parameter file for three-dimensional fit (\textbf{fitsh}):
+      An example configuration file for three-dimensional fit (\textbf{fitsh}):
       \begin{longtable}{p{0.3\linewidth}p{0.5\linewidth}}
         \verb|4.5 L 1.2 5.5|      & $R_{out}$ in fm\\
         \verb|4.5 L 1.2 5.5|      & $R_{side}$ in fm\\
@@ -81,8 +81,8 @@
         \verb|0|                  & not used\\
         \verb|0|                  & not used\\
       \end{longtable}
-      This file contains extra columns indicating allowed range for value of a fit parameter.
-      The first number (the 3rd column) is the minimum and the second one (4th column) is the maximum of this range.
+      This file contains extra columns specify allowed range for the value of a fit parameter.
+      The minimum of the range is determined by the value in the 3rd column, while the 4th column contains its maximum.
 
     %
     % ========
@@ -90,10 +90,10 @@
     % ========
       The application during calculations creates subdirectories for each centrality inside the \verb|data/| directory.
       For each pair type and each of the following variables $R_{inv}$, $R_{out}$, $R_{side}$, $R_{long}$, $\lambda$ and $R_{LCMS}$, the output files \textit{*.out} with four columns are created.
-      First column is the beginning of the $k_T$ range, second one is the ending of the range, third column contains result of the fit and the last one stores uncertainty of this value.
+      First column is the beginning of the $k_T$ range, while the second one is its end, third column contains result of the fit and the last one stores uncertainty of this value.
       In addition, plots (in the png format) of the correlation functions for each pair type and $k_T$ bin are generated inside subdirectories.
 
-      Files \textit{filelist.\{pair type\}.in} contain list of input \textit{*.root} files with processed correlation functions.
+      Files \textit{filelist.\{pair type\}.in} include list of input \textit{*.root} files with processed correlation functions.
     %
     % ========
     \subsection{Compilation}
@@ -110,7 +110,7 @@
       % ========
         In order to start the fitting process, one should execute the following command:\\
         \verb|./run.sh /path/to/the/tpi/output centrality|\\
-        The \verb|/path/to/the/tpi/output| parameter is a location of \verb|tpi| output files and \verb|centrality| is a name of a directory in which the results of fits will be stored.
+        The \verb|/path/to/the/tpi/output| parameter is a location of \verb|tpi| output files and \verb|centrality| is a name of a directory, where the fitting results will be stored.
       %
       % ========
       \subsubsection{Plotting}
