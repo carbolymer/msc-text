@@ -2,16 +2,16 @@
 % fix page break in toc
 % \addtocontents{toc}{\protect\newpage}
 \chapter{Results}
-  For the purposes of the femtoscopic analysis in this thesis, the \verb|THERMINATOR| model was used to generate large number of events for eight different sets of initial conditions corresponding the following centrality ranges: 0-5\%, 0-10\%, 10-20\%, 20-30\%, 30-40\%, 40-50\%, 50-60\% and 60-70\% for the Pb-Pb collisions at the centre of mass energy $\sqrt{s_{NN}}~=~2.76$~TeV.
-  Software used in the process of calculating correlation functions is described in Appendix~\ref{a:a}.
-  Plots in this chapter were generated using macros described in Appendix~\ref{a:c}.
+  For the purpose of the femtoscopic analysis in this thesis, the \verb|THERMINATOR| model was used to generate large number of events for eight different sets of initial conditions corresponding the following centrality ranges: 0-5\%, 0-10\%, 10-20\%, 20-30\%, 30-40\%, 40-50\%, 50-60\% and 60-70\% for the Pb-Pb collisions at the centre of mass energy $\sqrt{s_{NN}}~=~2.76$~TeV.
+  Software used in the process of calculating correlation functions is described in Appendix~\ref{a:a}, while plots presented in this chapter were generated using macros described in Appendix~\ref{a:c}.
   %
   % ========
   \section{Identical particles correlations}
   % ========
-    The correlation functions (three-dimensional and one-dimensional) were calculated separately for the following different pairs of identical particles: $\pi$-$\pi$, $K$-$K$ and  $p$-$p$ for nine $k_T$ bins (in GeV/c): 0.1-0.2, 0.2-0.3, 0.3-0.4, 0.4-0.5, 0.6-0.7, 0.7-0.8, 0.8-1.0 and 1.0-1.2.
-    In case of kaons, $k_T$ ranges start from 0.3 and for protons from 0.4 and for both of them the maximum value is 1.0.
-    The $k_T$ ranges for the heavier particles were limited to maintain sufficient multiplicity to perform reliable calculations.
+    The correlation functions (three- and one-dimensional) were calculated separately for the following different pairs of identical particles: $\pi$-$\pi$, $K$-$K$ and  $p$-$p$ for nine $k_T$ bins (in GeV/c): 0.1-0.2, 0.2-0.3, 0.3-0.4, 0.4-0.5, 0.6-0.7, 0.7-0.8, 0.8-1.0 and 1.0-1.2.
+    In the case of kaons, $k_T$ ranges start from 0.3 while for protons from 0.4.
+    For both of them the maximum value is 1.0.
+    However, for the heavier particles $k_T$ ranges were limited to maintain sufficient multiplicity to perform reliable calculations.
     %
     % ========
     \subsection{Spherical harmonics components}
@@ -38,19 +38,19 @@
       \label{fig:cf3dp}
       \end{figure}
 
-      The three-dimensional correlation function as a function of relative momentum $q_{LCMS}$ was calculated in a form of components of spherical harmonics series accordingly to the Eq.~\ref{eq:sh_decomposition}.
-      In the femtoscopic analysis of identical particles, the most important information is stored in the $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$, hence only those components were analyzed.
-      Correlation functions obtained in this procedure were calculated for the different centrality bins for the pairs of pions, kaons and protons.
-      They are presented in the Fig.~\ref{fig:cf3dpi}, \ref{fig:cf3dk} and \ref{fig:cf3dp}.
+      The three-dimensional correlation function as a function of relative momentum $q_{LCMS}$ was calculated in a form of components of spherical harmonics series accordingly to Eq.~\ref{eq:sh_decomposition}.
+      In the femtoscopic analysis of identical particles, the most important information is stored in the $\Re C^0_0$, $\Re C^0_2$ and $\Re C^2_2$, hence only these components were analyzed.
+      Correlation functions obtained in this procedure were calculated for the pairs of pions, kaons and protons in the different centrality bins.
+      They are presented in Fig.~\ref{fig:cf3dpi}, \ref{fig:cf3dk} and \ref{fig:cf3dp}.
       
-      Coefficients for pairs of identical bosons (pions and kaons) are shown in the Fig.~\ref{fig:cf3dpi} and \ref{fig:cf3dk}.
-      The wave function symmetrization (Bose-Einstein statistics) causes the increase of a correlation in the low relative momenta regime (\mbox{$q_{LCMS}<0.06$~GeV/c} or even \mbox{$q_{LCMS}<0.12$~GeV/c} for more peripheral collisions).
+      Particular coefficients for pairs of identical bosons (pions and kaons) are shown in Fig.~\ref{fig:cf3dpi} and \ref{fig:cf3dk}.
+      The wave function symmetrization (Bose-Einstein statistics) causes the increase of correlation in the low relative momenta regime (\mbox{$q_{LCMS}<0.06$~GeV/c} or even \mbox{$q_{LCMS}<0.12$~GeV/c} for more peripheral collisions).
       It is clearly visible in the $\Re C^0_0$ component.
-      The $\Re C_0^0$ resembles one-dimensional correlation function and in the sense that it encodes information about the overall source radius.
+      The $\Re C_0^0$ resembles one-dimensional correlation function in the sense that it encodes information about the overall source radius.
       The second coefficient $\Re C^0_2$ differs from zero (is negative), which yields the information about the ratio $R_T / R_{long}$.
       The $\Re C^2_2$ stores the information about $R_{out} / R_{side}$ ratio and one can notice that is non-vanishing (is also negative).
 
-      The correlation function for a pair of identical fermions is presented in the Fig.~\ref{fig:cf3dp}.
+      Finally, the correlation function for a pair of identical fermions is presented in the Fig.~\ref{fig:cf3dp}.
       A wave function for a pair of protons is a composition of singlet (described by Bose-Einstein statistics) and triplet state (described by the Fermi-Dirac statistics - see Section~\ref{sec:exp-approach}).
       An influence of Fermi-Dirac statistics has its effect in the decrease of a correlation down to 0.5 at low relative momentum (\mbox{$q_{LCMS}<0.1$~GeV/c} or \mbox{$q_{LCMS}<0.15$~GeV/c} for more peripheral collisions), which can be observed in $\Re C^0_0$.
       The $\Re C^0_2$ and $\Re C^2_2$ coefficients differ from zero and are becoming positive.
@@ -59,9 +59,9 @@
       This is quite different behaviour than in the case of correlations of non-identical particles, where the $\Re C^0_2$ still behaves in the same manner, but $\Re C_2^2$ has the opposite sign to the $\Re C^0_2$~\cite{nonidfemto}.
 
       In all cases, the correlation function gets wider with the peripherality of a collision i.e. the correlation function for most central collisions (0-10\%) is much narrower than for the most peripheral ones (60-70\%).
-      This phenomena in clearly visible the $\Re C^0_0$ coefficients.
-      Other components are also affected by this effect, this is especially noticeable in the case of kaons and pions.
-      For the protons, the results are noisy, hence this effect is not clearly distinguishable.
+      This phenomenon is clearly visible in the $\Re C^0_0$ coefficients.
+      Moreover, other components are also affected by this effect, what is especially noticeable in the case of kaons and pions.
+      However, the results for the protons are noisy, hence this effect is not clearly distinguishable.
 
       % The quantitative analysis of the trends in the shape (described by the femtoscopic radii) of a three-dimensional correlation function is performed in the next section of this chapter.
 
@@ -71,15 +71,15 @@
     % ========
     \subsection{Centrality dependence of a correlation function}
     % ========
-      The centrality dependence of a correlation function is especially visible in one-dimensional correlation functions.
+      This centrality dependence is especially visible in one-dimensional correlation functions.
       This effect is presented in the Fig.~\ref{fig:centr_dep} - the correlation functions for pions, kaons and protons are plotted for the same $k_T$ range but different centrality bins.
-      One can notice that the width of a function is smaller in the case of most central collisions.
+      One can observe that the width of a function is smaller for the most central collisions.
       Hence, the femtoscopic radii (proportional to the inverse of width) are increasing with the centrality.
-      An explanation for this growth is that in the most central collisions, a size of a created system is larger than for the peripheral ones.
+      Such increase can be explained by the fact that for the most central collisions, size of created system is larger than for the peripheral ones.
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cfvsctr}}
-        \caption{One-dimensional correlation function for pions(top left), kaons (top right) and protons (bottom) for different centralities.}
+        \caption{One-dimensional correlation function for pions (top left), kaons (top right) and protons (bottom) for different centralities.}
       \label{fig:centr_dep}
       \end{figure}
     \FloatBarrier
@@ -88,14 +88,14 @@
     % ========
     \subsection{$k_T$ dependence of a correlation function}
     % ========
-      In the Fig.~\ref{fig:kt_dep} there are presented one-dimensional correlation functions for pions, kaons and protons for the same centrality bin, but different $k_T$ ranges.
-      One can observe in all cases of the particle types, appearance of the same trend: with the increase of the total transverse momentum of a pair, the width of a correlation function increases and the femtoscopic radius decreases.
-      The plots in the Fig.~\ref{fig:kt_dep} were zoomed in to show the influence of $k_T$.
+      In Fig.~\ref{fig:kt_dep} are presented one-dimensional correlation functions for pions, kaons and protons for the same centrality bin but different $k_T$ ranges.
+      For all particles types, one can notice appearance of the same trend: the width of a correlation function increases and the femtoscopic radius decreases with the increase of the total transverse momentum of a pair.
+      The plots in Fig.~\ref{fig:kt_dep} were zoomed in to show the influence of $k_T$.
 
       \begin{figure}[h]
         \centering
         \centerline{\includegraphics[width=1.0\textwidth]{results/cfvskt}}
-        \caption{One-dimensional correlation functions for pions, kaons and protons, for the same centrality bin and different $k_T$ ranges. The plot was zoomed in to the region which illustrates the $k_T$ dependence in the best way. Only few of the calculated ranges are presented for better readability.}
+        \caption{One-dimensional correlation functions for pions, kaons and protons in the same centrality bin and different $k_T$ ranges. The plot was zoomed in to the region which illustrates the $k_T$ dependence in the best way. Only few of the calculated ranges are presented for a better readability.}
       \label{fig:kt_dep}
       \end{figure}
     \FloatBarrier
@@ -104,16 +104,16 @@
   % ========
   \section{Results of the fitting procedure}
   % ========
-    In order to perform a quantitative analysis of a wide range of correlation functions, the theoretical formulas were fitted to the calculated experimental-like data.
-    In this procedure, the femtoscopic radii for the three-dimensional as well as one-dimensional correlation functions were extracted.
+    In order to perform a quantitative analysis of a wide range of correlation functions, the analytical formulas were fitted to the calculated experimental-like data.
+    In this procedure, the femtoscopic radii for the one- as well as three-dimensional correlation functions were extracted.
     The main goal of this analysis is a verification of a common transverse mass scaling for different particles types.
-    Obtained radii are plotted as a function of a transverse mass $m_T = \sqrt{k_T^2 +m^2}$.
-    To test the scaling, the following power-law was fitted to the particular radii afterwards:
+    Afterwards, calculated radii are plotted as a function of a transverse mass $m_T = \sqrt{k_T^2 +m^2}$.
+    Finally, to test the scaling accuracy, the following power-law was fitted to the particular radii:
     \begin{equation}
       \label{eq:power-law}
       R_x = \alpha {m_T}^{-\beta}~,
     \end{equation}
-    where the $\alpha$ and $\beta$ are free parameters.
+    where $\alpha$ and $\beta$ are free parameters.
     The procedure of fitting and used software are described in Appendix~\ref{a:b}.
     %
     % ========
@@ -122,18 +122,17 @@
       \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/piradii}}
-        \caption{Femtoscopic radii in LCMS coming from two-pion correlation functions for all centrality bins as a function of $m_T$. The dashed lines are power-law fits. The most central collisions (0-5\%) are compared to the results from ALICE~\cite{alice_pion}. The two datasets are shifted to the right for visibility~\cite{galazyn}.}
+        \caption{Femtoscopic radii in LCMS coming from two-pion correlation functions for all centrality bins as a function of $m_T$. The dashed lines are power-law fits. The most central collisions (0-5\%) are compared to the results from ALICE~\cite{alice_pion}. The two datasets are shifted to the right for a better visibility~\cite{galazyn}.}
         \label{fig:piradii}
       \end{figure}
-
-      The femtoscopic radii in the outward, sideward and longitudinal directions for the analysis of two-pion correlation functions in the LCMS are presented~in~Fig.~\ref{fig:piradii}.
-      The dashed lines are fits of the power law to the data.
-      One can notice, that the power law describes data points well with a 5\% accuracy.
+      The femtoscopic radii in the outward, sideward and longitudinal directions for the analysis of two-pion correlation functions in LCMS are presented~in~Fig.~\ref{fig:piradii}.
+      The dashed lines represent fits of the-power law to the data.
+      One can notice that the power-law describes well data points with a 5\% accuracy.
       The $\beta$ fit parameter for the outward direction is in the order of 0.45.
       For the sideward direction, this parameter has the similar value, but it is lower for the most peripheral collisions.
-      In case of the longitudinal direction, the $\beta$ has greater value, up to 0.75.
-      In the Fig.~\ref{fig:piradii}, results for the top 5\% central collisions (star-shaped markers) with experimental data from ALICE~\cite{alice_pion} are also compared.
-      The experimental results are consistent with the ones coming from the model predictions.
+      In the case of the longitudinal direction, the $\beta$ has greater value, up to 0.75.
+      Moreover, in Fig.~\ref{fig:piradii}, the results for the top 5\% central collisions (star-shaped markers) are also compared with experimental data from ALICE~\cite{alice_pion}.
+      One can notice that the experimental results are consistent with the ones coming from the model predictions.
       % \begin{figure}[b]
       %   \centering
       %   \centerline{\includegraphics[width=1.05\textwidth]{results/piradii_vs_nch}}
@@ -147,13 +146,13 @@
       \label{fig:kradii}
       \end{figure}
 
-      The Fig.~\ref{fig:kradii} presents femtoscopic radii coming from the kaon calculations.
-      The $R_{out}$, $R_{side}$ and $R_{long}$ fall also with the power-law within the 5\% accuracy.
-      The $\beta$ parameter was larger in case of kaons: 0.59 in outward direction, 0.54 in the sideward and 0.86 for longitudinal.
+      Femtoscopic radii coming from the kaon calculations are presented in Fig.~\ref{fig:kradii}.
+      The $R_{out}$, $R_{side}$ and $R_{long}$ also fall with the power-law within the 5\% accuracy.
+      The $\beta$ parameter was larger in the case of kaons: 0.59 in outward, 0.54 in the sideward and 0.86 for longitudinal directions.
 
-      The results for two-proton analysis are shown in the Fig.~\ref{fig:pradii}.
-      The Eq.~\ref{eq:power-law} was fitted to the data and tells that the protons also follow the $m_T$ scaling within 5\% range.
-      The $\beta$ parameter values were even bigger for the outward ( 0.58 ), sideward ( 0.61 ) and longitudinal ( 1.09 ) directions than for the other particle types. 
+      The results for two-proton analysis are shown in Fig.~\ref{fig:pradii}.
+      The result of fitting Eq.~\ref{eq:power-law} to the data gives the information that protons also follow the $m_T$ scaling with 5\% accuracy.
+      The $\beta$ parameter values were even bigger for the outward (0.58), sideward (0.61) and longitudinal (1.09) directions than for the other particle types. 
 
       \begin{figure}[b]
         \centering
@@ -165,16 +164,16 @@
       \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/allradii_lcms}}
-        \caption{The results from the calculations for the pions, kaons and protons in for the three centralities presented on the common plot. One can notice that radii for particular centralities and different particle types follow the common power-law scaling.~\cite{galazyn}.}
+        \caption{The results from the calculations for the pions, kaons and protons for the three centralities presented on the same plot. One can notice that radii for particular centralities and different particle types follow the common power-law scaling.~\cite{galazyn}.}
       \label{fig:allradii}
       \end{figure}    
 
-      The Fig.~\ref{fig:allradii} presents results for the pions, kaons and protons together as a function of $m_T$.
-      Considering differences in the $\beta$ value for the fits for different particles, one can suspect that there is no common scaling between different kinds of particles.
-      However, when all of the results shown on the same plot, they are aligning on the common curve and the scaling is well preserved.
-      The scaling accuracy is 3\%, 5\% and 4\% for the 0-10\%, 20-30\% and 60-70\% for the outward direction.
-      For the sideward radii the scaling is better, with average deviations 2\%, 2\% and 3\% respectively.
-      In case of longitudinal direction the accuracy is 6\%, 5\% and 3\% for the three centralities.
+      The results for the pions, kaons and protons together as a function of $m_T$ are presented in Fig.~\ref{fig:allradii}.
+      Considering differences in the $\beta$ value in the fits for different particles, one can suspect that there is no common scaling between different kinds of particles.
+      However, when all of the results are shown on the same plot, they are aligning on the common curve and the scaling is well preserved.
+      The scaling accuracy is 3\%, 5\% and 4\% for the 0-10\%, 20-30\% and 60-70\% centrality bins for the outward direction.
+      In the case of the sideward radii the scaling is better, with average deviations 2\%, 2\% and 3\% respectively.
+      Finally, the accuracy for the longitudinal direction is 6\%, 5\% and 3\% for these three centralities.
       The $\beta$ parameter for the outward direction is close to 0.42 in all cases.
       For the sideward direction it varies from 0.28 to 0.47 and is bigger for more central collisions.
       Regarding longitudinal radii, the exponent is bigger than the other two: $\beta \in [0.62 ; 0.72]$~.
@@ -184,35 +183,35 @@
       % ========
       \subsection{Scaling of one-dimensional radii}
       % ========
-      To the one-dimensional correlation function, the corresponding function in the PRF given by the Eq.~\ref{eq:cf_1d} was fitted.
-      The results from those fits are presented in the upper left plot in the Fig.~\ref{fig:scaling_test}.
-      One immediately notices, that there is no common scaling of $R_{inv}$ for different kind of particles.
-      In Fig.~\ref{fig:allradii} the radii in the outward direction for the pions, kaons and protons for the same $m_T$ are similar.
-      However, when one performs a transition from the LCMS to the PRF, the $R_{out}$ radius grows:
+      To the one-dimensional correlation function, the analytical formula in PRF given by Eq.~\ref{eq:cf_1d} was fitted.
+      The results obtained from these fits are presented in the upper left plot in Fig.~\ref{fig:scaling_test}.
+      One can notice that there is no common scaling of $R_{inv}$ for different kind of particles.
+      The radii for pions, kaons and protons in the outward direction presented in Fig.~\ref{fig:allradii} are similar for the same $m_T$.
+      However, during the transition from LCMS to PRF the $R_{out}$ radius grows as follows:
       \begin{equation}
         {R_{out}}^{*} = \gamma_T R_{out}~,
       \end{equation}
       where $\gamma_T = m_T / m$.
       For the lighter particles, the $\gamma_T$ is much larger, hence the bigger growth of the $R_{out}$ and the overall radius.
-      This is visible in the Fig.~\ref{fig:scaling_test} (top left), where the radii in the PRF for the lighter particles are bigger than for the heavier ones in case of the same $m_T$ range.
+      This is visible in Fig.~\ref{fig:scaling_test} (top left), where the radii in PRF for the lighter particles are bigger than for the heavier ones in the case of the same $m_T$ range.
 
-      In the Fig.~\ref{fig:allradii} there is visible scaling in the outward, sideward and longitudinal direction.
-      Hence one can expect an appearance of such scaling in a direction-averaged radius calculated in the LCMS.
+      In Fig.~\ref{fig:allradii}, scaling is visible in the outward, sideward and longitudinal directions.
+      Hence, one can expect an appearance of such scaling in a direction-averaged radius calculated in LCMS.
       This radius is presented in the Fig.~\ref{fig:scaling_test} (bottom) and indeed the $R_{LCMS}$ exhibits power-law scaling with $m_T$.
 
       \begin{figure}[b]
         \centering
         \centerline{\includegraphics[width=1.05\textwidth]{results/scaling_test}}
-        \caption{Top left: one-dimensional radius for pions, kaons and protons calculated in the PRF. Top right: the $R_{inv}$ scaled by the proposed factor. Bottom: averaged one-dimensional radius in the LCMS for pions, kaons and protons. Only three centrality bins are shown for the better readability~\cite{galazyn}.}
+        \caption{Top left: one-dimensional radius for pions, kaons and protons calculated in PRF. Top right: the $R_{inv}$ scaled by the proposed factor. Bottom: averaged one-dimensional radius in LCMS for pions, kaons and protons. Only three centrality bins are shown for a better readability~\cite{galazyn}.}
       \label{fig:scaling_test}
       \end{figure}
 
       One can try to account the effect of an increase of the radii in the outward direction by using the appropriate scaling factor.
-      In Fig.~\ref{fig:scaling_test} (top right), femtoscopic radii in the LCMS are divided by the proposed scaling factor:
+      In Fig.~\ref{fig:scaling_test} (top right), femtoscopic radii in LCMS are divided by the proposed factor (described in Section~\ref{sec:prf_scaling}):
       \begin{equation}
         f = \sqrt{ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. }~.
       \end{equation}
-      The radii for pions, kaons and protons in the PRF after the division by $f$ are following the power-law with the accuracy of 10\%.
+      The radii for pions, kaons and protons in PRF after the division by $f$ are following the power-law with the accuracy of 10\%.
 
       % \begin{figure}[b]
       %   \centering
@@ -227,25 +226,25 @@
   % ========
   \section{Discussion of the results}
   % ========
-    The femtoscopic radii obtained from the three-dimensional correlation function fitting exhibit the $m_T$ dependence described by the power law (Eq.~\ref{eq:power-law}).
-    This scaling is preserved quite well with accuracy <10\%.
-    Observation of such scaling in a femtoscopic radii is a strong signal of the appearance of a collective behaviour of a particle-emitting source created in the collision.
+    The femtoscopic radii obtained from the three-dimensional correlation function fitting exhibit the $m_T$ dependence described by the power-law (Eq.~\ref{eq:power-law}).
+    This scaling is preserved quite well with accuracy <~10\%.
+    Observation of $m_T$ dependence of femtoscopic radii is a strong signal of the collective behaviour of a particle-emitting source created in the collision.
     The data used in the analysis was coming from the hydrodynamic model, hence one can indeed expect the appearance of this scaling.
-    However, the results for pion femtoscopy from the ALICE at LHC are consistent with the data from analysis performed in this thesis (Fig.~\ref{fig:piradii}).
-    This is a confirmation of an applicability of hydrodynamic models in a description of an evolution of a quark-gluon plasma.
+    The results for pion femtoscopy from the ALICE at LHC are consistent with the data from analysis performed in this thesis (Fig.~\ref{fig:piradii}).
+    This is a confirmation of applicability of hydrodynamic models in a description of evolution of a quark-gluon plasma.
 
-    The $\beta$ parameter calculated in the fitting of the power-law to the femtoscopic radii is of the order of 0.5 in case of the radii in the transverse plane.
+    The $\beta$ parameter calculated in the fitting of the power-law to the femtoscopic radii is of the order of 0.5 in the case of the radii in the transverse plane.
     This value is consistent with the hydrodynamic predictions.
-    In case of longitudinal radii, the exponent is bigger (greater than 0.7), which is an indication of a strong transversal expansion in the system~\cite{akkelin_sinyukov}.
+    On the other side, for longitudinal radii the exponent is bigger (greater than 0.7), which is an indication of a strong transversal expansion in the system~\cite{akkelin_sinyukov}.
 
-    A scaling described above is visible in the LCMS, however due to limited statistics, analysis in this reference frame is not always possible.
-    In such case one performs calculations in the PRF.
-    The $m_T$ scaling in the PRF is not observed - this has a trivial kinematic origin.
-    A transition from the PRF to LCMS causes growth of the radius in the outward direction and the common power-law scaling for different particles breaks due to differences in the $\gamma_T (m_T)$ for different particle types.
-    However one can try to deal with the radius growth and restore the scaling by dividing the radii $R_{inv}$ by an approximate factor $\sqrt{ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. }$.
+    A scaling described above is visible in LCMS.
+    However due to limited statistics, analysis in this reference frame is not always possible.
+    In such a case, one performs calculations in the PRF where the scaling is not observed - it has a trivial kinematic origin.
+    A transition from PRF to LCMS causes growth of the radius in the outward direction and the common power-law scaling for various particles breaks due to differences in the $\gamma_T (m_T)$ for different particle types.
+    However, one can try to deal with the radius growth and restore the scaling through dividing the radii $R_{inv}$ by an approximate factor $\sqrt{ \left. \left( \sqrt{\gamma_T} + 2 \right) \middle/ 3 \right. }$.
     The scaled $R_{inv}$ are following the power-law and could be used as a verification of hydrodynamic behaviour in the investigated particle source.
 
     The hadronic evolution and freeze-out in the \verb|THERMINATOR| is followed by the resonance propagation and decay phase.
-    A good accuracy of a scaling with the power-law indicated that the inclusion of the resonances does not break the $m_T$ scaling.
+    A good agreement of the results with the power-law show that the inclusion of the resonances does not break the $m_T$ scaling.
     However, recent calculations, which include also hadron rescattering phase, indicate that the scaling between pions and kaons is broken at the LHC~\cite{sinyukov_kaon}.
     Thus, the results of this work suggest that the scaling breaks at the hadron rescattering phase~\cite{galazyn}.
