@@ -35,7 +35,7 @@
       Configuration files (\textit{*.conf}) are located inside the application's folder in the \verb|data/| directory.
       Files with the names beginning with \textit{fitsh} contain parameters for three-dimensional fits, while \textit{fit1d} prefix indicates settings for one-dimensional ones.
       In principle, names of the parameter files are following this pattern: \textit{\{fit type\}.\{centrality\}.\{pair type\}.\{kT range beginning\}.conf}, for example: \verb|fit1d.b3.1.pp.0.6.conf|.
-      To set parameters for all fits of the same kind of particles, one has to create file with the following name: \textit{\{fit type\}.\{pair type\}.conf}. For example, \verb|fitsh.kk.conf| file contains initial parameters for all fits for kaon pairs.
+      To set parameters for all fits of the same kind of particles, one has to create a file with the following name: \textit{\{fit type\}.\{pair type\}.conf}. For example, \verb|fitsh.kk.conf| file contains initial parameters for all fits for kaon pairs.
       Similarly, one can set fit parameters for pions (\textit{pipi}) and protons correlation functions (\textit{pp}) using corresponding letters in place of \textit{kk} in the name of the file.
 
 
@@ -81,7 +81,7 @@
         \verb|0|                  & not used\\
         \verb|0|                  & not used\\
       \end{longtable}
-      This file contains extra columns specify allowed range for the value of a fit parameter.
+      This file contains extra columns to specify the allowed range for the value of a fit parameter.
       The minimum of the range is determined by the value in the 3rd column, while the 4th column contains its maximum.
 
     %

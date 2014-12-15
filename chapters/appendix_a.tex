@@ -12,7 +12,7 @@
     To handle this task, a computer cluster at Faculty of Physics at Warsaw University of Technology was used.
     This cluster consists of 20 nodes with the following hardware configuration: \mbox{Intel\textregistered} \mbox{Core\texttrademark~2 Quad} CPU \mbox{Q6600 @ 2.40GHz,} \mbox{8GB RAM} with Scientific~Linux~5.8.
     The communication between nodes is realized by the TORQUE Resource Manager~\cite{torque}.
-    To control process of launching multiple event generators and collecting the data, the following scripts were written using \verb|Bash| scripting language:
+    To control the process of launching multiple event generators and collecting the data, the following scripts were written using \verb|Bash| scripting language:
     \begin{description}
       \item[skynet.sh] This is a script in a form of a batch job for TORQUE.
         It simply launches multiple \verb|THERMINATOR| processes in the same working directory with the separate output folders for each job.
