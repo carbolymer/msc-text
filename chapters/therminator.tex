@@ -15,12 +15,12 @@
   Experimental data reveal that no boost-invariant region is formed in the collisions~\cite{chmeson}.
   Hence, for the better description of created system a \mbox{(3+1)-dimensional} model is required.
 
-  In the four dimensional relativistic dynamics one can describe a system using a space-time four-vector $x^\nu=(ct,x,y,z)$, a velocity four-vector $u^\nu=\gamma(c,v_x,v_y,v_z)$ and a energy-momentum tensor $T^{\mu\nu}$.
+  In the four dimensional relativistic dynamics one can describe a system using a space-time four-vector $x^\nu=(ct,x,y,z)$, a velocity four-vector $u^\nu=\gamma(c,v_x,v_y,v_z)$ and an energy-momentum tensor $T^{\mu\nu}$.
   The particular components of $T^{\mu\nu}$ have a following meaning:
   \begin{itemize}
-    \item $T^{00}$ - an energy density,
-    \item $c T^{0\alpha}$ - an energy flux across a surface $x^\alpha$,
-    \item $T^{\alpha0}$ - an $\alpha$-momentum flux across a surface  $x^\alpha$ multiplied by $c$,
+    \item $T^{00}$ - energy density,
+    \item $c T^{0\alpha}$ - energy flux across a surface $x^\alpha$,
+    \item $T^{\alpha0}$ - $\alpha$-momentum flux across a surface  $x^\alpha$ multiplied by $c$,
     \item $T^{\alpha\beta}$ - components of momentum flux density tensor,
   \end{itemize}
   where $\gamma = (1-v^2/c^2)^{-1/2}$ is the Lorentz factor and $\alpha,\beta \in \{1,2,3\}$.
@@ -39,7 +39,7 @@
       0 & 0 & 0 & -1
     \end{bmatrix} .
   \end{equation}
-  The presented version of energy-momentum tensor (Eq.~\ref{eq:visc_ten}) can be used to describe dynamics of a perfect fluid.
+  The presented version of the energy-momentum tensor (Eq.~\ref{eq:visc_ten}) can be used to describe dynamics of a perfect fluid.
   To take into account influence of viscosity, one has to apply the following corrections coming from shear $\pi^{\mu\nu}$ and bulk $\Pi$ viscosities~\cite{visc_hydro}:
   \begin{equation}
     T^{\mu\nu} = T_0^{\mu\nu} + \pi^{\mu\nu} + \Pi(g^{\mu\nu}-u^{\mu}u^{\nu}) .
@@ -48,14 +48,14 @@
   The comparison of hydrodynamic calculations with the experimental results reveals that the shear viscosity divided by entropy $\eta / s$ has to be small and close to the AdS/CFT estimate $\eta /s$ = 0.08~\cite{visc_hydro,adscft}.
   The bulk viscosity over entropy value used in calculations is $\zeta /s$~=~0.04~\cite{visc_hydro}.
   
-  In the situation, when system described by $T^{\mu\nu}$ is evolving close to local thermodynamic equilibrium, then relativistic hydrodynamic equations take the following form:
+  In the situation, when the system described by $T^{\mu\nu}$ is evolving close to local thermodynamic equilibrium, the relativistic hydrodynamic equations take the following form:
   % When using $T^{\mu\nu}$ to describe system evolving close to local thermodynamic equilibrium, relativistic hydrodynamic equations in a form of:
   \begin{equation}
     \partial_{\mu} T^{\mu\nu} = 0~,
   \end{equation}
   which can be used to determine the dynamics of the local energy density, pressure and flow velocity.
 
-  Hydrodynamic calculations are starting from the Glauber\footnote{The Glauber Model is used to calculate ``geometrical'' parameters of a collision like an impact parameter, number of participating nucleons or number of binary collisions.}
+  Hydrodynamic calculations are starting from the Glauber\footnote{The Glauber Model is used to calculate ``geometrical'' parameters of a collision like an impact parameter, number of participating nucleons or the number of binary collisions.}
   model initial conditions.
   The collective expansion of a fluid ends at the freeze-out hypersurface.
   That surface is usually defined as a constant temperature surface, or equivalently as a cut-off in local energy density.
@@ -69,7 +69,7 @@
     The basic assumption of the statistical approach of evolution of the quark-gluon plasma is that at some point of the space-time evolution of the fireball, the thermal equilibrium is reached.
     When the system is in this state the local phase-space densities of particles follow the Fermi-Dirac or Bose-Einstein statistical distributions.
     At the end of the plasma expansion, the freeze-out occurs.
-    The freeze-out model incorporated in \verb|THERMINATOR| assumes, that chemical and thermal freeze-outs occur at the same time.
+    The freeze-out model incorporated in \verb|THERMINATOR| assumes that chemical and thermal freeze-outs occur at the same time.
     %
     % ========
     \subsection{Cooper-Frye formalism}
@@ -114,7 +114,7 @@
         f_0(p_\mu u^\mu) = \left\{ \exp\left[ \frac{p_\mu u^\mu - (B \mu_B + I_3 \mu_{I_3}+S\mu_S + C \mu_C)}{T} \right] \pm 1 \right\}^{-1}~.
       \end{equation}
       In case of fermions, in the Eq.~\ref{eq:phase-space-dist} there is a plus sign and for bosons, minus sign respectively.
-      The thermodynamic quantities appearing in the $f_0(\cdot)$ are \mbox{$T$ - temperature}, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, \mbox{$\mu_S$ - strange} chemical potential, $\mu_C$ - charmed chemical potential and $s$ as a spin of a particle.
+      The thermodynamic quantities appearing in the $f_0(\cdot)$ are \mbox{$T$ - temperature}, $\mu_B$ - baryon chemical potential, $\mu_{I_3}$ - isospin chemical potential, \mbox{$\mu_S$ - strange} chemical potential, $\mu_C$ - charmed chemical potential and $s$ as a spin of the particle.
       The hydrodynamic calculations yield the flow velocity at freeze-out as well as the stress and bulk viscosity tensors required to calculate non-equilibrium corrections to the momentum distribution used in Eq.~\ref{eq:cooper-frye}.
       The term coming from shear viscosity has a form~\cite{visc_hydro}
       \begin{equation}
@@ -133,7 +133,7 @@
       % This information is kept in the simulation due to its importance for the femtoscopic analysis.
   %
   % ========
-  \section{Events generation procedure}
+  \section{Event generation procedure}
   \label{sec:events-generation}
   % ========
     The equations presented in the previous section are directly used in the \verb|THERMINATOR| to generate the primordial hadrons (created during freeze-out) with the Monte-Carlo method.
@@ -141,15 +141,15 @@
     After the generation of primordial particles, the cascade decay of unstable resonances is performed.
     \subsubsection{Determination of a maximum of an integrand}
       In order to generate particles through a Monte Carlo method, the maximum value of the distribution in the right-hand-side of Eq.~\ref{eq:cooper-frye} must be known.
-      To find this number, \verb|THERMINATOR| performs generation of a sample consisting of a large number of particles.
+      To find this number, \verb|THERMINATOR| generates a sample consisting of a large number of particles.
       For each particle the value of a distribution is calculated and the maximum value $f_{max}$ of the sample is stored.
       A large enough sample of particles guarantees that $f_{max}$ found in this procedure is a good estimate of the maximum value of a distribution in Eq.~\ref{eq:cooper-frye}.
       This maximum value depends on a particle type and values of parameters, but does not change from event to event.
-      Hence this procedure is performed once, at the beginning of the events generation~\cite{therminator}.
+      Hence this procedure is performed once, at the beginning of the event generation~\cite{therminator}.
     \subsubsection{Multiplicity calculation}
       In order to generate events, a multiplicity of each particle must be known.
-      The multiplicities are obtained through a numerical integration of distribution functions (Eq.~\ref{eq:cooper-frye}) in the given integration ranges determined by the model parameters.
-      As in the previous case, the multiplicities depend only on the model parameters and they are calculated only once at the beginning of the events generation~\cite{therminator}.
+      The multiplicities are obtained through a numerical integration of the distribution functions (Eq.~\ref{eq:cooper-frye}) in the given integration ranges determined by the model parameters.
+      As in the previous case, the multiplicities depend only on the model parameters and they are calculated only once at the beginning of the event generation~\cite{therminator}.
     \subsubsection{Events and particles generation}
       Every event produced by \verb|THERMINATOR| is generated separately.
       At first, the multiplicities for each of particle type are calculated as random numbers from a Poisson distribution, with the mean being the average particles multiplicity determined in the previous step.
@@ -157,7 +157,7 @@
       In essence, this procedure is a generation of the set of six random numbers: three components of particle's momentum ($p_x$, $p_y$, $p_z$) and three parameters providing space-time coordinates on a freeze-out hypersurface ($\zeta$, $\phi_s$, $\theta$).
       The events generation procedure is based on the von Neumann's acceptance-rejection algorithm.
       Firstly, the integrand in Eq.~\ref{eq:cooper-frye} is calculated using given set of numbers.
-      Subsequently, a random number from uniform distribution over $[0;f_{max}]$ is compared to the value of integrand.
+      Subsequently, a random number from an uniform distribution over $[0;f_{max}]$ is compared to the value of the integrand.
       If it is lower, then the set of numbers is stored as an actual particle.
       If this condition was not satisfied, a new set is generated.
       This procedure is repeated until the determined number of particles of each kind is generated.
